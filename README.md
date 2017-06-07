@@ -1,1 +1,1 @@
-# is24-media-liquid-galaxy
+# Draft: Project Liquid Galaxy for Real Estate Search
