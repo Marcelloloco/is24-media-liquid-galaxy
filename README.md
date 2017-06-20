@@ -20,6 +20,18 @@ To get a better idea, watch the demo video (link to youtube):
 
 [![Real Estate Example](http://img.youtube.com/vi/kZ0bq-dA-rg/0.jpg)](http://www.youtube.com/watch?v=kZ0bq-dA-rg)
 
+During the Q2 2017 Hackdays we managed to setup a prototype system which we created using 7 old 24 inch Dell screens and 7 old Dell laptops. 
+It worked out of the box flawlessly and we even managed to build a piece of software that would constantly search for listing in the current viewable area and depict them as icons on the map.
+
+Here a Video (click the image) of the result from the hackdays presentation:
+[![Real Estate Example](https://lh3.googleusercontent.com/icwDAw5U_IiGymBvSQnqLuSR8OF5hzldGNKd_YX05axk0k-swd42gIJkfWw_HPkG5lcjHtAHYDZfP1pCHHkDC7HkCvoUrmRMnxshajpRFJ_4ueEMAfSeWEbIXXCVha4NvgRmKCu4od-sXxOPRhvjys_WPw-glKebPNcSJ4mB0BYXxRx262ciQo4x3BCDMRIanU6lEMAiw-pmxsyzYFY08MDI07jcoXQyKRzJtbcTtsQUHG9VpnmAyGzBX31Mh1CVn5NRuzyznPZ9Wdeio8zEaILubQMQgf03e-iv3JKyETZV4PROiJXDJoPqXLddyG-3Kune7eCJMgsWLH_MIqNn1UQNVE-G8y4ogRg2tXHA7clY069pnu6p1cBvAlDZKjMfpme3omz3i44zcaZlT_lUadWoksPZ-hkHvq0Z-GOg6y9QNQpTQv1nnnC0c2-RQVNQkHgyFfuBnqwVH49wfOAwQ_4yogCVPUzgEPbVeo2nuYAYvAJGvLQYNNW9ZRUtjDJ7M-3W2l7XSNGN5mEMV4esPZWeoSTRTJ647bGO6iAqsq5WkNXwgWOWKhH3FDSTF02XN1WWkZ-ZEfFKDSnD9y1QiTDkK_cNbWAC9hS-mBZsMKNFum_bpzqevlX7M5gH3WNvqFycHpM9-qNMd-iYS6-kG9sFtTIu0gsciOe1Le67Ego=w1200-h675-no)](https://goo.gl/photos/mKE6axNyeVMyByZg7)
+
+
+
+
+
+
+
 
 
 
