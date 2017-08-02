@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<Style id="normalPlacemark">
+          <IconStyle>
+            <scale>{{iconScale}}</scale>
+            <Icon>
+              <href>http://maps.google.com/mapfiles/kml/paddle/{{type-color}}-blank.png</href>
+            </Icon>
+          </IconStyle>
+        </Style>
+        <Style id="highlightPlacemark">
+          <IconStyle>
+            <scale>{{iconScale}}</scale>
+            <Icon>
+              <href>http://maps.google.com/mapfiles/kml/paddle/{{type-color}}-stars.png</href>
+            </Icon>
+          </IconStyle>
+        </Style>
+        <StyleMap id="exampleStyleMap">
+          <Pair>
+            <key>normal</key>
+            <styleUrl>#normalPlacemark</styleUrl>
+          </Pair>
+          <Pair>
+            <key>highlight</key>
+            <styleUrl>#highlightPlacemark</styleUrl>
+          </Pair>
+        </StyleMap>
+
+        {{#results}}
+            <Placemark>
+                <name></name>
+            	<description>
+            	    <![CDATA[
+                      <h1>{{title}}</h1>
+                      <p><img src="{{{titlePicture}}}"></p>
+                      <p><a href="https://www.immobilienscout24.de/expose/{{{id}}}" target="_blank">Zum Expose</a></p>
+                    ]]>
+            	</description>
+            	<styleUrl>#exampleStyleMap</styleUrl>
+            	<Point>
+            	    <coordinates>{{address.wgs84Coordinate.longitude}}, {{address.wgs84Coordinate.latitude}},50</coordinates>
+            	</Point>
+            </Placemark>
+        {{/results}}
+	</Document>
+</kml>

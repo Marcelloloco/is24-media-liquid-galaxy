@@ -1,0 +1,19 @@
+{
+  "name": "IS24-Liquid-Galaxy-Search-Server",
+  "author": "",
+  "version": "1.0.0",
+  "description": "IS24 Liquid Galaxy Search Server",
+  "main": "./app",
+  "scripts": {
+    "start": "node ./app"
+  },
+  "dependencies": {
+    "@onehilltech/blueprint": "^1.9.1",
+    "winston": "^1.0.1",
+    "request": "2.76.0",
+    "request-promise": "4.1.1"
+  },
+  "devDependencies": {
+    "oauth-1.0a": "^2.1.0"
+  }
+}

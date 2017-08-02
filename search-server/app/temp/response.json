@@ -1,0 +1,1992 @@
+{
+  "resultlist.resultlist": {
+    "paging": {
+      "next": {
+        "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?realestatetype=HouseBuy&geocoordinates=52.520304525744145;13.351985071708349;5.983497306624568&pagenumber=2"
+      },
+      "pageNumber": 1,
+      "pageSize": 20,
+      "numberOfPages": 3,
+      "numberOfHits": 46,
+      "numberOfListings": 46
+    },
+    "resultlistEntries": [
+      {
+        "@numberOfHits": "46",
+        "@realEstateType": "3",
+        "resultlistEntry": [
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/93963683",
+            "@id": "93963683",
+            "@modification": "2017-03-14T15:35:24.000+01:00",
+            "@creation": "2017-03-14T15:35:24.000+01:00",
+            "@publishDate": "2017-03-14T15:35:24.000+01:00",
+            "realEstateId": 93963683,
+            "distance": 5.48,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "93963683",
+              "title": "AGBF: Villa mit Indoor Pool und Süd-Terrasse - nahe Kurfürstendamm -",
+              "address": {
+                "postcode": "14193",
+                "city": "Berlin",
+                "quarter": "Grunewald (Wilmersdorf)"
+              },
+              "companyWideCustomerId": "001.179106",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/N/565/908/199/565908199-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "93963683",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/565/908/199/565908199-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/565/908/199/565908199-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/565/908/199/565908199-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/565/908/199/565908199-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/565/908/199/565908199-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "XL",
+              "showcasePlacementColor": "#283A5F",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 1800000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 280,
+              "plotArea": 660,
+              "numberOfRooms": 5,
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/90721176",
+            "@id": "90721176",
+            "@modification": "2017-04-04T17:41:10.152+02:00",
+            "@creation": "2016-10-12T16:29:14.000+02:00",
+            "@publishDate": "2016-10-12T16:29:14.000+02:00",
+            "realEstateId": 90721176,
+            "distance": 5.511,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "90721176",
+              "title": "AGBF: Exklusiv Wohnen mit eigenem Pool und großer Süd-Terrasse -nahe Kurfürstendamm-",
+              "address": {
+                "postcode": "14193",
+                "city": "Berlin",
+                "quarter": "Grunewald (Wilmersdorf)"
+              },
+              "companyWideCustomerId": "001.179106",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/571/674/900/571674900-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "90721176",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/571/674/900/571674900-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/571/674/900/571674900-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/571/674/900/571674900-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/571/674/900/571674900-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/571/674/900/571674900-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "XL",
+              "showcasePlacementColor": "#283A5F",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/285/639/778/285639778-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 1800000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 280,
+              "plotArea": 660,
+              "numberOfRooms": 5,
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/94231846",
+            "@id": "94231846",
+            "@modification": "2017-03-27T10:41:25.076+02:00",
+            "@creation": "2017-03-27T10:36:21.000+02:00",
+            "@publishDate": "2017-03-27T10:36:21.000+02:00",
+            "realEstateId": 94231846,
+            "distance": 5.934,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "94231846",
+              "title": "Hochwertig saniertes denkmalgeschütztes Reihenendhaus in grüner Idylle***optional mit Pool und Kamin",
+              "address": {
+                "postcode": "13403",
+                "city": "Berlin",
+                "quarter": "Reinickendorf (Reinickendorf)"
+              },
+              "companyWideCustomerId": "001.947582",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/N/569/248/627/569248627-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "94231846",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/569/248/627/569248627-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/569/248/627/569248627-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/569/248/627/569248627-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/569/248/627/569248627-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/569/248/627/569248627-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "true",
+              "streamingVideo": "false",
+              "listingType": "XL",
+              "showcasePlacementColor": "#343434",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig02/L/163/683/177/163683177-0.gif",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig02/L/163/683/177/163683177-0.gif",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/L/163/683/177/163683177-0.gif/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/L/163/683/177/163683177-0.gif/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/L/163/683/177/163683177-0.gif/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 829000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 165.84,
+              "plotArea": 524,
+              "numberOfRooms": 6,
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "true",
+              "cellar": "true",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/85789489",
+            "@id": "85789489",
+            "@modification": "2017-04-19T16:24:35.216+02:00",
+            "@creation": "2015-12-10T19:34:14.000+01:00",
+            "@publishDate": "2015-12-10T19:34:14.000+01:00",
+            "realEstateId": 85789489,
+            "distance": 1.645,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "85789489",
+              "title": "Splitlevel mit Garten im Stadthausquartier!",
+              "address": {
+                "postcode": "10785",
+                "city": "Berlin",
+                "quarter": "Tiergarten (Tiergarten)"
+              },
+              "companyWideCustomerId": "002.01006554579",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig02/N/568/654/321/568654321-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "85789489",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/568/654/321/568654321-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/568/654/321/568654321-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/568/654/321/568654321-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/568/654/321/568654321-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/568/654/321/568654321-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "true",
+              "streamingVideo": "false",
+              "listingType": "L",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig04/L/483/66/695/483066695-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/L/483/66/695/483066695-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/66/695/483066695-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/66/695/483066695-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/66/695/483066695-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 1500000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 220,
+              "plotArea": 270,
+              "numberOfRooms": 7,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "true",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/89269901",
+            "@id": "89269901",
+            "@modification": "2016-11-04T18:44:41.000+01:00",
+            "@creation": "2016-07-11T19:52:51.000+02:00",
+            "@publishDate": "2016-07-11T19:52:51.000+02:00",
+            "realEstateId": 89269901,
+            "distance": 4.478,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "89269901",
+              "title": "- Nähe U3/U7/ Liebevoll sanierte Stilvilla der 20er Jahre mit 4 Wohneinheiten -",
+              "address": {
+                "postcode": "10713",
+                "city": "Berlin",
+                "quarter": "Wilmersdorf (Wilmersdorf)"
+              },
+              "companyWideCustomerId": "001.368987",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/532/529/672/532529672-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "89269901",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/532/529/672/532529672-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/532/529/672/532529672-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/532/529/672/532529672-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/532/529/672/532529672-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/532/529/672/532529672-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "L",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig02/L/334/472/457/334472457-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig02/L/334/472/457/334472457-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/L/334/472/457/334472457-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/L/334/472/457/334472457-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/L/334/472/457/334472457-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 2350000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 500,
+              "plotArea": 680,
+              "numberOfRooms": 15,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "true",
+              "cellar": "true",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/93116920",
+            "@id": "93116920",
+            "@modification": "2017-04-19T17:38:20.018+02:00",
+            "@creation": "2017-02-02T15:59:31.000+01:00",
+            "@publishDate": "2017-02-02T15:59:31.000+01:00",
+            "realEstateId": 93116920,
+            "distance": 4.492,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "93116920",
+              "title": "Leben in moderner, nachhaltiger Architektur - grün, ruhig und dennoch mittendrin",
+              "address": {
+                "postcode": "10179",
+                "city": "Berlin",
+                "quarter": "Mitte (Mitte)"
+              },
+              "companyWideCustomerId": "001.4254239",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/570/671/624/570671624-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "93116920",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/570/671/624/570671624-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/570/671/624/570671624-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/570/671/624/570671624-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/570/671/624/570671624-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/570/671/624/570671624-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "L",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig04/L/483/56/779/483056779-0.png",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/L/483/56/779/483056779-0.png",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/56/779/483056779-0.png/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/56/779/483056779-0.png/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/56/779/483056779-0.png/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 3500000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 500,
+              "plotArea": 372,
+              "numberOfRooms": 15,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/91124131",
+            "@id": "91124131",
+            "@modification": "2017-04-01T20:14:46.736+02:00",
+            "@creation": "2016-11-02T19:41:16.000+01:00",
+            "@publishDate": "2016-11-02T19:41:16.000+01:00",
+            "realEstateId": 91124131,
+            "distance": 4.518,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "91124131",
+              "title": "Repräsentative Zwei-Familien-Villa in zentraler Lage",
+              "address": {
+                "postcode": "10713",
+                "city": "Berlin",
+                "quarter": "Wilmersdorf (Wilmersdorf)"
+              },
+              "companyWideCustomerId": "001.4385544",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig02/N/565/422/753/565422753-0.jpeg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "91124131",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/565/422/753/565422753-0.jpeg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/565/422/753/565422753-0.jpeg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/565/422/753/565422753-0.jpeg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/565/422/753/565422753-0.jpeg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/565/422/753/565422753-0.jpeg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "true",
+              "streamingVideo": "true",
+              "listingType": "L",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig04/L/208/969/971/208969971-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/L/208/969/971/208969971-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/208/969/971/208969971-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/208/969/971/208969971-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/208/969/971/208969971-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 2699000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 485,
+              "plotArea": 1100,
+              "numberOfRooms": 15,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "true",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/94647001",
+            "@id": "94647001",
+            "@modification": "2017-04-18T19:43:40.375+02:00",
+            "@creation": "2017-04-13T15:12:26.000+02:00",
+            "@publishDate": "2017-04-13T15:12:26.000+02:00",
+            "realEstateId": 94647001,
+            "distance": 5.621,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "94647001",
+              "title": "***BESTLAGE TEMPELHOF / FLIEGERVIERTEL*** Geräumiges, familiengerechtes Reihenmittelhaus",
+              "address": {
+                "postcode": "12101",
+                "city": "Berlin",
+                "quarter": "Tempelhof (Tempelhof)"
+              },
+              "companyWideCustomerId": "002.01006791836",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/574/776/920/574776920-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "94647001",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/574/776/920/574776920-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/574/776/920/574776920-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/574/776/920/574776920-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/574/776/920/574776920-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/574/776/920/574776920-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "true",
+              "streamingVideo": "false",
+              "listingType": "M",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/198/249/270/198249270-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/L/198/249/270/198249270-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/198/249/270/198249270-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/198/249/270/198249270-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/198/249/270/198249270-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 698000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 150,
+              "plotArea": 248,
+              "numberOfRooms": 5,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "true",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/94733415",
+            "@id": "94733415",
+            "@modification": "2017-04-18T13:36:40.712+02:00",
+            "@creation": "2017-04-18T13:27:49.000+02:00",
+            "@publishDate": "2017-04-18T13:27:49.000+02:00",
+            "realEstateId": 94733415,
+            "distance": 5.719,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "94733415",
+              "title": "Bauen SIE mit dem Marktführer Massahaus! 0152 33 88 51 76",
+              "address": {
+                "postcode": "13405",
+                "city": "Berlin",
+                "quarter": "Siemensstadt (Spandau)"
+              },
+              "companyWideCustomerId": "002.01007700138",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/N/575/753/87/575753087-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "94733415",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/575/753/87/575753087-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/575/753/87/575753087-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/575/753/87/575753087-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/575/753/87/575753087-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/575/753/87/575753087-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "M",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig04/L/388/115/527/388115527-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/L/388/115/527/388115527-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/388/115/527/388115527-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/388/115/527/388115527-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/388/115/527/388115527-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 595000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 233,
+              "plotArea": 580,
+              "numberOfRooms": 7,
+              "courtage": {
+                "hasCourtage": "NO"
+              },
+              "guestToilet": "true",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/94589610",
+            "@id": "94589610",
+            "@modification": "2017-04-11T10:27:52.190+02:00",
+            "@creation": "2017-04-11T10:27:52.000+02:00",
+            "@publishDate": "2017-04-11T10:27:52.000+02:00",
+            "realEstateId": 94589610,
+            "distance": 5.926,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "94589610",
+              "title": "Remise mit Gartenanteil, Terrasse, Balkon, bodentiefe Fenster, hohe Decken, Fußbodenheizung",
+              "address": {
+                "postcode": "10407",
+                "city": "Berlin",
+                "quarter": "Prenzlauer Berg (Prenzlauer Berg)"
+              },
+              "companyWideCustomerId": "001.216206",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/N/573/873/919/573873919-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "94589610",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/573/873/919/573873919-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/573/873/919/573873919-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/573/873/919/573873919-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/573/873/919/573873919-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/573/873/919/573873919-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "M",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig04/L/483/38/59/483038059-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/L/483/38/59/483038059-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/38/59/483038059-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/38/59/483038059-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/L/483/38/59/483038059-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 595000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 129,
+              "plotArea": 40,
+              "numberOfRooms": 5,
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "true",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/91798394",
+            "@id": "91798394",
+            "@modification": "2017-04-06T08:17:24.378+02:00",
+            "@creation": "2016-12-13T08:39:02.000+01:00",
+            "@publishDate": "2016-12-13T08:39:02.000+01:00",
+            "realEstateId": 91798394,
+            "distance": 1.047,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "91798394",
+              "title": "LUXUS Hausboot - 2 Etagen - 120 m² Wohnen - 25m² SONNENTERRASSE - Kamin, Sauna, komplett individuell",
+              "address": {
+                "postcode": "10559",
+                "city": "Berlin",
+                "quarter": "Tiergarten (Tiergarten)"
+              },
+              "companyWideCustomerId": "001.634094",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/N/543/166/3/543166003-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "91798394",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/166/3/543166003-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/166/3/543166003-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/166/3/543166003-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/166/3/543166003-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/166/3/543166003-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 469000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 135,
+              "plotArea": 100,
+              "numberOfRooms": 4,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "true",
+              "isBarrierFree": "true"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/91527013",
+            "@id": "91527013",
+            "@modification": "2017-04-11T11:56:57.015+02:00",
+            "@creation": "2017-03-13T08:45:23.000+01:00",
+            "@publishDate": "2017-03-13T08:45:23.000+01:00",
+            "realEstateId": 91527013,
+            "distance": 1.555,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "91527013",
+              "title": "LUXUS Hausboot - 2 Etagen - 120 m² Wohnen - 25m² SONNENTERRASSE - Kamin, Sauna, komplett individuell",
+              "address": {
+                "postcode": "10587",
+                "city": "Berlin",
+                "quarter": "Charlottenburg (Charlottenburg)"
+              },
+              "companyWideCustomerId": "001.634094",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/N/537/717/750/537717750-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "91527013",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/537/717/750/537717750-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/537/717/750/537717750-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/537/717/750/537717750-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/537/717/750/537717750-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/537/717/750/537717750-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 469000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 135,
+              "plotArea": 100,
+              "numberOfRooms": 4,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "true",
+              "isBarrierFree": "true"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/93842929",
+            "@id": "93842929",
+            "@modification": "2017-03-08T20:34:55.000+01:00",
+            "@creation": "2017-03-08T20:34:45.000+01:00",
+            "@publishDate": "2017-03-08T20:34:45.000+01:00",
+            "realEstateId": 93842929,
+            "distance": 2.057,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "93842929",
+              "title": "Herrschaftliches Stadtpalais mit Potential für ca. 1.780 qm Wfl. - dicht Potsdamer Platz!",
+              "address": {
+                "postcode": "10785",
+                "city": "Berlin",
+                "quarter": "Tiergarten (Tiergarten)"
+              },
+              "companyWideCustomerId": "001.164338",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/564/524/504/564524504-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "93842929",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/564/524/504/564524504-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/564/524/504/564524504-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/564/524/504/564524504-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/564/524/504/564524504-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/564/524/504/564524504-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/483/64/602/483064602-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/L/483/64/602/483064602-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/483/64/602/483064602-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/483/64/602/483064602-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/483/64/602/483064602-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 6500000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 1330,
+              "plotArea": 900,
+              "numberOfRooms": 25,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/91527107",
+            "@id": "91527107",
+            "@modification": "2017-04-11T11:57:47.761+02:00",
+            "@creation": "2016-11-22T10:41:48.000+01:00",
+            "@publishDate": "2016-11-22T10:41:48.000+01:00",
+            "realEstateId": 91527107,
+            "distance": 2.561,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "91527107",
+              "title": "LUXUS Hausboot - 2 Etagen - 120 m² Wohnen - 25m² SONNENTERRASSE - Kamin, Sauna, komplett individuell",
+              "address": {
+                "postcode": "10785",
+                "city": "Berlin",
+                "quarter": "Kreuzberg (Kreuzberg)"
+              },
+              "companyWideCustomerId": "001.634094",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/537/718/140/537718140-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "91527107",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/537/718/140/537718140-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/537/718/140/537718140-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/537/718/140/537718140-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/537/718/140/537718140-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/537/718/140/537718140-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 469000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 135,
+              "plotArea": 100,
+              "numberOfRooms": 4,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "true",
+              "isBarrierFree": "true"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/93607474",
+            "@id": "93607474",
+            "@modification": "2017-03-20T12:44:33.810+01:00",
+            "@creation": "2017-02-24T20:34:18.000+01:00",
+            "@publishDate": "2017-02-24T20:34:18.000+01:00",
+            "realEstateId": 93607474,
+            "distance": 3.335,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "93607474",
+              "title": "Sanierungsbedürftiges Mehrfamilienhaus in Berlin-Schönefeld",
+              "address": {
+                "postcode": "10823",
+                "city": "Berlin",
+                "quarter": "Schöneberg (Schöneberg)"
+              },
+              "companyWideCustomerId": "002.01008199270",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig02/N/562/206/541/562206541-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "93607474",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/562/206/541/562206541-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/562/206/541/562206541-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/562/206/541/562206541-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/562/206/541/562206541-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig02/N/562/206/541/562206541-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "price": {
+                "value": 6100000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 3100,
+              "plotArea": 2000,
+              "numberOfRooms": 130,
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/91798118",
+            "@id": "91798118",
+            "@modification": "2017-04-06T08:17:47.056+02:00",
+            "@creation": "2016-12-13T08:31:52.000+01:00",
+            "@publishDate": "2016-12-13T08:31:52.000+01:00",
+            "realEstateId": 91798118,
+            "distance": 3.412,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "91798118",
+              "title": "LUXUS Hausboot - 2 Etagen - 120 m² Wohnen - 25m² SONNENTERRASSE - Kamin, Sauna, komplett individuell",
+              "address": {
+                "postcode": "10178",
+                "city": "Berlin",
+                "quarter": "Mitte (Mitte)"
+              },
+              "companyWideCustomerId": "001.634094",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/543/165/428/543165428-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "91798118",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/543/165/428/543165428-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/543/165/428/543165428-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/543/165/428/543165428-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/543/165/428/543165428-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/543/165/428/543165428-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 469000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 135,
+              "plotArea": 100,
+              "numberOfRooms": 4,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "true",
+              "isBarrierFree": "true"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/91798290",
+            "@id": "91798290",
+            "@modification": "2017-04-10T10:34:07.963+02:00",
+            "@creation": "2016-12-13T08:36:48.000+01:00",
+            "@publishDate": "2016-12-13T08:36:48.000+01:00",
+            "realEstateId": 91798290,
+            "distance": 3.638,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "91798290",
+              "title": "LUXUS Hausboot - 2 Etagen - 120 m² Wohnen - 25m² SONNENTERRASSE - Kamin, Sauna, komplett individuell",
+              "address": {
+                "postcode": "10589",
+                "city": "Berlin",
+                "quarter": "Charlottenburg (Charlottenburg)"
+              },
+              "companyWideCustomerId": "001.634094",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/N/543/165/803/543165803-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "91798290",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/165/803/543165803-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/165/803/543165803-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/165/803/543165803-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/165/803/543165803-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/543/165/803/543165803-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/284/315/528/284315528-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 469000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 135,
+              "plotArea": 100,
+              "numberOfRooms": 4,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "true",
+              "isBarrierFree": "true"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/93278911",
+            "@id": "93278911",
+            "@modification": "2017-02-09T13:16:06.000+01:00",
+            "@creation": "2017-02-09T13:15:29.000+01:00",
+            "@publishDate": "2017-02-09T13:15:29.000+01:00",
+            "realEstateId": 93278911,
+            "distance": 4.252,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "93278911",
+              "title": "Nahe Kurfürstendamm: Moderne Doppelhaushälfte mit Terrasse und Garten",
+              "address": {
+                "postcode": "10707",
+                "city": "Berlin",
+                "quarter": "Charlottenburg (Charlottenburg)"
+              },
+              "companyWideCustomerId": "002.01007500398",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/N/557/487/588/557487588-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "93278911",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/557/487/588/557487588-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/557/487/588/557487588-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/557/487/588/557487588-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/557/487/588/557487588-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/N/557/487/588/557487588-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/483/59/470/483059470-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/L/483/59/470/483059470-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/483/59/470/483059470-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/483/59/470/483059470-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/483/59/470/483059470-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 900000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 188,
+              "plotArea": 236,
+              "numberOfRooms": 5,
+              "energyPerformanceCertificate": "true",
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "true",
+              "cellar": "true",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/91116469",
+            "@id": "91116469",
+            "@modification": "2017-02-12T10:31:58.000+01:00",
+            "@creation": "2016-11-04T02:03:40.000+01:00",
+            "@publishDate": "2016-11-04T02:03:40.000+01:00",
+            "realEstateId": 91116469,
+            "distance": 4.507,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "91116469",
+              "title": "PLANEN SIE NACH IHREN VORSTELLUNGEN IHR TRAUMHAUS!!! BAUEN SIE MIT DEM MARKTFÜHRER !!!!!!!!",
+              "address": {
+                "postcode": "10711",
+                "city": "Berlin",
+                "quarter": "Wilmersdorf (Wilmersdorf)"
+              },
+              "companyWideCustomerId": "002.01008103496",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/N/533/198/162/533198162-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "91116469",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/533/198/162/533198162-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/533/198/162/533198162-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/533/198/162/533198162-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/533/198/162/533198162-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/N/533/198/162/533198162-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/483/47/688/483047688-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig01/L/483/47/688/483047688-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/483/47/688/483047688-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/483/47/688/483047688-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig01/L/483/47/688/483047688-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 689000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 146,
+              "plotArea": 500,
+              "numberOfRooms": 5,
+              "courtage": {
+                "hasCourtage": "NO"
+              },
+              "guestToilet": "true",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          },
+          {
+            "@xlink.href": "https://rest.immobilienscout24.de/restapi/api/search/v1.0/expose/92796746",
+            "@id": "92796746",
+            "@modification": "2017-03-23T06:24:41.204+01:00",
+            "@creation": "2017-01-18T09:55:15.000+01:00",
+            "@publishDate": "2017-01-18T09:55:15.000+01:00",
+            "realEstateId": 92796746,
+            "distance": 4.549,
+            "resultlist.realEstate": {
+              "@xsi.type": "search:HouseBuy",
+              "@id": "92796746",
+              "title": "Gelegenheit: Mehrfamilienhaus in Berlin-Schöneberg -Baugenehmigung für Dachausbau liegt vor-",
+              "address": {
+                "postcode": "10827",
+                "city": "Berlin",
+                "quarter": "Schöneberg (Schöneberg)"
+              },
+              "companyWideCustomerId": "001.15971127",
+              "titlePicture": {
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig04/N/551/674/215/551674215-0.jpg/ORIG/resize/60x60%3E/extent/60x60/format/jpg/quality/50",
+                "@id": "92796746",
+                "@modification": "2017-04-20T11:30:31.399+02:00",
+                "@creation": "2017-04-20T11:30:31.399+02:00",
+                "@publishDate": "2017-04-20T11:30:31.399+02:00",
+                "floorplan": "false",
+                "titlePicture": "true",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE_118x118",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/551/674/215/551674215-0.jpg/ORIG/resize/118x118%3E/extent/118x118/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_210x210",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/551/674/215/551674215-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/551/674/215/551674215-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/551/674/215/551674215-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig04/N/551/674/215/551674215-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "floorplan": "false",
+              "streamingVideo": "false",
+              "listingType": "S",
+              "privateOffer": "false",
+              "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/327/896/746/327896746-0.jpg",
+              "realtorLogoForResultList": {
+                "@xsi.type": "common:Picture",
+                "@xlink.href": "https://pic.immobilienscout24.de/pic/orig03/L/327/896/746/327896746-0.jpg",
+                "floorplan": "false",
+                "titlePicture": "false",
+                "urls": [
+                  {
+                    "url": [
+                      {
+                        "@scale": "SCALE",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/327/896/746/327896746-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/quality/50"
+                      },
+                      {
+                        "@scale": "SCALE_AND_CROP",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/327/896/746/327896746-0.jpg/ORIG/legacy_thumbnail/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      },
+                      {
+                        "@scale": "WHITE_FILLING",
+                        "@href": "https://pic.immobilienscout24.de/pic/orig03/L/327/896/746/327896746-0.jpg/ORIG/resize/%WIDTH%x%HEIGHT%%3E/extent/%WIDTH%x%HEIGHT%/format/jpg/quality/50"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "price": {
+                "value": 4900000,
+                "currency": "EUR",
+                "marketingType": "PURCHASE",
+                "priceIntervalType": "ONE_TIME_CHARGE"
+              },
+              "livingSpace": 1194.59,
+              "plotArea": 470,
+              "numberOfRooms": 40,
+              "courtage": {
+                "hasCourtage": "YES"
+              },
+              "guestToilet": "false",
+              "cellar": "false",
+              "isBarrierFree": "false"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

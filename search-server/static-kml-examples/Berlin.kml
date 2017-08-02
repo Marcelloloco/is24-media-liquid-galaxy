@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Berlin</name>
+	<Placemark>
+		<name>Berlin mit Neigung</name>
+		<LookAt>
+			<longitude>13.39874258897659</longitude>
+			<latitude>52.51135486124301</latitude>
+			<altitude>39.79999427479507</altitude>
+			<heading>141.16858404605251</heading>
+			<tilt>60.09389681804046</tilt>
+			<range>1010.84205597222</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Point>
+			<coordinates>13.39874258897659,52.51135486124301,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

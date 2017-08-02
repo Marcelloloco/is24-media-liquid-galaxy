@@ -1,0 +1,19 @@
+node_modules
+**/node_modules
+
+target
+
+# IDEA
+*.iml
+.idea
+
+.DS_Store
+*.log
+
+**/.serverless
+
+*.testconfig.js
+
+**/template.json
+
+.env

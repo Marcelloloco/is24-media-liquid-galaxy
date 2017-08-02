@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Folder>
+    <name>ImmobilienScout24</name>
+    <visibility>1</visibility>
+    <open>1</open>
+    <description>Search your new home at ImmobilienScout24</description>
+    <NetworkLink>
+      <name>Exposes</name>
+      <visibility>1</visibility>
+      <open>1</open>
+      <description></description>
+      <refreshVisibility>0</refreshVisibility>
+      <flyToView>0</flyToView>
+      <Link>
+        <href>http://isdeblnnm178.iscout.local:5000/search</href>
+        <viewRefreshMode>onStop</viewRefreshMode>
+        <viewRefreshTime>0.1</viewRefreshTime>
+        <viewBoundScale>1</viewBoundScale>
+        <viewFormat>BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]&amp;View=[lookatLon],[lookatLat],[lookatRange],[lookatTilt],[lookatHeading]&amp;CamPos=[cameraLon],[cameraLat],[cameraAlt],[horizFov],[vertFov]</viewFormat>
+      </Link>
+    </NetworkLink>
+  </Folder>
+</kml>
