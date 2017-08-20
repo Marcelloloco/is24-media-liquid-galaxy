@@ -26,6 +26,7 @@ It worked out of the box flawlessly and we even managed to build a piece of soft
 Here a Video (click the image) of the result from the hackdays presentation:
 [![Real Estate Example](https://lh3.googleusercontent.com/icwDAw5U_IiGymBvSQnqLuSR8OF5hzldGNKd_YX05axk0k-swd42gIJkfWw_HPkG5lcjHtAHYDZfP1pCHHkDC7HkCvoUrmRMnxshajpRFJ_4ueEMAfSeWEbIXXCVha4NvgRmKCu4od-sXxOPRhvjys_WPw-glKebPNcSJ4mB0BYXxRx262ciQo4x3BCDMRIanU6lEMAiw-pmxsyzYFY08MDI07jcoXQyKRzJtbcTtsQUHG9VpnmAyGzBX31Mh1CVn5NRuzyznPZ9Wdeio8zEaILubQMQgf03e-iv3JKyETZV4PROiJXDJoPqXLddyG-3Kune7eCJMgsWLH_MIqNn1UQNVE-G8y4ogRg2tXHA7clY069pnu6p1cBvAlDZKjMfpme3omz3i44zcaZlT_lUadWoksPZ-hkHvq0Z-GOg6y9QNQpTQv1nnnC0c2-RQVNQkHgyFfuBnqwVH49wfOAwQ_4yogCVPUzgEPbVeo2nuYAYvAJGvLQYNNW9ZRUtjDJ7M-3W2l7XSNGN5mEMV4esPZWeoSTRTJ647bGO6iAqsq5WkNXwgWOWKhH3FDSTF02XN1WWkZ-ZEfFKDSnD9y1QiTDkK_cNbWAC9hS-mBZsMKNFum_bpzqevlX7M5gH3WNvqFycHpM9-qNMd-iYS6-kG9sFtTIu0gsciOe1Le67Ego=w1200-h675-no)](https://goo.gl/photos/mKE6axNyeVMyByZg7)
 
+[![Possible setup](https://raw.githubusercontent.com/AutoScout24/is24-media-liquid-galaxy/master/lg2.jpg)]
 
 
 
