@@ -3,13 +3,16 @@
 const
 	blueprint = require('@onehilltech/blueprint'),
 	SearchService = require('../services/SearchService'),
-	fs = require("fs");
+	fs = require("fs"),
+	LRU = require("lru-cache"),
+	maxCacheSize = 	500;
 
 function SearchController() {
 	blueprint.BaseController.call(this);
 	this.searchService = new SearchService();
 	this.enabled = true;
 	this.realEstateType = 'ApartmentRent';
+	this.searchResultCache = LRU(maxCacheSize);
 	// default is IS24 Berlin Office
 	this.currentView = {
 		lng: 13.43173929843387,
@@ -24,11 +27,18 @@ function SearchController() {
 blueprint.controller(SearchController);
 
 
+SearchController.prototype.switchRealEstateType = function (newRealEstateType) {
+	if (this.realEstateType !== newRealEstateType) {
+		this.realEstateType = newRealEstateType;
+		this.searchResultCache.reset();
+	}
+};
+
 SearchController.prototype.enableSearch = function () {
 	let self = this;
 	return (req, res) => {
 		if (req.query && req.query.realEstateType) {
-			self.realEstateType = req.query.realEstateType;
+			self.switchRealEstateType(req.query.realEstateType);
 		}
 		self.enabled = true;
 		self.flyTo();
@@ -42,6 +52,7 @@ SearchController.prototype.disableSearch = function () {
 	let self = this;
 	return (req, res) => {
 		self.enabled = false;
+		this.searchResultCache.reset();
 		let msg = 'search disabled';
 		console.log(msg);
 		return res.render('controller-result.mustache', {message: msg});
@@ -51,7 +62,7 @@ SearchController.prototype.disableSearch = function () {
 SearchController.prototype.searchHouseBuy = function () {
 	let self = this;
 	return (req, res) => {
-		self.realEstateType = 'HouseBuy';
+		self.switchRealEstateType('HouseBuy');
 		return self.doSearch(req, res);
 	};
 };
@@ -59,7 +70,7 @@ SearchController.prototype.searchHouseBuy = function () {
 SearchController.prototype.searchHouseRent = function () {
 	let self = this;
 	return (req, res) => {
-		self.realEstateType = 'HouseRent';
+		self.switchRealEstateType('HouseRent');
 		return self.doSearch(req, res);
 	};
 };
@@ -67,7 +78,7 @@ SearchController.prototype.searchHouseRent = function () {
 SearchController.prototype.searchApartmentBuy = function () {
 	let self = this;
 	return (req, res) => {
-		self.realEstateType = 'ApartmentBuy';
+		self.switchRealEstateType('ApartmentBuy');
 		return self.doSearch(req, res);
 	};
 };
@@ -75,7 +86,7 @@ SearchController.prototype.searchApartmentBuy = function () {
 SearchController.prototype.searchApartmentRent = function () {
 	let self = this;
 	return (req, res) => {
-		self.realEstateType = 'ApartmentRent';
+		self.switchRealEstateType('ApartmentRent');
 		return self.doSearch(req, res);
 	};
 };
@@ -161,16 +172,22 @@ SearchController.prototype.doSearch = function (req, res) {
 		iconScale = 6.0;
 	}
 
+	const self = this;
 	return this.searchService
 		.search(this.currentView.lng, this.currentView.lat, type)
 		.then(results => {
 			console.log(`search returned ${results.length} results`);
+			results.forEach(item => {
+				self.searchResultCache.set(item.id, item);
+			});
+			const allItemsFromCache = self.searchResultCache.values();
+			console.log(`Items in cache: ${allItemsFromCache.length}`);
 			return res.render('search-results-kml.mustache', {
 				iconScale: iconScale,
 				type: type,
 				'type-color': typeColor,
 				desc: 'This is the perfect home - go buy it now!!',
-				results: results
+				results: allItemsFromCache
 			});
 		})
 		.catch(error => {

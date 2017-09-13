@@ -13,7 +13,7 @@
       <refreshVisibility>0</refreshVisibility>
       <flyToView>0</flyToView>
       <Link>
-        <href>http://localhost:5000/search</href>
+        <href>http://lg1:5000/search</href>
         <viewRefreshMode>onStop</viewRefreshMode>
         <viewRefreshTime>0.1</viewRefreshTime>
         <viewBoundScale>1</viewBoundScale>
