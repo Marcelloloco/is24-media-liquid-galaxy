@@ -11,12 +11,16 @@ module.exports = {
 			action: 'SearchController@disableSearch'
 		}
 	},
+	'/last-search': {
+		get: {
+			action: 'SearchController@getLastSearch'
+		}
+	},
 	'/search': {
 		get: {
 			action: 'SearchController@search'
 		}
 	},
-
 
 	'/search-house-buy': {
 		get: {

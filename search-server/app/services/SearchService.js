@@ -4,7 +4,9 @@ const
 	promisedRequest = require('request-promise'),
 	OAuth = require('oauth-1.0a'),
 	crypto = require('crypto'),
-	config = require('../configs/app.config');
+	config = require('../configs/app.config'),
+	logger = require('../utils/logger'),
+	LRU = require("lru-cache");
 
 
 function distanceInKm(lat1, lon1, lat2, lon2) {
@@ -36,6 +38,7 @@ function SearchService() {
 		}
 	});
 
+	this.requestCache = LRU(50);
 }
 
 // SearchService.prototype.search = function (north, east, south, west, type) {
@@ -48,10 +51,10 @@ SearchService.prototype.search = function (long, lat, type) {
 
 	let radius = 3;
 
-	// console.log(`lat:${lat} lng:${long} radius:${radius}`);
+	logger.log(`search for ${type} at lat:${lat} lng:${long} with radius:${radius}`);
 
 	let request_data = {
-		url: `https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?realestatetype=${type}&geocoordinates=${lat};${long};${radius}&pageSize=200`,
+		url: `https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?realestatetype=${type}&geocoordinates=${lat};${long};${radius}&pageSize=200&sorting=distance`,
 		method: 'GET',
 		headers: {
 			'Accept': 'application/json',
@@ -59,9 +62,19 @@ SearchService.prototype.search = function (long, lat, type) {
 		}
 	};
 
+	const cachedResults = this.requestCache.get(request_data.url);
+	if (cachedResults) {
+		logger.log('found results in cache!');
+		return new Promise((resolve) => {
+			resolve(cachedResults);
+		});
+	}
+
+	logger.log('start search request...');
 	request_data.headers = Object.assign(request_data.headers, this.oauth.toHeader(this.oauth.authorize(request_data, {})));
 	request_data.json = true;
 
+	const self = this;
 	return promisedRequest(request_data)
 		.then(response => {
 			// console.log('search successful! response:\n' + JSON.stringify(response, null, 2));
@@ -72,6 +85,7 @@ SearchService.prototype.search = function (long, lat, type) {
 					wrapper.resultlistEntry.forEach(entry => {
 						entry = entry['resultlist.realEstate'];
 						if (entry.address && entry.address.wgs84Coordinate) {
+							// logger.log('search result entry: '+JSON.stringify(entry));
 							let pictureUrl = '';
 							if (entry.titlePicture) {
 								pictureUrl = entry.titlePicture['@xlink.href'];
@@ -96,6 +110,7 @@ SearchService.prototype.search = function (long, lat, type) {
 					});
 				}
 			}
+			self.requestCache.set(request_data.url, results);
 			return results;
 		});
 };

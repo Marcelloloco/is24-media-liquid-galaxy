@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 	<Document>
+		<Style id="normalCenterPlacemark">
+          <IconStyle>
+            <scale>{{iconScale}}</scale>
+            <Icon>
+              <href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href>
+            </Icon>
+          </IconStyle>
+        </Style>
+        <Style id="normalMasterPlacemark">
+          <IconStyle>
+            <scale>{{iconScale}}</scale>
+            <Icon>
+              <href>http://maps.google.com/mapfiles/kml/paddle/red-blank.png</href>
+            </Icon>
+          </IconStyle>
+        </Style>
 		<Style id="normalPlacemark">
           <IconStyle>
             <scale>{{iconScale}}</scale>
@@ -27,6 +43,36 @@
             <styleUrl>#highlightPlacemark</styleUrl>
           </Pair>
         </StyleMap>
+        <StyleMap id="masterStyleMap">
+          <Pair>
+            <key>normal</key>
+            <styleUrl>#normalMasterPlacemark</styleUrl>
+          </Pair>
+          <Pair>
+            <key>highlight</key>
+            <styleUrl>#highlightPlacemark</styleUrl>
+          </Pair>
+        </StyleMap>
+        <StyleMap id="centerStyleMap">
+          <Pair>
+            <key>normal</key>
+            <styleUrl>#normalCenterPlacemark</styleUrl>
+          </Pair>
+          <Pair>
+            <key>highlight</key>
+            <styleUrl>#highlightPlacemark</styleUrl>
+          </Pair>
+        </StyleMap>
+
+        {{#center}}
+            <Placemark>
+                <name>Center</name>
+                <styleUrl>#centerStyleMap</styleUrl>
+                <Point>
+                    <coordinates>{{longitude}}, {{latitude}},50</coordinates>
+                </Point>
+            </Placemark>
+        {{/center}}
 
         {{#results}}
             <Placemark>
@@ -38,7 +84,12 @@
                       <p><a href="https://www.immobilienscout24.de/expose/{{{id}}}" target="_blank">Zum Expose</a></p>
                     ]]>
             	</description>
+            	{{#isMaster}}
+            	    <styleUrl>#masterStyleMap</styleUrl>
+            	{{/isMaster}}
+            	{{^isMaster}}
             	<styleUrl>#exampleStyleMap</styleUrl>
+            	{{/isMaster}}
             	<Point>
             	    <coordinates>{{address.wgs84Coordinate.longitude}}, {{address.wgs84Coordinate.latitude}},50</coordinates>
             	</Point>
