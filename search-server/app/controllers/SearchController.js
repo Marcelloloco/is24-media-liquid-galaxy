@@ -211,21 +211,21 @@ SearchController.prototype.doSearch = function (req, res) {
 		this.lastMasterViewPoint = _.clone(currentView);
 	}
 
-	let iconScale = 1.0;
+	let iconScale = 4.0;
 	if (currentView.alt < 1500) {
-		iconScale = 1.5;
+		iconScale = 7.5;
 	}
 	if (currentView.alt < 400) {
-		iconScale = 2.0;
+		iconScale = 8.0;
 	}
 	if (currentView.alt < 300) {
-		iconScale = 3.0;
+		iconScale = 9.5;
 	}
 	if (currentView.alt < 200) {
-		iconScale = 6.0;
+		iconScale = 9.5;
 	}
 	if (currentView.alt < 100) {
-		iconScale = 8.0;
+		iconScale = 10.0;
 	}
 
 	const searchKey = [currentView.lng, currentView.lat, type, this.maxPrice, this.minArea].join('|');
