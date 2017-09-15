@@ -1,0 +1,312 @@
+{
+  "results": [{
+    "counter": 1,
+    "id": "98596354",
+    "title": "Für Sie frisch sanierte 6 Zimmer!!!",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig02/N/615/854/949/615854949-0.png/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/52/936/458/52936458-0.jpg",
+    "address": {
+      "street": "Lausitzer Platz",
+      "houseNumber": "13",
+      "postcode": "10997",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.5010956950718,
+        "longitude": 13.43077806060016
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 19500000,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 6,
+    "livingSpace": 147,
+    "builtInKitchen": "false",
+    "balcony": "true",
+    "garden": "false",
+    "distance": 0.21439359726270402,
+    "isLastSearch": true
+  }, {
+    "counter": 2,
+    "id": "98666950",
+    "title": "Erstbezug nach umfassender Modernisierung, 2-Zimmer Wohnung",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig03/N/616/425/930/616425930-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/483/70/980/483070980-0.jpg",
+    "address": {
+      "street": "Wiener Str.",
+      "houseNumber": "31",
+      "postcode": "10999",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.496588489699015,
+        "longitude": 13.433608226249694
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 1400,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 2,
+    "livingSpace": 75.34,
+    "builtInKitchen": "false",
+    "balcony": "false",
+    "garden": "false",
+    "distance": 0.33557991209649435,
+    "isLastSearch": true
+  }, {
+    "counter": 3,
+    "id": "98767481",
+    "title": "geräumige 2-Zimmerwohnung mit EBK und Balkon am Görli",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig03/N/617/387/110/617387110-0.png/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig02/L/483/38/937/483038937-0.png",
+    "address": {
+      "street": "Skalitzer Straße",
+      "houseNumber": "59a",
+      "postcode": "10997",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.49983850174567,
+        "longitude": 13.436516738991179
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 1045.3,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 2,
+    "livingSpace": 72.59,
+    "builtInKitchen": "true",
+    "balcony": "true",
+    "garden": "false",
+    "distance": 0.37708410583015844,
+    "isLastSearch": true
+  }, {
+    "counter": 4,
+    "id": "98559804",
+    "title": "Sonnige Altbau-Wohnung mit EBK und Wannenbad in Kreuzberg",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig02/N/621/141/825/621141825-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "address": {
+      "street": "Reichenberger Straße",
+      "houseNumber": "143",
+      "postcode": "10999",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.49695824926395,
+        "longitude": 13.426636183002522
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 810,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 2,
+    "livingSpace": 50.48,
+    "builtInKitchen": "true",
+    "balcony": "false",
+    "garden": "false",
+    "distance": 0.38753656481422033,
+    "isLastSearch": true
+  }, {
+    "counter": 5,
+    "id": "98810657",
+    "title": "Treffpunkt vor dem Terrassenzugang des Amrit - Kiezlage mit optimalen Voraussetzungen",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig02/N/617/812/89/617812089-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig03/L/483/63/66/483063066-0.png",
+    "address": {
+      "street": "Oranienstraße",
+      "houseNumber": "204",
+      "postcode": "10999",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.49964963659324,
+        "longitude": 13.424745287917322
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 1588,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 4,
+    "livingSpace": 132.3,
+    "builtInKitchen": "true",
+    "balcony": "false",
+    "garden": "false",
+    "distance": 0.43028859641131334,
+    "isLastSearch": true
+  }, {
+    "counter": 6,
+    "id": "88966351",
+    "title": "Zweitbezug nach Sanierung - gutgeschnittene 1 Zimmerwohnung in Kreuzberg!",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig01/N/600/249/792/600249792-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig02/L/393/382/885/393382885-0.jpg",
+    "address": {
+      "street": "Manteuffelstraße",
+      "houseNumber": "22",
+      "postcode": "10997",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.50290465462031,
+        "longitude": 13.429104772816663
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 502.37,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 1,
+    "livingSpace": 45.67,
+    "builtInKitchen": "false",
+    "balcony": "false",
+    "garden": "false",
+    "distance": 0.4352055665897746,
+    "isLastSearch": true
+  }, {
+    "counter": 7,
+    "id": "98807659",
+    "title": "In Sanierung! Attraktive 3 Zimmerwohnung im Wrangelkiez!",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig01/N/617/781/916/617781916-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig02/L/393/382/885/393382885-0.jpg",
+    "address": {
+      "street": "Lübbener Str.",
+      "houseNumber": "16",
+      "postcode": "10997",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.49988985178527,
+        "longitude": 13.438255796008148
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 1201.65,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 3,
+    "livingSpace": 80.11,
+    "builtInKitchen": "false",
+    "balcony": "false",
+    "garden": "false",
+    "distance": 0.49395339080304745,
+    "isLastSearch": true
+  }, {
+    "counter": 8,
+    "id": "98967336",
+    "title": "Schöne Seniorenwohnung für Sie aufgehübscht!",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig04/N/619/262/71/619262071-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/483/43/360/483043360-0.jpg",
+    "address": {
+      "street": "Manteuffelstr.",
+      "houseNumber": "12",
+      "postcode": "10997",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.50389128799022,
+        "longitude": 13.430376109367275
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 330.87,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 1,
+    "livingSpace": 37.64,
+    "builtInKitchen": "false",
+    "balcony": "true",
+    "garden": "false",
+    "distance": 0.5264376933766395,
+    "isLastSearch": true
+  }, {
+    "counter": 9,
+    "id": "98796572",
+    "title": "Für Personen ab 55 - Jahren !",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig04/N/617/646/523/617646523-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig01/L/483/43/360/483043360-0.jpg",
+    "address": {
+      "street": "Köpenicker Str.",
+      "houseNumber": "193",
+      "postcode": "10997",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.5027344337267,
+        "longitude": 13.43676599820056
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 383.5,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 1.5,
+    "livingSpace": 45.69,
+    "builtInKitchen": "true",
+    "balcony": "true",
+    "garden": "false",
+    "distance": 0.5533159737651483,
+    "isLastSearch": true
+  }, {
+    "counter": 10,
+    "id": "97902520",
+    "title": "Loft in alter Piano-Fabrik",
+    "titlePicture": "https://pic.immobilienscout24.de/pic/orig02/N/609/883/525/609883525-0.jpg/ORIG/resize/210x210%3E/format/jpg/quality/50",
+    "realtorLogo": "https://pic.immobilienscout24.de/pic/orig04/L/483/72/171/483072171-0.png",
+    "address": {
+      "street": "Mariannenplatz",
+      "houseNumber": "21c",
+      "postcode": "10997",
+      "city": "Berlin",
+      "quarter": "Kreuzberg (Kreuzberg)",
+      "wgs84Coordinate": {
+        "latitude": 52.50387632755964,
+        "longitude": 13.426365812367244
+      },
+      "preciseHouseNumber": "true"
+    },
+    "price": {
+      "value": 1759,
+      "currency": "EUR",
+      "marketingType": "RENT",
+      "priceIntervalType": "MONTH"
+    },
+    "numberOfRooms": 3,
+    "livingSpace": 152.95,
+    "builtInKitchen": "true",
+    "balcony": "true",
+    "garden": "false",
+    "distance": 0.611544260889415,
+    "isLastSearch": true
+  }]
+}

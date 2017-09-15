@@ -21,13 +21,13 @@ target
 .env
 
 # compiled output
-touchscreen/dist
-touchscreen/tmp
-touchscreen/out-tsc
+touchscreen-api/dist
+touchscreen-api/tmp
+touchscreen-api/out-tsc
 
 # dependencies
-touchscreen/node_modules
-touchscreen/node_modules/*
+touchscreen-api/node_modules
+touchscreen-api/node_modules/*
 
 # IDEs and editors
 /.idea
@@ -39,15 +39,15 @@ touchscreen/node_modules/*
 *.sublime-workspace
 
 # misc
-touchscreen/.sass-cache
-touchscreen/connect.lock
-touchscreen/coverage
-touchscreen/libpeerconnection.log
-touchscreen/npm-debug.log
-touchscreen/testem.log
-touchscreen/typings
+touchscreen-api/.sass-cache
+touchscreen-api/connect.lock
+touchscreen-api/coverage
+touchscreen-api/libpeerconnection.log
+touchscreen-api/npm-debug.log
+touchscreen-api/testem.log
+touchscreen-api/typings
 
 # e2e
-touchscreen/e2e/*.js
-touchscreen/e2e/*.map
+touchscreen-api/e2e/*.js
+touchscreen-api/e2e/*.map
 

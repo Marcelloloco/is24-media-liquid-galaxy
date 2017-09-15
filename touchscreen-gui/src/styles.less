@@ -1,0 +1,200 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+html,
+body,
+.viewport,
+.page-wrapper,
+.content-wrapper {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+button:focus {
+  transition: 0.5s;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+* {
+  // cursor: none;
+}
+
+.main{
+  margin: 100px 100px 50px 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    flex: 0 1 auto;
+  }
+
+}
+
+.germany-map {
+  height: 700px;
+}
+
+.cities {
+  position: absolute;
+  z-index: 2;
+
+  * {
+    z-index: inherit;
+  }
+
+  button {
+    position: absolute;
+    font-size: 1.5em;
+  }
+
+  .berlin {
+    left: 370px;
+    top: 200px;
+  }
+
+  .munich {
+    top: 570px;
+    left: 240px;
+  }
+
+  .cologne {
+    top: 260px;
+    left: 40px;
+  }
+
+  .hamburg {
+    left: 200px;
+    top: 100px;
+  }
+
+  .frankfurt {
+    top: 380px;
+    left: 150px;
+  }
+
+}
+
+.dashboard {
+  margin-top: 70px;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+.settings {
+  padding: 0 70px 0 70px;
+}
+
+.type-buttons {
+  height: 70px;
+  display: flex;
+  flex-flow: row;
+
+  button {
+    flex: 1 1 auto;
+    font-size: 2em;
+  }
+}
+
+.setting-slider {
+
+  h3 {
+    text-align: right;
+  }
+}
+
+.expansionPanelContent {
+  margin-top: 10px;
+
+  div {
+    //display: inline-block;
+  }
+  .imageContainer {
+    width: 150px;
+    height: 100px;
+    background-color: #f8f8f8;
+    position: relative;
+
+    img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    }
+
+  }
+
+}
+
+.expansionPanelNavigationButtons {
+  margin-top: 10px;
+
+  button {
+    width: 100%;
+    font-size: 1.1em;
+  }
+
+
+}
+.mat-expansion-panel-header-title {
+  display: block !important;
+  margin-right: 0 !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 250px;
+}
+
+.mat-expansion-panel-header-description {
+  display: block !important;
+  text-align: right;
+}
+
+
+.data-container {
+  padding-top: 8px !important;
+
+}
+
+.data-entity {
+  float: left;
+  width: auto;
+}
+
+.data-title {
+  text-align: center;
+  clear: both;
+}
+.data-value {
+  font-weight: bold;
+  text-align: center;
+}
+
+.right-border {
+  border-right: #cccccc 1px solid ;
+}
+
+.search-button {
+  font-size: 2em;
+  float: right;
+  margin-top: 50px;
+  transition-duration: 0.1s !important;
+
+  &:active {
+    background: #e96a00;
+  }
+}
