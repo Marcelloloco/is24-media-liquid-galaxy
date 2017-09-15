@@ -7,7 +7,7 @@ const
 	fs = require("fs"),
 	LRU = require("lru-cache"),
 	logger = require("../utils/logger"),
-	maxCacheSize = 	500,
+	maxCacheSize = 	100,
 	MASTER = '10.42.42.1';
 
 function SearchController() {
