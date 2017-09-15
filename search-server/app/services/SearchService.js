@@ -44,7 +44,7 @@ function SearchService() {
 	this.requestCache = LRU(50);
 }
 
-SearchService.prototype.search = function (long, lat, type) {
+SearchService.prototype.search = function (long, lat, type, maxPrice, minArea) {
 	if (!this.oauth) {
 		return Promise.reject('oauth not configured');
 	}
@@ -54,7 +54,7 @@ SearchService.prototype.search = function (long, lat, type) {
 	logger.log(`search for ${type} at lat:${lat} lng:${long} with radius:${radius}`);
 
 	let request_data = {
-		url: `https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?realestatetype=${type}&geocoordinates=${lat};${long};${radius}&pageSize=200&sorting=distance`,
+		url: `https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?realestatetype=${type}&geocoordinates=${lat};${long};${radius}&price=-${maxPrice}&livingspace=${minArea}-&pageSize=200&sorting=distance`,
 		method: 'GET',
 		headers: {
 			'Accept': 'application/json',
@@ -80,6 +80,11 @@ SearchService.prototype.search = function (long, lat, type) {
 			if (response && response['resultlist.resultlist'] && response['resultlist.resultlist']['resultlistEntries']) {
 				const wrapper = response['resultlist.resultlist']['resultlistEntries'][0];
 				if (wrapper && wrapper.resultlistEntry) {
+					if (!Array.isArray(wrapper.resultlistEntry)) {
+						let tmp = wrapper.resultlistEntry;
+						wrapper.resultlistEntry = [];
+						wrapper.resultlistEntry.push(tmp);
+					}
 					wrapper.resultlistEntry.forEach(entry => {
 						entry = entry['resultlist.realEstate'];
 						if (entry.address && entry.address.wgs84Coordinate && entry.price && entry.price.value) {

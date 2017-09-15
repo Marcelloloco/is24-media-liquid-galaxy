@@ -15,8 +15,8 @@ function SearchController() {
 	this.searchService = new SearchService();
 	this.enabled = true;
 	this.realEstateType = 'ApartmentRent';
-	this.maxPrice = null;
-	this.minArea = null;
+	this.maxPrice = 1000000;
+	this.minArea = 1;
 	this.searchResultCache = LRU(maxCacheSize);
 	// default is IS24 Berlin Office
 	this.lastMasterViewPoint = {
@@ -59,12 +59,8 @@ SearchController.prototype.enableSearch = function () {
 			self.realEstateType = req.query.realEstateType;
 			self.searchResultCache.reset();
 		}
-		if (req.query.maxPrice) {
-			self.maxPrice = req.query.maxPrice;
-		}
-		if (req.query.minArea) {
-			self.minArea = req.query.minArea;
-		}
+		self.maxPrice = req.query.maxPrice || self.maxPrice;
+		self.minArea = req.query.minArea || self.minArea;
 
 		let tmpList = _.cloneDeep(self.searchResultCache.values());
 		tmpList.forEach(item => {
@@ -114,6 +110,18 @@ SearchController.prototype.getLastSearch = function () {
 	let self = this;
 	return (req, res) => {
 		return res.json({results: self.lastSearchResults.slice(0, 10)});
+	};
+};
+
+SearchController.prototype.status = function () {
+	let self = this;
+	return (req, res) => {
+		return res.json({
+			realEstateType: self.realEstateType,
+			maxPrice: self.maxPrice,
+			minArea: self.minArea,
+			lastMasterViewPoint: self.lastMasterViewPoint
+		});
 	};
 };
 
@@ -220,14 +228,14 @@ SearchController.prototype.doSearch = function (req, res) {
 		iconScale = 8.0;
 	}
 
-	const searchKey = [currentView.lng, currentView.lat, type].join('|');
+	const searchKey = [currentView.lng, currentView.lat, type, this.maxPrice, this.minArea].join('|');
 	if (self.lastSearch.get(clientIp) === searchKey) {
 		return res.sendStatus(304);
 	}
 	self.lastSearch.set(clientIp, searchKey, 60000);
 
 	return this.searchService
-		.search(currentView.lng, currentView.lat, type)
+		.search(currentView.lng, currentView.lat, type, this.maxPrice, this.minArea)
 		.then(results => {
 			logger.log(`search returned ${results.length} results`);
 			results.forEach(item => {

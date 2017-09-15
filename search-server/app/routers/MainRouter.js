@@ -11,6 +11,14 @@ module.exports = {
 			action: 'SearchController@enableSearch'
 		}
 	},
+	'/status': {
+		get: {
+			before : [
+				cors()
+			],
+			action: 'SearchController@status'
+		}
+	},
 	'/search-disable': {
 		get: {
 			before : [
