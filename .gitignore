@@ -19,3 +19,35 @@ target
 **/template.json
 
 .env
+
+# compiled output
+touchscreen/dist
+touchscreen/tmp
+touchscreen/out-tsc
+
+# dependencies
+touchscreen/node_modules
+touchscreen/node_modules/*
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# misc
+touchscreen/.sass-cache
+touchscreen/connect.lock
+touchscreen/coverage
+touchscreen/libpeerconnection.log
+touchscreen/npm-debug.log
+touchscreen/testem.log
+touchscreen/typings
+
+# e2e
+touchscreen/e2e/*.js
+touchscreen/e2e/*.map
+
