@@ -12,7 +12,7 @@ target
 .DS_Store
 *.log
 
-**/.serverless
+**/.serverlessgit push
 
 *.testconfig.js
 
