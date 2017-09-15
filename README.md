@@ -31,8 +31,33 @@ We created a 3d model for a possible setup with 10 curved screens in 2 rows:
 
 
 
+## notes
 
+turn search on for all screens:
+```
+http POST 'http://10.200.144.22:82/kmls' uri=http://lg1:81/is24-lg-slave.kml
+```
 
+turn search off for all screens:
+```
+http POST 'http://10.200.144.22:82/kmls' uri=http://lg1:81/file-not-found.kml
+```
+
+get last 10 search results (used from touchscreen FE APP):
+```
+http 'http://10.200.144.22:88/last-search'
+```
+
+change search parameter for next search:
+```
+http 'http://10.200.144.22:88/search-enable?realEstateType=ApartmentRent&maxPrice=1500&minArea=40'
+http 'http://10.200.144.22:88/search-enable?realEstateType=ApartmentBuy&maxPrice=1500000&minArea=80'
+```
+
+get current internal state of search api:
+```
+http 'http://10.200.144.22:88/status'
+```
 
 
 
