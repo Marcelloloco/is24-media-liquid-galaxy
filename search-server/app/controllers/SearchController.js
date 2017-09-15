@@ -180,22 +180,6 @@ SearchController.prototype.doSearch = function (req, res) {
 	}
 
 	let type = this.realEstateType;
-	let typeColor = 'wht';
-	switch (type) {
-		case 'HouseBuy':
-			typeColor = 'red';
-			break;
-		case 'HouseRent':
-			typeColor = 'blu';
-			break;
-		case 'ApartmentBuy':
-			typeColor = 'ylw';
-			break;
-		case 'ApartmentRent':
-			typeColor = 'orange';
-			break;
-	}
-
 	let view = req.query.View.split(',');
 	let cam = req.query.CamPos.split(',');
 
@@ -235,12 +219,14 @@ SearchController.prototype.doSearch = function (req, res) {
 	self.lastSearch.set(clientIp, searchKey, 60000);
 
 	return this.searchService
-		.search(currentView.lng, currentView.lat, type, this.maxPrice, this.minArea)
+		.search(isMaster, currentView.lng, currentView.lat, type, this.maxPrice, this.minArea)
 		.then(results => {
 			logger.log(`search returned ${results.length} results`);
 			results.forEach(item => {
 				self.searchResultCache.set(item.id, item);
 			});
+		})
+		.then(() => {
 			let allItemsFromCache = self.searchResultCache.values();
 			let center = null;
 			if (isMaster) {
@@ -249,20 +235,17 @@ SearchController.prototype.doSearch = function (req, res) {
 				tmpList = sortByDistance(tmpList, currentView.lat, currentView.lng);
 				for (let i=0; i<tmpList.length && i<10; i++) {
 					self.lastSearchResults.push(tmpList[i]);
-					tmpList[i].isLastSearch = true;
 				}
-				allItemsFromCache = tmpList;
-
-				center = {
-					latitude: currentView.lat,
-					longitude: currentView.lng
-				};
+//				center = {
+//					latitude: currentView.lat,
+//					longitude: currentView.lng
+//				};
 			}
 			logger.log(`Items in cache: ${allItemsFromCache.length}`);
 			return res.render('search-results-kml.mustache', {
 				iconScale: iconScale,
 				type: type,
-				'type-color': typeColor,
+				'type-color': 'orange',
 				desc: 'This is the perfect home - go buy it now!!',
 				center: center,
 				results: allItemsFromCache

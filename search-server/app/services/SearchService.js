@@ -44,12 +44,17 @@ function SearchService() {
 	this.requestCache = LRU(50);
 }
 
-SearchService.prototype.search = function (long, lat, type, maxPrice, minArea) {
+SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, minArea) {
 	if (!this.oauth) {
 		return Promise.reject('oauth not configured');
 	}
 
-	let radius = 3;
+	if (!isMaster) {
+		logger.log('only searching on master!');
+		return Promise.resolve([]);
+	}
+
+	let radius = 20;
 
 	logger.log(`search for ${type} at lat:${lat} lng:${long} with radius:${radius}`);
 
