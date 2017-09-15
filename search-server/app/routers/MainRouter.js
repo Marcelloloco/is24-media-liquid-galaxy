@@ -20,26 +20,5 @@ module.exports = {
 		get: {
 			action: 'SearchController@search'
 		}
-	},
-
-	'/search-house-buy': {
-		get: {
-			action: 'SearchController@searchHouseBuy'
-		}
-	},
-	'/search-house-rent': {
-		get: {
-			action: 'SearchController@searchHouseRent'
-		}
-	},
-	'/search-apartment-buy': {
-		get: {
-			action: 'SearchController@searchApartmentBuy'
-		}
-	},
-	'/search-apartment-rent': {
-		get: {
-			action: 'SearchController@searchApartmentRent'
-		}
 	}
 };

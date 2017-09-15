@@ -84,12 +84,12 @@
                       <p><a href="https://www.immobilienscout24.de/expose/{{{id}}}" target="_blank">Zum Expose</a></p>
                     ]]>
             	</description>
-            	{{#isMaster}}
+            	{{#isLastSearch}}
             	    <styleUrl>#masterStyleMap</styleUrl>
-            	{{/isMaster}}
-            	{{^isMaster}}
-            	<styleUrl>#exampleStyleMap</styleUrl>
-            	{{/isMaster}}
+            	{{/isLastSearch}}
+            	{{^isLastSearch}}
+            	    <styleUrl>#exampleStyleMap</styleUrl>
+            	{{/isLastSearch}}
             	<Point>
             	    <coordinates>{{address.wgs84Coordinate.longitude}}, {{address.wgs84Coordinate.latitude}},50</coordinates>
             	</Point>

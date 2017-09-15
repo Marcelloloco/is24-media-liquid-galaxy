@@ -1,6 +1,7 @@
 'use strict';
 
 const
+	_ = require('lodash'),
 	blueprint = require('@onehilltech/blueprint'),
 	SearchService = require('../services/SearchService'),
 	fs = require("fs"),
@@ -14,9 +15,11 @@ function SearchController() {
 	this.searchService = new SearchService();
 	this.enabled = true;
 	this.realEstateType = 'ApartmentRent';
+	this.maxPrice = null;
+	this.minArea = null;
 	this.searchResultCache = LRU(maxCacheSize);
 	// default is IS24 Berlin Office
-	this.currentView = {
+	this.lastMasterViewPoint = {
 		lng: 13.43173929843387,
 		lat: 52.51231193328837,
 		alt: 29.37,
@@ -24,7 +27,8 @@ function SearchController() {
 		range: 453,
 		tilt: 78.75
 	};
-	this.lastSearch = {};
+	this.lastSearch = LRU(7);
+	this.lastSearchResults = [];
 }
 
 blueprint.controller(SearchController);
@@ -47,25 +51,46 @@ function deg2rad(deg) {
 	return deg * (Math.PI / 180)
 }
 
-
-SearchController.prototype.switchRealEstateType = function (newRealEstateType) {
-	if (this.realEstateType !== newRealEstateType) {
-		this.realEstateType = newRealEstateType;
-		this.searchResultCache.reset();
-	}
-};
-
 SearchController.prototype.enableSearch = function () {
 	let self = this;
 	return (req, res) => {
-		if (req.query && req.query.realEstateType) {
-			self.switchRealEstateType(req.query.realEstateType);
+		req.query = req.query || {};
+		if (req.query.realEstateType && self.realEstateType !== req.query.realEstateType) {
+			self.realEstateType = req.query.realEstateType;
+			self.searchResultCache.reset();
 		}
+		if (req.query.maxPrice) {
+			self.maxPrice = req.query.maxPrice;
+		}
+		if (req.query.minArea) {
+			self.minArea = req.query.minArea;
+		}
+
+		let tmpList = _.cloneDeep(self.searchResultCache.values());
+		tmpList.forEach(item => {
+			if (item.price.value > self.maxPrice) {
+				self.searchResultCache.del(item.id);
+				return;
+			}
+			if (!item.livingSpace || item.livingSpace < self.minArea) {
+				self.searchResultCache.del(item.id);
+			}
+		});
+		self.lastSearchResults = self.lastSearchResults.filter(item => {
+			if (item.price.value > self.maxPrice) {
+				return false;
+			}
+			if (!item.livingSpace || item.livingSpace < self.minArea) {
+				return false;
+			}
+			return true;
+		});
+		self.lastSearch.reset();
+
 		self.enabled = true;
-		self.flyTo();
-		let msg = 'search enabled for '+self.realEstateType;
+		let msg = `search enabled for ${self.realEstateType} - maxPrice=${self.maxPrice} - minArea=${self.minArea}`;
 		logger.log(msg);
-		return res.render('controller-result.mustache', {message: msg});
+		return res.json({message: msg});
 	};
 };
 
@@ -74,55 +99,21 @@ SearchController.prototype.disableSearch = function () {
 	return (req, res) => {
 		self.enabled = false;
 		this.searchResultCache.reset();
-		this.lastSearch = {};
+		this.lastSearchResults = [];
+		this.lastSearch.reset();
+		this.maxPrice = null;
+		this.minArea = null;
+
 		let msg = 'search disabled';
 		logger.log(msg);
-		return res.render('controller-result.mustache', {message: msg});
+		return res.json({message: msg});
 	};
 };
 
 SearchController.prototype.getLastSearch = function () {
 	let self = this;
 	return (req, res) => {
-		const list = [];
-		if (self.enabled) {
-			if (MASTER in this.lastSearch) {
-				list.push(this.lastSearch[MASTER].slice(0, 10));
-			}
-		}
-		return res.json({results: list});
-	};
-};
-
-SearchController.prototype.searchHouseBuy = function () {
-	let self = this;
-	return (req, res) => {
-		self.switchRealEstateType('HouseBuy');
-		return self.doSearch(req, res);
-	};
-};
-
-SearchController.prototype.searchHouseRent = function () {
-	let self = this;
-	return (req, res) => {
-		self.switchRealEstateType('HouseRent');
-		return self.doSearch(req, res);
-	};
-};
-
-SearchController.prototype.searchApartmentBuy = function () {
-	let self = this;
-	return (req, res) => {
-		self.switchRealEstateType('ApartmentBuy');
-		return self.doSearch(req, res);
-	};
-};
-
-SearchController.prototype.searchApartmentRent = function () {
-	let self = this;
-	return (req, res) => {
-		self.switchRealEstateType('ApartmentRent');
-		return self.doSearch(req, res);
+		return res.json({results: self.lastSearchResults.slice(0, 10)});
 	};
 };
 
@@ -136,17 +127,17 @@ SearchController.prototype.search = function () {
 SearchController.prototype.flyTo = function (req, res) {
 	let query = [
 		"flytoview=<LookAt><longitude>",
-		this.currentView.lng,
+		this.lastMasterViewPoint.lng,
 		"</longitude><latitude>",
-		this.currentView.lat,
+		this.lastMasterViewPoint.lat,
 		"</latitude><altitude>",
-		this.currentView.alt,
+		this.lastMasterViewPoint.alt,
 		"</altitude><heading>",
-		this.currentView.heading,
+		this.lastMasterViewPoint.heading,
 		"</heading><tilt>",
-		this.currentView.tilt,
+		this.lastMasterViewPoint.tilt,
 		"</tilt><range>",
-		this.currentView.range+0.1,
+		this.lastMasterViewPoint.range,
 		"</range><altitudeMode>relativeToGround</altitudeMode><gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode></LookAt>"].join('');
 
 	// "flytoview=<LookAt><longitude>13.43173929843387</longitude><latitude>52.51231193328837</latitude><altitude>29.37</altitude><heading>40.929</heading><tilt>78.75</tilt><range>453</range><altitudeMode>relativeToGround</altitudeMode><gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode></LookAt>"
@@ -155,9 +146,10 @@ SearchController.prototype.flyTo = function (req, res) {
 };
 
 function sortByDistance(list, centerLat, centerLng) {
-	return list.forEach(item => {
+	list.forEach(item => {
 		item.distance = distanceInKm(centerLat, centerLng, item.address.wgs84Coordinate.latitude, item.address.wgs84Coordinate.longitude);
-	}).sort((a,b) => {
+	});
+	return list.sort((a,b) => {
 		if (a.distance < b.distance) {
 			return -1;
 		}
@@ -169,8 +161,10 @@ function sortByDistance(list, centerLat, centerLng) {
 }
 
 SearchController.prototype.doSearch = function (req, res) {
-	const clientIp = req.headers['x-forwarded-for'];
-    logger.log('clientIP: '+clientIp);
+	const self = this;
+	const clientIp = req.headers['x-forwarded-for'] || MASTER;
+	const isMaster = (clientIp === MASTER);
+    logger.log(`request from ${clientIp} isMaster=${isMaster}`);
 
 	if (!this.enabled) {
 		logger.log('search is disabled!!!');
@@ -197,7 +191,7 @@ SearchController.prototype.doSearch = function (req, res) {
 	let view = req.query.View.split(',');
 	let cam = req.query.CamPos.split(',');
 
-	this.currentView = {
+	const currentView = {
 		lng: parseFloat(view[0]),
 		lat: parseFloat(view[1]),
 		alt: parseFloat(cam[2]),
@@ -205,47 +199,58 @@ SearchController.prototype.doSearch = function (req, res) {
 		range: parseFloat(view[2]),
 		tilt: parseFloat(view[3])
 	};
+	if (isMaster) {
+		this.lastMasterViewPoint = _.clone(currentView);
+	}
 
 	let iconScale = 1.0;
-	if (this.currentView.alt < 1500) {
+	if (currentView.alt < 1500) {
 		iconScale = 1.5;
 	}
-	if (this.currentView.alt < 400) {
+	if (currentView.alt < 400) {
 		iconScale = 2.0;
 	}
-	if (this.currentView.alt < 300) {
+	if (currentView.alt < 300) {
 		iconScale = 3.0;
 	}
-	if (this.currentView.alt < 200) {
+	if (currentView.alt < 200) {
 		iconScale = 6.0;
 	}
-	if (this.currentView.alt < 100) {
+	if (currentView.alt < 100) {
 		iconScale = 8.0;
 	}
 
-	const self = this;
+	const searchKey = [currentView.lng, currentView.lat, type].join('|');
+	if (self.lastSearch.get(clientIp) === searchKey) {
+		return res.sendStatus(304);
+	}
+	self.lastSearch.set(clientIp, searchKey, 60000);
+
 	return this.searchService
-		.search(this.currentView.lng, this.currentView.lat, type)
+		.search(currentView.lng, currentView.lat, type)
 		.then(results => {
-			//results = sortByDistance(results, self.currentView.lat, self.currentView.lng);
-			self.lastSearch[clientIp] = results;
 			logger.log(`search returned ${results.length} results`);
 			results.forEach(item => {
 				self.searchResultCache.set(item.id, item);
 			});
 			let allItemsFromCache = self.searchResultCache.values();
-			//allItemsFromCache = sortByDistance(allItemsFromCache, self.currentView.lat, self.currentView.lng);
-			for (let i=0; i<allItemsFromCache.length && i<10; i++) {
-				allItemsFromCache[i].isMaster = (clientIp === MASTER);
-			}
-			logger.log(`Items in cache: ${allItemsFromCache.length}`);
 			let center = null;
-			if (clientIp === MASTER) {
+			if (isMaster) {
+				self.lastSearchResults = [];
+				let tmpList = _.cloneDeep(self.searchResultCache.values());
+				tmpList = sortByDistance(tmpList, currentView.lat, currentView.lng);
+				for (let i=0; i<tmpList.length && i<10; i++) {
+					self.lastSearchResults.push(tmpList[i]);
+					tmpList[i].isLastSearch = true;
+				}
+				allItemsFromCache = tmpList;
+
 				center = {
-					latitude: this.currentView.lat,
-					longitude: this.currentView.lng
+					latitude: currentView.lat,
+					longitude: currentView.lng
 				};
 			}
+			logger.log(`Items in cache: ${allItemsFromCache.length}`);
 			return res.render('search-results-kml.mustache', {
 				iconScale: iconScale,
 				type: type,
@@ -256,8 +261,14 @@ SearchController.prototype.doSearch = function (req, res) {
 			});
 		})
 		.catch(error => {
-			self.lastSearch[clientIp] = [];
-			logger.log('search failed! response:\n' + JSON.stringify(error, null, 2));
+			if (isMaster) {
+				self.lastSearchResults = [];
+			}
+			logger.log('search failed or error while processing! error:');
+			logger.log(error);
+			if (error.stack) {
+				logger.log(error.stack);
+			}
 			return res.render('search-error-kml.mustache', {message: 'search failed! msg: '+error});
 		});
 

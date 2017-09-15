@@ -18,7 +18,6 @@
         <viewRefreshTime>0.1</viewRefreshTime>
         <viewBoundScale>1</viewBoundScale>
         <viewFormat>BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]&amp;View=[lookatLon],[lookatLat],[lookatRange],[lookatTilt],[lookatHeading]&amp;CamPos=[cameraLon],[cameraLat],[cameraAlt],[horizFov],[vertFov]</viewFormat>
-        <httpQuery>clientVersion=[clientVersion]&kmlVersion=[kmlVersion]&clientName=[clientName]&language=[language]</httpQuery>
       </Link>
     </NetworkLink>
   </Folder>

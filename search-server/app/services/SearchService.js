@@ -27,6 +27,9 @@ function deg2rad(deg) {
 }
 
 function SearchService() {
+	if (config.oauthConsumerSecret === 'xxxxxxxxxx') {
+		throw new Error('oauthConsumerSecret not configured!');
+	}
 	this.oauth = OAuth({
 		consumer: {
 			key: config.oauthConsumerKey,
@@ -41,13 +44,10 @@ function SearchService() {
 	this.requestCache = LRU(50);
 }
 
-// SearchService.prototype.search = function (north, east, south, west, type) {
 SearchService.prototype.search = function (long, lat, type) {
-	// let long = ((east - west) / 2) + west;
-	// let lat = ((north - south) / 2) + south;
-	// let radius = distanceInKm(east, north, west, south) / 2;
-	// radius = Math.min(radius, 2.0);
-	// radius = Math.max(radius, 0.2);
+	if (!this.oauth) {
+		return Promise.reject('oauth not configured');
+	}
 
 	let radius = 3;
 
@@ -65,9 +65,7 @@ SearchService.prototype.search = function (long, lat, type) {
 	const cachedResults = this.requestCache.get(request_data.url);
 	if (cachedResults) {
 		logger.log('found results in cache!');
-		return new Promise((resolve) => {
-			resolve(cachedResults);
-		});
+		return Promise.resolve(cachedResults);
 	}
 
 	logger.log('start search request...');
@@ -84,8 +82,8 @@ SearchService.prototype.search = function (long, lat, type) {
 				if (wrapper && wrapper.resultlistEntry) {
 					wrapper.resultlistEntry.forEach(entry => {
 						entry = entry['resultlist.realEstate'];
-						if (entry.address && entry.address.wgs84Coordinate) {
-							// logger.log('search result entry: '+JSON.stringify(entry));
+						if (entry.address && entry.address.wgs84Coordinate && entry.price && entry.price.value) {
+							//logger.log('search result entry: '+JSON.stringify(entry));
 							let pictureUrl = '';
 							if (entry.titlePicture) {
 								pictureUrl = entry.titlePicture['@xlink.href'];
@@ -104,7 +102,13 @@ SearchService.prototype.search = function (long, lat, type) {
 								title: entry.title,
 								titlePicture: pictureUrl,
 								realtorLogo: entry.realtorLogo,
-								address: entry.address
+								address: entry.address,
+								price: entry.price,
+								numberOfRooms: entry.numberOfRooms,
+								livingSpace: entry.livingSpace,
+								builtInKitchen: entry.builtInKitchen,
+								balcony: entry.balcony,
+								garden: entry.garden
 							});
 						}
 					});
