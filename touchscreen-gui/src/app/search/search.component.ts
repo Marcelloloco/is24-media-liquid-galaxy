@@ -66,6 +66,7 @@ export class SearchComponent implements OnDestroy {
     public cityChanged(city: City) {
         this.city = city;
         this.navigationService.navigateToCity(this.city);
+        this.storeSearchParameters();
     }
 
     public openStreetView(lng: number, lat: number) {
@@ -74,10 +75,12 @@ export class SearchComponent implements OnDestroy {
 
     public spaceChanged(event: MdSliderChange) {
         this.space = event.value;
+        this.storeSearchParameters();
     }
 
     public priceChanged(event: MdSliderChange) {
         this.price = event.value;
+        this.storeSearchParameters();
     }
 
     public typeChanged(isRent: boolean) {
@@ -87,6 +90,7 @@ export class SearchComponent implements OnDestroy {
         } else {
             this.price = 100000;
         }
+        this.storeSearchParameters();
     }
 
     public search() {
