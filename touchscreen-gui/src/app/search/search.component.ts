@@ -88,7 +88,7 @@ export class SearchComponent implements OnDestroy {
         if (isRent) {
             this.price = 2000;
         } else {
-            this.price = 100000;
+            this.price = 500000;
         }
         this.storeSearchParameters();
     }
