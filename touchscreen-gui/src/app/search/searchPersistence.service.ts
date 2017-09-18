@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {SERVER_IP, SERVER_PORT} from "../constants";
 import {City} from "../city";
 
 @Injectable()

@@ -1,3 +1,5 @@
-export const SERVER_IP = '10.200.144.22';
-export const SERVER_PORT = 88;
+export const LG_SERVER_IP = 'lg1';
+
+export const SEARCH_SERVER_IP = 'lg1';
+export const SEARCH_SERVER_PORT = 88;
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {City} from './city';
-import {SERVER_IP} from './constants';
+import {LG_SERVER_IP} from './constants';
 
 @Injectable()
 export class NavigationService {
@@ -23,7 +23,7 @@ export class NavigationService {
       .set('query', this.generateFlytoString(longitude, latitude, altitude, heading, tilt, range))
       .set('name', 'whatever');
 
-    this.http.get(`http://${SERVER_IP}:81/change.php`, {params: params}).subscribe(response => {
+    this.http.get(`http://${LG_SERVER_IP}:81/change.php`, {params: params}).subscribe(response => {
       console.log(response);
     });
   }
