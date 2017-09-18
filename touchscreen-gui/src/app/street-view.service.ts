@@ -13,6 +13,8 @@ export class StreetViewService {
     .subscribe(res => {
       console.log(`received ${JSON.stringify(res)} when accessing pano view.`);
       const panoId = res["pano_id"];
+      this.http.post(`http://lg1:81/change.php?query=peruse-${panoId}`, {})
+        .subscribe();
     });
   }
 
