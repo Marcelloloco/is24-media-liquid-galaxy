@@ -23,7 +23,7 @@ export class ExposeComponent implements OnInit {
 
     }
     private orMinus(value, suffix=''){
-        if(typeof value === 'undefined' || value === null){
+        if(typeof value === 'undefined' || value === null|| Number.isNaN(value)){
             return '-'
         } else {
             return value + suffix;
@@ -87,7 +87,7 @@ export class ExposeComponent implements OnInit {
                     [
                         [
                             this.detailFor(this.orMinus(realEstate.baseRent," &euro;"), "Kaltmiete"),
-                            this.detailFor((realEstate.calculatedTotalRent - realEstate.baseRent) + " &euro;", "Nebenkosten")
+                            this.detailFor(this.orMinus(realEstate.calculatedTotalRent - realEstate.baseRent," &euro;"), "Nebenkosten")
                         ],
                         [
                             this.detailFor(this.orMinus(realEstate.heatingCosts," &euro;"), "Heizkosten"),
