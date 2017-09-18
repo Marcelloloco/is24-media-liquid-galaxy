@@ -86,6 +86,7 @@ SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, 
 	request_data.json = true;
 
 	const self = this;
+	const latlngCache = {};
 	return promisedRequest(request_data)
 		.then(response => {
 			// console.log('search successful! response:\n' + JSON.stringify(response, null, 2));
@@ -102,6 +103,11 @@ SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, 
 						entry = entry['resultlist.realEstate'];
 						if (entry.address && entry.address.wgs84Coordinate && entry.price && entry.price.value) {
 							//logger.log('search result entry: '+JSON.stringify(entry));
+							let latLng = `${entry.address.wgs84Coordinate.latitude}|${entry.address.wgs84Coordinate.longitude}`;
+							if (latlngCache[latLng]) {
+								return;
+							}
+							latlngCache[latLng] = true;
 							let pictureUrl = '';
 							if (entry.titlePicture) {
 								pictureUrl = entry.titlePicture['@xlink.href'];
