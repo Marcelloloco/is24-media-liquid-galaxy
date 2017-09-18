@@ -50,6 +50,7 @@ import {SearchPersistenceService} from "./search/searchPersistence.service";
 import {CarouselModule} from "ngx-carousel";
 import "hammerjs";
 import { ExposeDetailValuePipe } from "./expose/exposeDetailValue.pipe";
+import {MaxLengthPipe} from "./expose/maxLength.pipe";
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchComponent },
@@ -65,7 +66,8 @@ const appRoutes: Routes = [
     SearchComponent,
     ExposeComponent,
     AppComponent,
-    ExposeDetailValuePipe
+    ExposeDetailValuePipe,
+    MaxLengthPipe
   ],
   imports: [
     BrowserModule,
