@@ -26,7 +26,7 @@ export class ExposeComponent implements OnInit {
         let id = this.route.snapshot.paramMap.get('id');
         this.exposeService.get(id)
             .subscribe(expose => {
-                this.expose = expose['expose.expose'];
+                this.expose = expose;
                 let realEstate = this.expose['realEstate'];
                 this.detailsGroups = [
                     [
