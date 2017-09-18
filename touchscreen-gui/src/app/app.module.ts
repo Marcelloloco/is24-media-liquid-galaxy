@@ -44,7 +44,8 @@ import {SearchService} from './search.service';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExposeComponent } from './expose/expose.component';
-import {ExposeService} from "./expose/expose.service";
+import { ExposeService } from "./expose/expose.service";
+import { ExposeDetailValuePipe } from "./expose/exposeDetailValue.pipe";
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchComponent },
@@ -59,7 +60,8 @@ const appRoutes: Routes = [
   declarations: [
     SearchComponent,
     ExposeComponent,
-    AppComponent
+    AppComponent,
+    ExposeDetailValuePipe
   ],
   imports: [
     BrowserModule,

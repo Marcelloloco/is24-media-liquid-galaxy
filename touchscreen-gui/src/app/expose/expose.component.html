@@ -28,8 +28,8 @@
             <div *ngFor="let detailsGroup of detailsGroups" class="details-group grid-item one-whole">
                 <div *ngFor="let detailsColumn of detailsGroup" class="grid-item one-half">
                     <div *ngFor="let detail of detailsColumn" class="detail grid">
-                        <div class="key grid-item one-half">{{detail.key}}</div>
-                        <div class="value grid-item one-half">{{detail.value}}</div>
+                        <div class="key grid-item one-half" [innerHTML]="detail.key + ':'"></div>
+                        <div class="value grid-item one-half" [innerHTML]="detail.value | exposeDetailValue"></div>
                     </div>
                 </div>
             </div>
