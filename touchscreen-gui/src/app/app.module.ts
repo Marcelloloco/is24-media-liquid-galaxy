@@ -38,13 +38,16 @@ import {
 import {HttpClientModule} from '@angular/common/http';
 
 
-import { AppComponent } from './app.component';
 import {CitiesNavigationService} from './cities-navigation.service';
 import {PropertiesListService} from './properties-list.service';
 import {SearchService} from './search.service';
+import { AppComponent } from './app.component';
+import { SearchComponent } from './search/search.component';
+import { ExposeComponent } from './expose/expose.component';
 
 const appRoutes: Routes = [
-    { path: 'search', component: AppComponent },
+    { path: 'search', component: SearchComponent },
+    { path: 'expose', component: ExposeComponent },
     { path: '',
         redirectTo: '/search',
         pathMatch: 'full'
@@ -53,7 +56,9 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
+    SearchComponent,
+    ExposeComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
