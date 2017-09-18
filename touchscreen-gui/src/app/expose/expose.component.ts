@@ -93,7 +93,7 @@ export class ExposeComponent implements OnInit {
                         [
                             this.detailFor(realEstate.heatingCosts + " &euro;", "Heizkosten"),
                             this.detailFor(realEstate.calculatedTotalRent + " &euro;", "Gesamtmiete"),
-                            this.detailFor(realEstate.deposit + " &euro;", "Kaution o. Genossenschaftsanteile"),
+                            this.detailFor(realEstate.deposit + " &euro;", "Kaution"),
                         ]
                     ],
                     [
