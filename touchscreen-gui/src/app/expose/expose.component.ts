@@ -104,7 +104,7 @@ export class ExposeComponent implements OnInit {
                         [
                             this.detailFor(FIRING_TYPE_CONDITIONS[(realEstate.firingTypes[0].firingType && realEstate.firingTypes[0].firingType) || 'NO_INFORMATION'], "Energieträger"),
                             this.detailFor(this.orMinus(realEstate.energyPerformanceCertificate), "Energieausweiß"),
-                            this.detailFor(this.orMinus(realEstate.thermalCharacteristic," kWh/(&#13217;*a)"), "Energieverbrauchswert"),
+                            this.detailFor(this.orMinus(realEstate.thermalCharacteristic," kWh/(&#13217;*a)"), "Energieverbrauch"),
                         ]
                     ]
                 ];
