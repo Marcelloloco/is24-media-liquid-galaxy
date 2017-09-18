@@ -63,6 +63,9 @@ export class SearchComponent implements OnDestroy {
     .subscribe((data) => {
       if (JSON.stringify(data) !== JSON.stringify(this.properties)) {
         this.properties = data;
+        for (let property of this.properties) {
+              this.preparePanoId(property);
+        }
       }
     });
   }
@@ -73,11 +76,11 @@ export class SearchComponent implements OnDestroy {
     this.storeSearchParameters();
   }
 
-  public preparePanoId(expose, lat:number, lng: number) {
-    this.streetViewService.getPanoId(lng, lat)
+  public preparePanoId(property) {
+    this.streetViewService.getPanoId(property.address.wgs84Coordinate.latitude, property.address.wgs84Coordinate.longitude)
     .then(
         panoId => {
-          // expose['panoId'] = panoId;
+	        property['panoId'] = panoId;
         });
   }
 

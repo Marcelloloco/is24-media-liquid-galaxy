@@ -50,7 +50,7 @@
 
         <md-expansion-panel (opened)="propertyExpanded(property)" *ngFor="let property of properties">
 
-          <md-expansion-panel-header (click)="preparePanoId(property, property.address.wgs84Coordinate.latitude, property.address.wgs84Coordinate.longitude)" >
+          <md-expansion-panel-header>
             <md-panel-title>
               <span class="fa fa-map-marker padding-right-s font-info" aria-hidden="true"></span>
 
