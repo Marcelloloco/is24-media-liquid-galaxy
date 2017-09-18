@@ -3,6 +3,7 @@ import {Location} from '@angular/common';
 import {ExposeService} from "./expose.service";
 import {ActivatedRoute} from "@angular/router";
 import {Carousel} from "ngx-carousel";
+import {REAL_ESTATE_CONDITIONS} from "./realEstateCondition";
 
 @Component({
     selector: 'app-expose',
@@ -98,7 +99,7 @@ export class ExposeComponent implements OnInit {
                     [
                         [
                             this.detailFor(realEstate.constructionYear, "Baujahr"),
-                            this.detailFor(realEstate.condition, "Objektzustand"),
+                            this.detailFor(REAL_ESTATE_CONDITIONS[realEstate.condition], "Objektzustand"),
                             this.detailFor("???", "Denkmalschutz"),
                             this.detailFor("???", "Ausstattung"),
                             this.detailFor("???", "Zentralheizung"),
@@ -108,7 +109,6 @@ export class ExposeComponent implements OnInit {
                             this.detailFor(realEstate.energyPerformanceCertificate, "Energieausweiß"),
                             this.detailFor(realEstate.thermalCharacteristic + " kWh/(&#13217;*a)", "Energieverbrauchswert"),
                         ]
-
                     ]
                 ];
             });
