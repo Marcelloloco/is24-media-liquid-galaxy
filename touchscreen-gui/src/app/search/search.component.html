@@ -6,6 +6,10 @@
         Der Marktführer:<br />
         Die Nr. 1 rund um Immobilien
     </span>
+
+    <div class="close" *ngIf="this.isInStreetView">
+      <button class="close-button" (click)="closeStreetView()">Zurrück zur Welt</button>
+    </div>
   </header>
 
   <div class="dashboard grid ">
