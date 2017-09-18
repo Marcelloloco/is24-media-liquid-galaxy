@@ -78,7 +78,7 @@ export class SearchComponent implements OnDestroy {
     }
 
     public easterEgg() {
-        this.city = null;
+        this.city = City.Berlin;
         this.navigationService.navigateToImmoScout();
     }
 
