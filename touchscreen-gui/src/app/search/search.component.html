@@ -1,0 +1,123 @@
+<div class="main">
+  <header class="page-header page-header--white">
+    <a href="#" title="Zur Startseite" class="page-header__logo">
+      <img alt="ImmobilienScout24" src="/img/logo/immobilienscout24.svg">
+    </a><span class="page-header__brand">
+        Der Marktführer:<br />
+        Die Nr. 1 rund um Immobilien
+    </span>
+  </header>
+
+  <div class="dashboard grid ">
+    <div class="grid-item three-tenths">
+      <div class="cities">
+        <button [class.disabled]="city != cities.Berlin" (click)="cityChanged(cities.Berlin)" class="button-primary berlin">Berlin</button>
+        <button [class.disabled]="city != cities.Frankfurt" (click)="cityChanged(cities.Frankfurt)" class="button-primary frankfurt">Frankfurt</button>
+        <button [class.disabled]="city != cities.Cologne" (click)="cityChanged(cities.Cologne)" class="button-primary cologne">Köln</button>
+        <button [class.disabled]="city != cities.Munich" (click)="cityChanged(cities.Munich)" class="button-primary munich">München</button>
+        <button [class.disabled]="city != cities.Hamburg" (click)="cityChanged(cities.Hamburg)" class="button-primary hamburg">Hamburg</button>
+      </div>
+      <img class="germany-map" src="/img/Karte_Deutschland.svg">
+    </div>
+    <div class="grid-item four-tenths settings">
+      <h1 class="font-brandorange font-center">ImmoSearch</h1>
+      <div class="type-buttons">
+        <button [class.disabled]="!isRent" class="button-secondary margin-right-l" (click)="typeChanged(true);">Mieten</button>
+        <button [class.disabled]="isRent" class="button-secondary disabled margin-left-l" (click)="typeChanged(false);">Kaufen</button>
+      </div>
+
+      <div class="setting-slider" style="margin-top: 50px;">
+        <h2>Preis (max)</h2>
+        <md-slider md-discrete [value]="price" min="1" [max]="isRent ? 4000 : 1000000" step="1" class="one-whole" (input)="priceChanged($event)"></md-slider>
+        <h3 [innerText]="price | currency:'EUR':true:'1.0-0'"></h3>
+      </div>
+
+      <div class="setting-slider margin-top">
+        <h2>Fläche (min)</h2>
+        <md-slider md-discrete [(value)]="space" min="1" max="200" step="1" class="one-whole" (input)="spaceChanged($event)"></md-slider>
+        <h3>{{space}}<span>&nbsp;m<sup>2</sup></span></h3>
+      </div>
+
+      <button class="button-primary search-button" (click)="search()"><span class="fa fa-search" aria-hidden="true"></span></button>
+
+    </div>
+    <div class="grid-item three-tenths">
+      <md-accordion class="example-headers-align" hide-toggle="false">
+
+        <md-expansion-panel (opened)="propertyExpanded(property)" *ngFor="let property of properties">
+
+          <md-expansion-panel-header>
+            <md-panel-title>
+              <span class="fa fa-map-marker padding-right-s font-info" aria-hidden="true"></span>
+
+              {{property.title}}
+
+            </md-panel-title>
+            <md-panel-description>
+              <span class="align-right" *ngIf="property.address.preciseHouseNumber" [innerText]="property.address.street + ' ' + property.address.houseNumber"></span>
+            </md-panel-description>
+          </md-expansion-panel-header>
+          <div class="font-info font-bold font-ll align-center">
+                  <span *ngIf="property.address.preciseHouseNumber">
+                    <span [innerText]="property.address.quarter"></span><span>,</span>
+                  </span>
+            <span [innerText]="property.address.postcode"></span>
+            <span [innerText]="property.address.city"></span>
+          </div>
+          <div class="expansionPanelContent margin-top">
+
+            <div class="imageContainer inline-block">
+              <img [src]="property.titlePicture">
+            </div>
+            <div style="vertical-align: top; margin-left: 20px" class="inline-block margin-top-l">
+
+              <div class="grid" style="width: 280px">
+                <div class="grid-item data-entity right-border one-third" *ngIf="property.price.value">
+                  <div class="grid">
+                    <div class="grid-item data-value">
+                      <span [innerText]="property.price.value | currency:'EUR':true:'1.0-0'"></span>
+                    </div>
+                    <div class="data-title">Preis</div>
+                  </div>
+                </div>
+                <div class="grid-item data-entity right-border one-third">
+                  <div class="grid">
+                    <div class="grid-item data-value">
+                      <span [innerText]="property.numberOfRooms"></span>
+                    </div>
+                    <div class="data-title">Zimmer</div>
+                  </div>
+                </div>
+                <div class="grid-item data-entity one-third">
+                  <div class="grid">
+                    <div class="grid-item data-value">
+                      <span [innerText]="property.livingSpace | number:'1.0-0'"></span><span>&nbsp;m<sup>2</sup></span>
+                    </div>
+                    <div class="data-title">Fläche</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="grid expansionPanelNavigationButtons">
+            <div class="grid-item one-third padding-right-s">
+              <button class="button">Streetview</button>
+            </div>
+            <div class="grid-item one-third">
+              <button class="button disabled">360 tour</button>
+            </div>
+            <div class="grid-item one-third padding-left-s">
+              <button routerLink="/expose/{{property.id}}" class="button">Exposé</button>
+            </div>
+          </div>
+        </md-expansion-panel>
+
+
+
+
+      </md-accordion>
+    </div>
+
+  </div>
+</div>

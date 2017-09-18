@@ -38,22 +38,28 @@ import {
 import {HttpClientModule} from '@angular/common/http';
 
 
-import { AppComponent } from './app.component';
 import {NavigationService} from './navigation.service';
 import {PropertiesListService} from './properties-list.service';
 import {SearchService} from './search.service';
+import { AppComponent } from './app.component';
+import { SearchComponent } from './search/search.component';
+import { ExposeComponent } from './expose/expose.component';
+import {ExposeService} from "./expose/expose.service";
 
 const appRoutes: Routes = [
-    { path: 'search', component: AppComponent },
-    { path: '',
-        redirectTo: '/search',
-        pathMatch: 'full'
-    }
+  { path: 'search', component: SearchComponent },
+  { path: 'expose/:id', component: ExposeComponent },
+  { path: '',
+    redirectTo: '/search',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,
+    SearchComponent,
+    ExposeComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -91,11 +97,11 @@ const appRoutes: Routes = [
     MdTooltipModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+        appRoutes,
+        { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [NavigationService, PropertiesListService, SearchService],
+  providers: [NavigationService, PropertiesListService, SearchService, ExposeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
