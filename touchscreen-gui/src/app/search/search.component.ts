@@ -21,7 +21,7 @@ export class SearchComponent {
 
     properties: Property[] = [];
 
-    constructor(private citiesNavigationService: NavigationService,
+    constructor(private navigationService: NavigationService,
                 private propertiesListService: PropertiesListService,
                 private searchService: SearchService) {
         this.startPollingProperties(propertiesListService);
@@ -39,7 +39,7 @@ export class SearchComponent {
 
     public cityChanged(city: City) {
         this.city = city;
-        this.citiesNavigationService.navigateToCity(this.city);
+        this.navigationService.navigateToCity(this.city);
     }
 
     public spaceChanged(event: MdSliderChange) {
@@ -66,7 +66,11 @@ export class SearchComponent {
     public propertyExpanded(property: Property) {
         const coordinates = property.address.wgs84Coordinate;
 
-        this.citiesNavigationService.navigate(coordinates.longitude, coordinates.latitude);
+        this.navigationService.navigate(coordinates.longitude, coordinates.latitude);
+    }
+
+    public easterEgg() {
+        this.navigationService.navigateToImmoScout();
     }
 
 }
