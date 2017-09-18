@@ -1,4 +1,17 @@
-<div class="expose-container grid">
+<div *ngIf="!expose">
+    <svg class="loading-indicator" height="250" width="300">
+        <path
+                class="house"
+                d="M100,200 l0,-70 l-20,0 l70,-70 l25,25 l0,-10 l15,0 l0,20 l35,35 l-20,0 l0,70 l-50,0 l0,-40 l-25,0 l0,40 Z"
+                stroke-linecap="round" stroke-linejoin="round"
+                fill="rgba(0,0,0,0)"
+                stroke="#FF7500"
+                stroke-width="4" />
+    </svg>
+
+</div>
+
+<div class="expose-container grid fade-in" *ngIf="expose">
     <div class="left-column grid-item two-fifths">
         <div class="gallery">
             <ngx-carousel
