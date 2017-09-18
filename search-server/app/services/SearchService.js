@@ -54,12 +54,20 @@ SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, 
 		return Promise.resolve([]);
 	}
 
-	let radius = 20;
+	let radius = 3;
 
 	logger.log(`search for ${type} at lat:${lat} lng:${long} with radius:${radius}`);
 
+	let searchParams = [
+		`realestatetype=${type}`,
+		`geocoordinates=${lat};${long};${radius}`,
+		`price=-${maxPrice}`,
+		`livingspace=${minArea}-`,
+		`pageSize=200`
+	].join('&');
+
 	let request_data = {
-		url: `https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?realestatetype=${type}&geocoordinates=${lat};${long};${radius}&price=-${maxPrice}&livingspace=${minArea}-&pageSize=200&sorting=distance`,
+		url: 'https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?'+searchParams,
 		method: 'GET',
 		headers: {
 			'Accept': 'application/json',
