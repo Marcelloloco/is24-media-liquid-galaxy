@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {config} from './config'
-import {SERVER_IP} from "./constants";
+import {LG_SERVER_IP} from "./constants";
 
 @Injectable()
 export class StreetViewService {
@@ -16,7 +16,7 @@ export class StreetViewService {
       .subscribe(res => {
         const panoId = res['pano_id'];
         if (panoId) {
-          const requestUrl = `http://${SERVER_IP}:81/change.php?query=peruse-${panoId}`;
+          const requestUrl = `http://${LG_SERVER_IP}:81/change.php?query=peruse-${panoId}`;
           this.http.get(requestUrl);
           resolve();
         } else {
@@ -30,7 +30,7 @@ export class StreetViewService {
 
   public closeStreetView() {
     return new Promise((resolve) => {
-      return this.http.get(`http://${SERVER_IP}:81/change.php?query=peruse-off`)
+      return this.http.get(`http://${LG_SERVER_IP}:81/change.php?query=peruse-off`)
       .subscribe(() => {
         resolve();
       });
