@@ -1,4 +1,4 @@
-{ "expose.expose":{
+export const SAMPLE_EXPOSE = { "expose.expose":{
     "@xlink.href":"https:\/\/rest.sandbox-immobilienscout24.de\/restapi\/api\/search\/v1.0\/expose\/64848329",
     "@id":"64848329",
     "@modification":"2016-03-04T14:17:01.081Z",

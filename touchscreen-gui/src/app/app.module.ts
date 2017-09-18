@@ -44,6 +44,7 @@ import {SearchService} from './search.service';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExposeComponent } from './expose/expose.component';
+import {ExposeService} from "./expose/expose.service";
 
 const appRoutes: Routes = [
     { path: 'search', component: SearchComponent },
@@ -100,7 +101,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [CitiesNavigationService, PropertiesListService, SearchService],
+  providers: [CitiesNavigationService, PropertiesListService, SearchService, ExposeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

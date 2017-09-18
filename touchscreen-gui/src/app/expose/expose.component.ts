@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ExposeService} from "./expose.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-expose',
-  templateUrl: './expose.component.html',
-  styleUrls: ['./expose.component.css']
+    selector: 'app-expose',
+    templateUrl: './expose.component.html',
+    styleUrls: ['./expose.component.css']
 })
 export class ExposeComponent implements OnInit {
+    expose: Object;
 
-  constructor() { }
+    constructor(
+        private exposeService: ExposeService,
+        private route: ActivatedRoute
+    ) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        let id = this.route.snapshot.paramMap.get('id');
+        this.exposeService.get(id)
+            .subscribe(expose => {
+                this.expose = expose['expose.expose']
+            });
+    }
 
 }
