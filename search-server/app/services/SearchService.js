@@ -54,12 +54,20 @@ SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, 
 		return Promise.resolve([]);
 	}
 
-	let radius = 20;
+	let radius = 3;
 
 	logger.log(`search for ${type} at lat:${lat} lng:${long} with radius:${radius}`);
 
+	let searchParams = [
+		`realestatetype=${type}`,
+		`geocoordinates=${lat};${long};${radius}`,
+		`price=-${maxPrice}`,
+		`livingspace=${minArea}-`,
+		`pageSize=200`
+	].join('&');
+
 	let request_data = {
-		url: `https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?realestatetype=${type}&geocoordinates=${lat};${long};${radius}&price=-${maxPrice}&livingspace=${minArea}-&pageSize=200&sorting=distance`,
+		url: 'https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?'+searchParams,
 		method: 'GET',
 		headers: {
 			'Accept': 'application/json',
@@ -78,6 +86,7 @@ SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, 
 	request_data.json = true;
 
 	const self = this;
+	const latlngCache = {};
 	return promisedRequest(request_data)
 		.then(response => {
 			// console.log('search successful! response:\n' + JSON.stringify(response, null, 2));
@@ -94,6 +103,11 @@ SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, 
 						entry = entry['resultlist.realEstate'];
 						if (entry.address && entry.address.wgs84Coordinate && entry.price && entry.price.value) {
 							//logger.log('search result entry: '+JSON.stringify(entry));
+							let latLng = `${entry.address.wgs84Coordinate.latitude}|${entry.address.wgs84Coordinate.longitude}`;
+							if (latlngCache[latLng]) {
+								return;
+							}
+							latlngCache[latLng] = true;
 							let pictureUrl = '';
 							if (entry.titlePicture) {
 								pictureUrl = entry.titlePicture['@xlink.href'];

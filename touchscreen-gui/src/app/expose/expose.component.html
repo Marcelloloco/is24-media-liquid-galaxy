@@ -1,3 +1,38 @@
-<div class="main">
-    {{expose?.realEstate.title}}
+<div class="expose-container grid">
+    <div class="left-column grid-item two-fifths">
+        <div class="gallery">... there be pictures</div>
+        <div class="key-facts">
+            <div class="title">{{expose?.realEstate.title}}</div>
+            <div class="subtitle">{{expose?.realEstate.address.street}}, {{expose?.realEstate.address.postcode}} {{expose?.realEstate.address.city}}, {{expose?.realEstate.address.quarter}}</div>
+            <div class="facts grid">
+                <div class="fact grid-item two-sixths">
+                    <div class="value">{{expose?.realEstate.baseRent}} &euro;</div>
+                    <div class="key">Kaltmiete</div>
+                </div>
+                <div class="fact grid-item one-sixth">
+                    <div class="value">{{expose?.realEstate.numberOfRooms}}</div>
+                    <div class="key">Zi.</div>
+                </div>
+                <div class="fact grid-item three-sixths">
+                    <div class="value">{{expose?.realEstate.livingSpace}} &#13217;</div>
+                    <div class="key">Wohnfläche</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-column grid-item three-fifths">
+        <div class="close">
+            <button class="close-button">Schließen</button>
+        </div>
+        <div class="details grid">
+            <div *ngFor="let detailsGroup of detailsGroups" class="details-group grid-item one-whole">
+                <div *ngFor="let detailsColumn of detailsGroup" class="grid-item one-half">
+                    <div *ngFor="let detail of detailsColumn" class="detail grid">
+                        <div class="key grid-item one-half">{{detail.key}}</div>
+                        <div class="value grid-item one-half">{{detail.value}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

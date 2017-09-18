@@ -42,5 +42,13 @@ module.exports = {
 			],
 			action: 'SearchController@search'
 		}
-	}
+	},
+  '/expose/:exposeId': {
+    get: {
+      before : [
+        cors()
+      ],
+      action: 'ExposeController@getById'
+    }
+  }
 };
