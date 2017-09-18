@@ -29,6 +29,7 @@ export class ExposeComponent implements OnInit {
     private typeFor(value) {
         switch(value)  {
             case "APARTMENT": return "Etagenwohnung";
+            case "GROUND_FLOOR": return "Erdgeschosswohnung";
             default: return value;
         }
     }
@@ -38,14 +39,15 @@ export class ExposeComponent implements OnInit {
         this.exposeService.get(id)
             .subscribe(expose => {
                 this.expose = expose;
+                console.log(expose);
                 let realEstate = this.expose['realEstate'];
                 this.detailsGroups = [
                     [
                         [
                             this.detailFor(this.typeFor(realEstate.apartmentType), "Typ"),
                             this.detailFor(realEstate.floor, "Etage"),
-                            this.detailFor(realEstate.livingSpace,"Wohnfläche"),
-                            this.detailFor("???", "Bezugsfrei"),
+                            this.detailFor(realEstate.livingSpace,"Wohnfläche &#13217;"),
+                            this.detailFor(realEstate.freeFrom, "Bezugsfrei"),
                             this.detailFor(realEstate.numberOfRooms, "Zimmer"),
                             this.detailFor(realEstate.numberOfBedRooms, "Schlafzimmer"),
                         ],
@@ -54,32 +56,31 @@ export class ExposeComponent implements OnInit {
                             this.detailFor(this.booleanFor(realEstate.cellar), "Keller"),
                             this.detailFor(this.booleanFor(realEstate.balcony), "Balkon / Terasse"),
                             this.detailFor(this.booleanFor(realEstate.guestToilet), "Gäste-WC"),
-                            this.detailFor("???", "Internet"),
                         ],
                     ],
                     [
                         [
-                            this.detailFor(realEstate.baseRent, "Kaltmiete"),
-                            this.detailFor("???", "Nebenkosten")
+                            this.detailFor(realEstate.baseRent + " &euro;", "Kaltmiete"),
+                            this.detailFor((realEstate.calculatedTotalRent - realEstate.baseRent) + " &euro;", "Nebenkosten")
                         ],
                         [
-                            this.detailFor("???", "Heizkosten"),
-                            this.detailFor("???", "Gesamtmiete"),
-                            this.detailFor("???", "Kaution o. Genossenschaftsanteile"),
+                            this.detailFor(realEstate.heatingCosts + " &euro;", "Heizkosten"),
+                            this.detailFor(realEstate.calculatedTotalRent + " &euro;", "Gesamtmiete"),
+                            this.detailFor(realEstate.deposit + " &euro;", "Kaution o. Genossenschaftsanteile"),
                         ]
                     ],
                     [
                         [
-                            this.detailFor("???", "Baujahr"),
-                            this.detailFor("???", "Objektzustand"),
+                            this.detailFor(realEstate.constructionYear, "Baujahr"),
+                            this.detailFor(realEstate.condition, "Objektzustand"),
                             this.detailFor("???", "Denkmalschutz"),
                             this.detailFor("???", "Ausstattung"),
                             this.detailFor("???", "Zentralheizung"),
                         ],
                         [
                             this.detailFor("???", "Energieträger"),
-                            this.detailFor("???", "Energieausweiß"),
-                            this.detailFor("???", "Energieverbrauchswert"),
+                            this.detailFor(realEstate.energyPerformanceCertificate, "Energieausweiß"),
+                            this.detailFor(realEstate.thermalCharacteristic + " kWh/(&#13217;*a)", "Energieverbrauchswert"),
                         ]
 
                     ]
