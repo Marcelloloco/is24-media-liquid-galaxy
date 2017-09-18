@@ -48,7 +48,7 @@ import {ExposeService} from "./expose/expose.service";
 
 const appRoutes: Routes = [
     { path: 'search', component: SearchComponent },
-    { path: 'expose', component: ExposeComponent },
+    { path: 'expose/:id', component: ExposeComponent },
     { path: '',
         redirectTo: '/search',
         pathMatch: 'full'
