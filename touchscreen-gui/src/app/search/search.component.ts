@@ -7,6 +7,7 @@ import {PropertiesListService} from '../properties-list.service';
 import {Property} from '../property';
 import {SearchService} from '../search.service';
 import {Subscription} from "rxjs/Subscription";
+import {StreetViewService} from "../street-view.service";
 
 @Component({
     selector: 'app-search',
@@ -26,7 +27,8 @@ export class SearchComponent implements OnDestroy {
 
     constructor(private navigationService: NavigationService,
                 private propertiesListService: PropertiesListService,
-                private searchService: SearchService) {
+                private searchService: SearchService,
+                private streetViewService: StreetViewService) {
         this.startPollingProperties(propertiesListService);
     }
     ngOnDestroy(): void {
@@ -48,6 +50,10 @@ export class SearchComponent implements OnDestroy {
     public cityChanged(city: City) {
         this.city = city;
         this.navigationService.navigateToCity(this.city);
+    }
+
+    public openStreetView(lng: number, lat: number) {
+        this.streetViewService.openStreetView(lng, lat);
     }
 
     public spaceChanged(event: MdSliderChange) {

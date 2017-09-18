@@ -41,6 +41,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NavigationService} from './navigation.service';
 import {PropertiesListService} from './properties-list.service';
 import {SearchService} from './search.service';
+import {StreetViewService} from './street-view.service';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExposeComponent } from './expose/expose.component';
@@ -106,7 +107,7 @@ const appRoutes: Routes = [
         { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [NavigationService, PropertiesListService, SearchService, ExposeService],
+  providers: [NavigationService, PropertiesListService, SearchService, ExposeService, StreetViewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

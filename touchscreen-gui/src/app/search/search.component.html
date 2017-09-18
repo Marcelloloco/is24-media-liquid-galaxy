@@ -102,7 +102,7 @@
           </div>
           <div class="grid expansionPanelNavigationButtons">
             <div class="grid-item one-third padding-right-s">
-              <button class="button">Streetview</button>
+              <button class="button" (click)="openStreetView(property.address.wgs84Coordinate.longitude, property.address.wgs84Coordinate.latitude)">Streetview</button>
             </div>
             <div class="grid-item one-third">
               <button class="button disabled">360 tour</button>
