@@ -36,7 +36,7 @@ export class SearchComponent implements OnDestroy {
         this.pollingInterval.unsubscribe();
     }
     private startPollingProperties(propertiesListService: PropertiesListService) {
-        this.pollingInterval = Observable.interval(1000)
+        this.pollingInterval = Observable.interval(100)
         .switchMap(() => propertiesListService.getCurrentProperties())
         .subscribe((data) => {
             if (JSON.stringify(data) !== JSON.stringify(this.properties)) {
@@ -78,6 +78,7 @@ export class SearchComponent implements OnDestroy {
     }
 
     public easterEgg() {
+        this.city = null;
         this.navigationService.navigateToImmoScout();
     }
 
