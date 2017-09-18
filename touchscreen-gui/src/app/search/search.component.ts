@@ -73,8 +73,16 @@ export class SearchComponent implements OnDestroy {
     this.storeSearchParameters();
   }
 
-  public openStreetView(lng: number, lat: number) {
-    this.streetViewService.openStreetView(lng, lat).then(
+  public preparePanoId(expose, lat:number, lng: number) {
+    this.streetViewService.getPanoId(lng, lat)
+    .then(
+        panoId => {
+          // expose['panoId'] = panoId;
+        });
+  }
+
+  public openStreetView(panoId: string) {
+    this.streetViewService.openStreetView(panoId).then(
         response => {
           this.isInStreetView = true;
         });

@@ -9,20 +9,28 @@ export class StreetViewService {
   constructor(private http: HttpClient) {
   }
 
-  public openStreetView(longitude: number, latitude: number) {
+  public getPanoId(longitude: number, latitude: number) {
     return new Promise((resolve, reject) => {
-
+      // resolve();
       this.http.get(`https://maps.googleapis.com/maps/api/streetview/metadata?location=${latitude},${longitude}&key=${config.streetViewImageApiKey}`)
       .subscribe(res => {
+        console.log(`received response! ${JSON.stringify(res)}`);
         const panoId = res['pano_id'];
         if (panoId) {
-          const requestUrl = `http://${LG_SERVER_IP}:81/change.php?query=peruse-${panoId}`;
-          this.http.get(requestUrl);
-          resolve();
+          console.log(`resolve with pano id. ${panoId}`);
+          resolve(panoId);
         } else {
-          console.log(`Street view is not available`);
-          reject();
+          resolve();
         }
+      });
+    })
+  }
+
+  public openStreetView(panoId: string) {
+    return new Promise((resolve, reject) => {
+      const requestUrl = `http://${LG_SERVER_IP}:81/change.php?query=peruse-${panoId}`;
+      this.http.get(requestUrl).subscribe(() => {
+        resolve();
       });
     })
 
