@@ -22,6 +22,17 @@ export class ExposeComponent implements OnInit {
         return { key: caption, value: value };
     }
 
+    private booleanFor(value) {
+        return value === "YES" || value === true;
+    }
+
+    private typeFor(value) {
+        switch(value)  {
+            case "APARTMENT": return "Etagenwohnung";
+            default: return value;
+        }
+    }
+
     ngOnInit() {
         let id = this.route.snapshot.paramMap.get('id');
         this.exposeService.get(id)
@@ -31,24 +42,24 @@ export class ExposeComponent implements OnInit {
                 this.detailsGroups = [
                     [
                         [
-                            this.detailFor(realEstate.apartmentType, "Typ"),
+                            this.detailFor(this.typeFor(realEstate.apartmentType), "Typ"),
                             this.detailFor(realEstate.floor, "Etage"),
-                            this.detailFor(realEstate.livingSpace, "Wohnfläche"),
+                            this.detailFor(realEstate.livingSpace,"Wohnfläche"),
                             this.detailFor("???", "Bezugsfrei"),
                             this.detailFor(realEstate.numberOfRooms, "Zimmer"),
                             this.detailFor(realEstate.numberOfBedRooms, "Schlafzimmer"),
                         ],
                         [
                             this.detailFor(realEstate.numberOfBathRooms, "Badezimmer"),
-                            this.detailFor(realEstate.cellar, "Keller"),
-                            this.detailFor(realEstate.balcony, "Balkon / Terasse"),
-                            this.detailFor(realEstate.guestToilet, "Gäste-WC"),
+                            this.detailFor(this.booleanFor(realEstate.cellar), "Keller"),
+                            this.detailFor(this.booleanFor(realEstate.balcony), "Balkon / Terasse"),
+                            this.detailFor(this.booleanFor(realEstate.guestToilet), "Gäste-WC"),
                             this.detailFor("???", "Internet"),
                         ],
                     ],
                     [
                         [
-                            this.detailFor("???", "Kaltmiete"),
+                            this.detailFor(realEstate.baseRent, "Kaltmiete"),
                             this.detailFor("???", "Nebenkosten")
                         ],
                         [
