@@ -1,6 +1,19 @@
 <div class="expose-container grid">
     <div class="left-column grid-item two-fifths">
-        <div class="gallery">... there be pictures</div>
+        <div class="gallery">
+            <ngx-carousel
+                    *ngIf="images"
+                    [inputs] = "carouselOne"
+                    [inputsLength]="images.length"
+                >
+                <div
+                        class="item"
+                        *ngFor="let image of images"
+                        [ngStyle] ="{backgroundImage:'url('+image.url+')'}"
+                >
+                </div>
+            </ngx-carousel>
+        </div>
         <div class="key-facts">
             <div class="title">{{expose?.realEstate.title}}</div>
             <div class="subtitle">{{expose?.realEstate.address.street}}, {{expose?.realEstate.address.postcode}} {{expose?.realEstate.address.city}}, {{expose?.realEstate.address.quarter}}</div>
@@ -22,7 +35,7 @@
     </div>
     <div class="right-column grid-item three-fifths">
         <div class="close">
-            <button class="close-button">Schließen</button>
+            <button class="close-button" (click)="closeButtonClicked()">Schließen</button>
         </div>
         <div class="details grid">
             <div *ngFor="let detailsGroup of detailsGroups" class="details-group grid-item one-whole">

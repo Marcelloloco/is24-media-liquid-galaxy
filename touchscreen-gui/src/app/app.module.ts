@@ -44,7 +44,9 @@ import {SearchService} from './search.service';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExposeComponent } from './expose/expose.component';
-import { ExposeService } from "./expose/expose.service";
+import {ExposeService} from "./expose/expose.service";
+import {CarouselModule} from "ngx-carousel";
+import "hammerjs";
 import { ExposeDetailValuePipe } from "./expose/exposeDetailValue.pipe";
 
 const appRoutes: Routes = [
@@ -98,6 +100,7 @@ const appRoutes: Routes = [
     MdToolbarModule,
     MdTooltipModule,
     HttpClientModule,
+    CarouselModule,
     RouterModule.forRoot(
         appRoutes,
         { enableTracing: true } // <-- debugging purposes only
