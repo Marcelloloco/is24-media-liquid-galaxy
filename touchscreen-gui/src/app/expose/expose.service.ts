@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {SERVER_IP} from "../constants";
+import {SERVER_IP, SERVER_PORT} from "../constants";
 
 @Injectable()
 export class ExposeService {
@@ -9,6 +9,6 @@ export class ExposeService {
     }
 
     public get(exposeId: string) {
-        return this.http.get(`http://${SERVER_IP}:88/expose/${exposeId}`);
+        return this.http.get(`http://${SERVER_IP}:${SERVER_PORT}/expose/${exposeId}`);
     }
 }
