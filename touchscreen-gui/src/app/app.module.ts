@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -42,6 +43,13 @@ import {CitiesNavigationService} from './cities-navigation.service';
 import {PropertiesListService} from './properties-list.service';
 import {SearchService} from './search.service';
 
+const appRoutes: Routes = [
+    { path: 'search', component: AppComponent },
+    { path: '',
+        redirectTo: '/search',
+        pathMatch: 'full'
+    }
+];
 
 @NgModule({
   declarations: [
@@ -81,7 +89,11 @@ import {SearchService} from './search.service';
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [CitiesNavigationService, PropertiesListService, SearchService],
   bootstrap: [AppComponent]
