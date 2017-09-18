@@ -44,7 +44,7 @@
     <div class="grid-item three-tenths">
       <md-accordion class="example-headers-align" hide-toggle="false">
 
-        <md-expansion-panel (opened)="opened($event)" *ngFor="let property of properties">
+        <md-expansion-panel (opened)="propertyExpanded(property)" *ngFor="let property of properties">
 
           <md-expansion-panel-header>
             <md-panel-title>

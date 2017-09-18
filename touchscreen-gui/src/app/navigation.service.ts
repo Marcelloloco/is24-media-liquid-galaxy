@@ -4,22 +4,28 @@ import {City} from './city';
 import {SERVER_IP} from './constants';
 
 @Injectable()
-export class CitiesNavigationService {
+export class NavigationService {
 
   constructor(private http: HttpClient) { }
 
-  public navigate(city: City) {
+  public navigateToCity(city: City) {
+    const [longitude, latitude] = this.getCityCoordinates(city);
+
+    this.navigate(longitude, latitude);
+  }
+
+  public navigate(longitude: number, latitide: number) {
     const params = new HttpParams()
-      .set('query', this.generateFlytoString(city))
-      .set('name', 'whatever');
+    .set('query', this.generateFlytoString(longitude, latitide))
+    .set('name', 'whatever');
 
     this.http.get(`http://${SERVER_IP}:81/change.php`, {params: params}).subscribe(response => {
       console.log(response);
     });
   }
 
-  private generateFlytoString(city: City) {
-    let longitude: Number, latitude: Number;
+  private getCityCoordinates(city: City) {
+    let longitude: number, latitude: number;
 
     switch (city) {
       case City.Cologne: {
@@ -48,8 +54,11 @@ export class CitiesNavigationService {
       }
     }
 
-    return `flytoview=<LookAt><longitude>${longitude}</longitude><latitude>${latitude}</latitude><altitude>0</altitude><heading>49.000000</heading><tilt>62.000000</tilt><range>374</range><gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode></LookAt>`;
+    return [longitude, latitude];
+  }
 
+  private generateFlytoString(longitude: Number, latitude: Number) {
+    return `flytoview=<LookAt><longitude>${longitude}</longitude><latitude>${latitude}</latitude><altitude>0</altitude><heading>49.000000</heading><tilt>62.000000</tilt><range>374</range><gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode></LookAt>`;
   }
 
 }

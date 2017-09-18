@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MdSliderChange} from '@angular/material';
 import {City} from './city';
-import {CitiesNavigationService} from './cities-navigation.service';
+import {NavigationService} from './navigation.service';
 import {Observable} from 'rxjs/Rx';
 import {PropertiesListService} from './properties-list.service';
 import {Property} from './property';
@@ -21,7 +21,7 @@ export class AppComponent {
 
   properties: Property[] = [];
 
-  constructor(private citiesNavigationService: CitiesNavigationService,
+  constructor(private citiesNavigationService: NavigationService,
               private propertiesListService: PropertiesListService,
               private searchService: SearchService) {
     this.startPollingProperties(propertiesListService);
@@ -39,7 +39,7 @@ export class AppComponent {
 
   public cityChanged(city: City) {
     this.city = city;
-    this.citiesNavigationService.navigate(this.city);
+    this.citiesNavigationService.navigateToCity(this.city);
   }
 
   public spaceChanged(event: MdSliderChange) {
@@ -63,8 +63,10 @@ export class AppComponent {
     this.searchService.search(this.isRent, this.price, this.space);
   }
 
-  public opened(a:any) {
-    console.log(a);
+  public propertyExpanded(property: Property) {
+    const coordinates = property.address.wgs84Coordinate;
+
+    this.citiesNavigationService.navigate(coordinates.longitude, coordinates.latitude);
   }
 
 

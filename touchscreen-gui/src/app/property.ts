@@ -1,18 +1,18 @@
 export interface Property {
-   counter: String;
-    id: String;
-    title: String;
-    titlePicture: String;
+   counter: string;
+    id: string;
+    title: string;
+    titlePicture: string;
     address: {
-      street: String;
-      houseNumber: String;
-      postcode: String;
-      city: String;
-      quarter: String;
+      street: string;
+      houseNumber: string;
+      postcode: string;
+      city: string;
+      quarter: string;
       wgs84Coordinate: {
-        latitude: Number;
-        longitude: Number;
+        latitude: number;
+        longitude: number;
       };
-      preciseHouseNumber: Boolean;
+      preciseHouseNumber: boolean;
     };
 }

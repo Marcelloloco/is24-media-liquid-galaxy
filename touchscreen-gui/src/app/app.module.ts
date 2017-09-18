@@ -39,7 +39,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import {CitiesNavigationService} from './cities-navigation.service';
+import {NavigationService} from './navigation.service';
 import {PropertiesListService} from './properties-list.service';
 import {SearchService} from './search.service';
 
@@ -95,7 +95,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [CitiesNavigationService, PropertiesListService, SearchService],
+  providers: [NavigationService, PropertiesListService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
