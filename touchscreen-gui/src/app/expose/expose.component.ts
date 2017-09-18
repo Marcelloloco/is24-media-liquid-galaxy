@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {ExposeService} from "./expose.service";
 import {ActivatedRoute} from "@angular/router";
+import {Carousel} from "ngx-carousel";
 
 @Component({
     selector: 'app-expose',
@@ -11,13 +12,13 @@ import {ActivatedRoute} from "@angular/router";
 
 export class ExposeComponent implements OnInit {
     expose: Object;
+    images: Array<Object>;
+    carouselOne: Carousel;
     detailsGroups: Array<Array<Array<Object>>>;
+    constructor(private exposeService: ExposeService,
+                private route: ActivatedRoute,
+                private location: Location) {
 
-    constructor(
-        private exposeService: ExposeService,
-        private route: ActivatedRoute,
-        private location: Location
-    ) {
     }
 
     private detailFor(value, caption) {
@@ -42,10 +43,29 @@ export class ExposeComponent implements OnInit {
 
     ngOnInit() {
         let id = this.route.snapshot.paramMap.get('id');
+        this.carouselOne = {
+            grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
+            slide: 1,
+            speed: 400,
+            interval: 4000,
+            point: true,
+            load: 2,
+            touch: true,
+            custom: 'banner',
+            dynamicLength: true
+        };
         this.exposeService.get(id)
             .subscribe(expose => {
                 this.expose = expose;
                 console.log(expose);
+                this.images = expose.realEstate.attachments[0].attachment
+                    .filter((attachment) => attachment['@xsi.type'] === 'common:Picture')
+                    .map((attachment) => {
+                        return {
+                            url: attachment.urls[0].url.find((image)=>image['@scale'] ==='SCALE_540x540')['@href'],
+                            text: attachment.title
+                        }
+                    });
                 let realEstate = this.expose['realEstate'];
                 this.detailsGroups = [
                     [
