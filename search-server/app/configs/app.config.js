@@ -3,5 +3,5 @@
 module.exports = exports = {
 	name: 'IS24 Liquid Galaxy Server',
 	oauthConsumerKey: 'liquidgalaxyKey',
-	oauthConsumerSecret: 'xxxxxxxxxx',
+	oauthConsumerSecret: 'Qm9r7PHdatDtgUyW',
 };

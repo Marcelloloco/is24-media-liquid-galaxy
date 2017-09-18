@@ -3,7 +3,7 @@ import {Location} from '@angular/common';
 import {ExposeService} from "./expose.service";
 import {ActivatedRoute} from "@angular/router";
 import {Carousel} from "ngx-carousel";
-import {REAL_ESTATE_CONDITIONS} from "./realEstateCondition";
+import {REAL_ESTATE_CONDITIONS, REAL_ESTATE_TYPES} from "./realEstateTranslations";
 import {FIRING_TYPE_CONDITIONS} from "./firingTypeCondition";
 
 @Component({
@@ -29,14 +29,6 @@ export class ExposeComponent implements OnInit {
 
     private booleanFor(value) {
         return value === "YES" || value === true;
-    }
-
-    private typeFor(value) {
-        switch(value)  {
-            case "APARTMENT": return "Etagenwohnung";
-            case "GROUND_FLOOR": return "Erdgeschosswohnung";
-            default: return value;
-        }
     }
 
     closeButtonClicked() {
@@ -72,7 +64,7 @@ export class ExposeComponent implements OnInit {
                 this.detailsGroups = [
                     [
                         [
-                            this.detailFor(this.typeFor(realEstate.apartmentType), "Typ"),
+                            this.detailFor(REAL_ESTATE_TYPES[realEstate['@xsi.type'].split(':')[1]], "Typ"),
                             this.detailFor(realEstate.floor, "Etage"),
                             this.detailFor(realEstate.livingSpace,"Wohnfläche &#13217;"),
                             this.detailFor(realEstate.freeFrom, "Bezugsfrei"),
@@ -101,9 +93,7 @@ export class ExposeComponent implements OnInit {
                         [
                             this.detailFor(realEstate.constructionYear, "Baujahr"),
                             this.detailFor(REAL_ESTATE_CONDITIONS[realEstate.condition], "Objektzustand"),
-                            this.detailFor("???", "Denkmalschutz"),
-                            this.detailFor("???", "Ausstattung"),
-                            this.detailFor("???", "Zentralheizung"),
+                            this.detailFor(realEstate.heatingType === "CENTRAL_HEATING", "Zentralheizung"),
                         ],
                         [
                             this.detailFor(FIRING_TYPE_CONDITIONS[(realEstate.firingTypes[0].firingType && realEstate.firingTypes[0].firingType) || 'NO_INFORMATION'], "Energieträger"),
