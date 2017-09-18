@@ -5,8 +5,9 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
     selector: 'app-expose',
     templateUrl: './expose.component.html',
-    styleUrls: ['./expose.component.css']
+    styleUrls: ['./expose.component.less']
 })
+
 export class ExposeComponent implements OnInit {
     expose: Object;
 
