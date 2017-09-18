@@ -5,7 +5,7 @@
   "description": "IS24 Liquid Galaxy Search Server",
   "main": "./app",
   "scripts": {
-    "start": "node ./app"
+    "start": "node $NODE_DEBUG_OPTION ./app"
   },
   "dependencies": {
     "@onehilltech/blueprint": "^1.9.1",
