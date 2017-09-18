@@ -15,7 +15,7 @@ export class NavigationService {
   }
 
   public navigateToImmoScout() {
-    this.navigate(13.43158897438021, 52.5121619221996, 19.03508785186355, 41.19475331649205, 75, 162.5619296413542);
+    this.navigate(13.43158897438021, 52.5121619221996, 19.03508785186355, 41.19475331649205, 80, 162.5619296413542);
   }
 
   public navigate(longitude: number, latitude: number, altitude = 0, heading = 49, tilt = 62, range = 400) {
@@ -46,7 +46,7 @@ export class NavigationService {
         latitude = 52.52096378877162;
         altitude = 11.06393855146612;
         heading = 64.50924269857357;
-        tilt = 52.22247346283616;
+        tilt = 69.22247346283616;
         range = 991.6556221498255;
         break;
       }
@@ -63,18 +63,18 @@ export class NavigationService {
         longitude = 8.672226637532439;
         latitude = 50.10989318426203;
         altitude = 23.78395936329224;
-        heading = 1.773222571673702;
-        tilt = 54.70241887356603;
+        heading = 10.773222571673702;
+        tilt = 65.70241887356603;
         range = 1180.363524908955;
         break;
       }
       case City.Hamburg: {
         longitude = 9.99400960055184;
         latitude = 53.55201361216928;
-        altitude = 0;
+        altitude = 100;
         heading = -169.5822581855827;
-        tilt = 61.22678891972156;
-        range = 469.93209165143;
+        tilt = 75.22678891972156;
+        range = 600.93209165143;
       }
     }
 
