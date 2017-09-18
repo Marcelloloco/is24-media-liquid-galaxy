@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Location} from '@angular/common';
 import {ExposeService} from "./expose.service";
 import {ActivatedRoute} from "@angular/router";
 
@@ -14,7 +15,8 @@ export class ExposeComponent implements OnInit {
 
     constructor(
         private exposeService: ExposeService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private location: Location
     ) {
     }
 
@@ -32,6 +34,10 @@ export class ExposeComponent implements OnInit {
             case "GROUND_FLOOR": return "Erdgeschosswohnung";
             default: return value;
         }
+    }
+
+    closeButtonClicked() {
+        this.location.back();
     }
 
     ngOnInit() {

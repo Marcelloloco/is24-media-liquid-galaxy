@@ -22,7 +22,7 @@
     </div>
     <div class="right-column grid-item three-fifths">
         <div class="close">
-            <button class="close-button">Schließen</button>
+            <button class="close-button" (click)="closeButtonClicked()">Schließen</button>
         </div>
         <div class="details grid">
             <div *ngFor="let detailsGroup of detailsGroups" class="details-group grid-item one-whole">
