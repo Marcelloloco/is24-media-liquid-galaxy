@@ -27,16 +27,11 @@ function ExposeService() {
   this.requestCache = LRU(50);
 }
 
-ExposeService.prototype.getExpose = function (isMaster, exposeId) {
+ExposeService.prototype.getExpose = function (exposeId) {
 
 
   if (!this.oauth) {
     return Promise.reject('oauth not configured');
-  }
-
-  if (!isMaster) {
-    logger.log('only searching on master!');
-    return Promise.resolve([]);
   }
 
   logger.log(`get expose ${exposeId}`);

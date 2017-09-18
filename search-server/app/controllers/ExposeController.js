@@ -12,14 +12,12 @@ function ExposeController() {
 }
 
 ExposeController.prototype.getById = function () {
-  let self = this;
   return (req, res) => {
     const clientIp = req.headers['x-forwarded-for'] || MASTER;
-    const isMaster = (clientIp === MASTER);
-    logger.log(`request from ${clientIp} isMaster=${isMaster}`);
+    logger.log(`request from ${clientIp}`);
     let exposeId = req.params.exposeId;
     return this.exposeService
-      .getExpose(isMaster, exposeId)
+      .getExpose( exposeId)
       .then(exposeData => {
           res.status(200);
           return res.json(exposeData["expose.expose"]);
