@@ -8,6 +8,7 @@ import {Property} from '../property';
 import {SearchService} from '../search.service';
 import {Subscription} from "rxjs/Subscription";
 import {StreetViewService} from "../street-view.service";
+import {SearchPersistenceService} from "./searchPersistence.service";
 
 @Component({
     selector: 'app-search',
@@ -17,10 +18,10 @@ import {StreetViewService} from "../street-view.service";
 export class SearchComponent implements OnDestroy {
 
     cities = City;
-    city = City.Berlin;
-    isRent = true;
-    price = 800;
-    space = 70;
+    city: City;
+    isRent: boolean;
+    price: number;
+    space: number;
 
     properties: Property[] = [];
     pollingInterval:Subscription;
@@ -28,12 +29,27 @@ export class SearchComponent implements OnDestroy {
     constructor(private navigationService: NavigationService,
                 private propertiesListService: PropertiesListService,
                 private searchService: SearchService,
-                private streetViewService: StreetViewService) {
+                private streetViewService: StreetViewService,
+                private searchPersistenceService: SearchPersistenceService) {
+        this.loadSearchParameters();
         this.startPollingProperties(propertiesListService);
     }
     ngOnDestroy(): void {
         this.stopPolling();
     }
+
+    private loadSearchParameters() {
+        let persistedSearchParameters = this.searchPersistenceService.getSearchParameters();
+        this.city = persistedSearchParameters.city;
+        this.isRent = persistedSearchParameters.isRent;
+        this.price = persistedSearchParameters.price;
+        this.space = persistedSearchParameters.space;
+    }
+
+    private storeSearchParameters() {
+        this.searchPersistenceService.setSearchParameters(this.city, this.isRent, this.price, this.space);
+    }
+
     private stopPolling(){
         this.pollingInterval.unsubscribe();
     }
@@ -74,6 +90,7 @@ export class SearchComponent implements OnDestroy {
     }
 
     public search() {
+        this.storeSearchParameters();
         this.searchService.search(this.isRent, this.price, this.space);
     }
 

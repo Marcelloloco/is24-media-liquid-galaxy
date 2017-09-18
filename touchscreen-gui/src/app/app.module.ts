@@ -46,6 +46,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExposeComponent } from './expose/expose.component';
 import {ExposeService} from "./expose/expose.service";
+import {SearchPersistenceService} from "./search/searchPersistence.service";
 import {CarouselModule} from "ngx-carousel";
 import "hammerjs";
 import { ExposeDetailValuePipe } from "./expose/exposeDetailValue.pipe";
@@ -107,7 +108,7 @@ const appRoutes: Routes = [
         { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [NavigationService, PropertiesListService, SearchService, ExposeService, StreetViewService],
+  providers: [NavigationService, PropertiesListService, SearchService, ExposeService, StreetViewService, SearchPersistenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
