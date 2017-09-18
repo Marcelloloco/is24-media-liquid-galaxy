@@ -22,7 +22,13 @@ export class ExposeComponent implements OnInit {
                 private location: Location) {
 
     }
-
+    private orMinus(value, suffix=''){
+        if(typeof value === 'undefined' || value === null){
+            return '-'
+        } else {
+            return value + suffix;
+        }
+    }
     private detailFor(value, caption) {
         return { key: caption, value: value };
     }
@@ -65,14 +71,14 @@ export class ExposeComponent implements OnInit {
                     [
                         [
                             this.detailFor(REAL_ESTATE_TYPES[realEstate['@xsi.type'].split(':')[1]], "Typ"),
-                            this.detailFor(realEstate.floor, "Etage"),
-                            this.detailFor(realEstate.livingSpace,"Wohnfläche &#13217;"),
-                            this.detailFor(realEstate.freeFrom, "Bezugsfrei"),
-                            this.detailFor(realEstate.numberOfRooms, "Zimmer"),
-                            this.detailFor(realEstate.numberOfBedRooms, "Schlafzimmer"),
+                            this.detailFor(this.orMinus(realEstate.floor), "Etage"),
+                            this.detailFor(this.orMinus(realEstate.livingSpace),"Wohnfläche &#13217;"),
+                            this.detailFor(this.orMinus(realEstate.freeFrom), "Bezugsfrei"),
+                            this.detailFor(this.orMinus(realEstate.numberOfRooms), "Zimmer"),
+                            this.detailFor(this.orMinus(realEstate.numberOfBedRooms), "Schlafzimmer"),
                         ],
                         [
-                            this.detailFor(realEstate.numberOfBathRooms, "Badezimmer"),
+                            this.detailFor(this.orMinus(realEstate.numberOfBathRooms), "Badezimmer"),
                             this.detailFor(this.booleanFor(realEstate.cellar), "Keller"),
                             this.detailFor(this.booleanFor(realEstate.balcony), "Balkon / Terasse"),
                             this.detailFor(this.booleanFor(realEstate.guestToilet), "Gäste-WC"),
@@ -80,25 +86,25 @@ export class ExposeComponent implements OnInit {
                     ],
                     [
                         [
-                            this.detailFor(realEstate.baseRent + " &euro;", "Kaltmiete"),
+                            this.detailFor(this.orMinus(realEstate.baseRent," &euro;"), "Kaltmiete"),
                             this.detailFor((realEstate.calculatedTotalRent - realEstate.baseRent) + " &euro;", "Nebenkosten")
                         ],
                         [
-                            this.detailFor(realEstate.heatingCosts + " &euro;", "Heizkosten"),
-                            this.detailFor(realEstate.calculatedTotalRent + " &euro;", "Gesamtmiete"),
-                            this.detailFor(realEstate.deposit + " &euro;", "Kaution"),
+                            this.detailFor(this.orMinus(realEstate.heatingCosts," &euro;"), "Heizkosten"),
+                            this.detailFor(this.orMinus(realEstate.calculatedTotalRent, " &euro;"), "Gesamtmiete"),
+                            this.detailFor(this.orMinus(realEstate.deposit , " &euro;"), "Kaution"),
                         ]
                     ],
                     [
                         [
-                            this.detailFor(realEstate.constructionYear, "Baujahr"),
+                            this.detailFor(this.orMinus(realEstate.constructionYear), "Baujahr"),
                             this.detailFor(REAL_ESTATE_CONDITIONS[realEstate.condition], "Objektzustand"),
                             this.detailFor(realEstate.heatingType === "CENTRAL_HEATING", "Zentralheizung"),
                         ],
                         [
                             this.detailFor(FIRING_TYPE_CONDITIONS[(realEstate.firingTypes[0].firingType && realEstate.firingTypes[0].firingType) || 'NO_INFORMATION'], "Energieträger"),
-                            this.detailFor(realEstate.energyPerformanceCertificate, "Energieausweiß"),
-                            this.detailFor(realEstate.thermalCharacteristic + " kWh/(&#13217;*a)", "Energieverbrauchswert"),
+                            this.detailFor(this.orMinus(realEstate.energyPerformanceCertificate), "Energieausweiß"),
+                            this.detailFor(this.orMinus(realEstate.thermalCharacteristic," kWh/(&#13217;*a)"), "Energieverbrauchswert"),
                         ]
                     ]
                 ];
