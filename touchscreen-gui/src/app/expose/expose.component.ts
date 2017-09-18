@@ -4,6 +4,7 @@ import {ExposeService} from "./expose.service";
 import {ActivatedRoute} from "@angular/router";
 import {Carousel} from "ngx-carousel";
 import {REAL_ESTATE_CONDITIONS} from "./realEstateCondition";
+import {FIRING_TYPE_CONDITIONS} from "./firingTypeCondition";
 
 @Component({
     selector: 'app-expose',
@@ -105,7 +106,7 @@ export class ExposeComponent implements OnInit {
                             this.detailFor("???", "Zentralheizung"),
                         ],
                         [
-                            this.detailFor("???", "Energieträger"),
+                            this.detailFor(FIRING_TYPE_CONDITIONS[(realEstate.firingTypes[0].firingType && realEstate.firingTypes[0].firingType) || 'NO_INFORMATION'], "Energieträger"),
                             this.detailFor(realEstate.energyPerformanceCertificate, "Energieausweiß"),
                             this.detailFor(realEstate.thermalCharacteristic + " kWh/(&#13217;*a)", "Energieverbrauchswert"),
                         ]
