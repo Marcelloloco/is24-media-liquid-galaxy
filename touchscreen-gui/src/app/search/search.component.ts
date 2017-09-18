@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {MdSliderChange} from '@angular/material';
 import {City} from '../city';
 import {NavigationService} from '../navigation.service';
@@ -6,13 +6,15 @@ import {Observable} from 'rxjs/Rx';
 import {PropertiesListService} from '../properties-list.service';
 import {Property} from '../property';
 import {SearchService} from '../search.service';
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
     selector: 'app-search',
     templateUrl: './search.component.html',
     styleUrls: ['./search.component.less']
 })
-export class SearchComponent {
+export class SearchComponent implements OnDestroy {
+
     cities = City;
     city = City.Berlin;
     isRent = true;
@@ -20,15 +22,21 @@ export class SearchComponent {
     space = 70;
 
     properties: Property[] = [];
+    pollingInterval:Subscription;
 
     constructor(private citiesNavigationService: NavigationService,
                 private propertiesListService: PropertiesListService,
                 private searchService: SearchService) {
         this.startPollingProperties(propertiesListService);
     }
-
+    ngOnDestroy(): void {
+        this.stopPolling();
+    }
+    private stopPolling(){
+        this.pollingInterval.unsubscribe();
+    }
     private startPollingProperties(propertiesListService: PropertiesListService) {
-        Observable.interval(100)
+        this.pollingInterval = Observable.interval(1000)
         .switchMap(() => propertiesListService.getCurrentProperties())
         .subscribe((data) => {
             if (JSON.stringify(data) !== JSON.stringify(this.properties)) {
