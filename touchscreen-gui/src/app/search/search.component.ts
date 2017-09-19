@@ -35,7 +35,7 @@ export class SearchComponent implements OnDestroy {
               private searchPersistenceService: SearchPersistenceService) {
     this.loadSearchParameters();
     this.isInStreetView = false;
-    //this.startPollingProperties(propertiesListService);
+    this.startPollingProperties(propertiesListService);
   }
 
   ngOnDestroy(): void {
@@ -60,7 +60,7 @@ export class SearchComponent implements OnDestroy {
   }
 
   private startPollingProperties(propertiesListService: PropertiesListService) {
-    this.pollingInterval = Observable.from
+    this.pollingInterval = Observable.from()
     .switchMap(() => propertiesListService.getCurrentProperties())
     .subscribe((data) => {
       if (JSON.stringify(data) !== JSON.stringify(this.properties)) {
