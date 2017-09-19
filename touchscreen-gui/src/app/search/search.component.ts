@@ -87,24 +87,26 @@ export class SearchComponent implements OnDestroy {
         });
   }
 
-  public openStreetView(panoId: string) {
-    this.streetViewService.openStreetView(panoId).then(
-        response => {
-          this.isInStreetView = true;
-        });
-  }
+    public openStreetView(panoId: string) {
+        this.isInStreetView = true;
+        this.streetViewService.openStreetView(panoId).then(
+            response => {
+                this.isInStreetView = true;
+            });
+    }
 
-  public closeStreetView() {
-    this.streetViewService.closeStreetView()
-    .then(() => {
-      this.isInStreetView = false;
-    });
-  }
+    public closeStreetView() {
+        this.isInStreetView = false;
+        this.streetViewService.closeStreetView()
+            .then(() => {
+                this.isInStreetView = false;
+            });
+    }
 
-  public spaceChanged(event: MdSliderChange) {
-    this.space = event.value;
-    this.storeSearchParameters();
-  }
+    public spaceChanged(event: MdSliderChange) {
+        this.space = event.value;
+        this.storeSearchParameters();
+    }
 
   public priceChanged(event: MdSliderChange) {
     this.price = event.value;
