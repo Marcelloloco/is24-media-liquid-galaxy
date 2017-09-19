@@ -62,12 +62,13 @@ export class SearchComponent implements OnDestroy {
     this.pollingInterval = Observable.interval(100)
     .switchMap(() => propertiesListService.getCurrentProperties())
     .subscribe((data) => {
-      if (JSON.stringify(data) !== this.oldProperties) {
-        this.oldProperties = JSON.stringify(this.properties);
-        this.properties = data;
-        this.properties.forEach( (property)=> {
-          this.preparePanoId(property);
-        });
+	    let oldProps = JSON.stringify(data);
+	    if (oldProps !== this.oldProperties) {
+          this.oldProperties = oldProps;
+          this.properties = data;
+          this.properties.forEach( (property)=> {
+            this.preparePanoId(property);
+          });
       }
     });
   }
