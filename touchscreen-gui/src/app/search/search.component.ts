@@ -25,7 +25,6 @@ export class SearchComponent implements OnDestroy {
   isInStreetView: boolean;
 
   properties: Property[] = [];
-  panoIds: string[] = [];
   pollingInterval: Subscription;
 
   constructor(private navigationService: NavigationService,
@@ -35,7 +34,7 @@ export class SearchComponent implements OnDestroy {
               private searchPersistenceService: SearchPersistenceService) {
     this.loadSearchParameters();
     this.isInStreetView = false;
-    //this.startPollingProperties(propertiesListService);
+    this.startPollingProperties(propertiesListService);
   }
 
   ngOnDestroy(): void {
@@ -52,7 +51,6 @@ export class SearchComponent implements OnDestroy {
 
   private storeSearchParameters() {
     this.searchPersistenceService.setSearchParameters(this.city, this.isRent, this.price, this.space);
-    this.startPollingProperties(this.propertiesListService);
   }
 
   private stopPolling() {
@@ -60,14 +58,13 @@ export class SearchComponent implements OnDestroy {
   }
 
   private startPollingProperties(propertiesListService: PropertiesListService) {
-    this.pollingInterval = Observable.interval(100000)
+    this.pollingInterval = Observable.interval(100)
     .switchMap(() => propertiesListService.getCurrentProperties())
     .subscribe((data) => {
       if (JSON.stringify(data) !== JSON.stringify(this.properties)) {
         this.properties = data;
         this.properties.forEach( (property)=> {
-	        this.preparePanoId(property);
-	        console.log('Preparing pano prop', property)
+          this.preparePanoId(property);
         });
       }
     });
