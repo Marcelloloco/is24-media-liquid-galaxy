@@ -63,8 +63,10 @@ export class SearchComponent implements OnDestroy {
     .subscribe((data) => {
       if (JSON.stringify(data) !== JSON.stringify(this.properties)) {
         this.properties = data;
+        console.log('Preparing panos for props', this.properties)
         this.properties.forEach( (property)=> {
-          this.preparePanoId(property);
+	        this.preparePanoId(property);
+	        console.log('Preparing pano prop', property)
         });
       }
     });
