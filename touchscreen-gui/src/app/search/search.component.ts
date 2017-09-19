@@ -25,7 +25,7 @@ export class SearchComponent implements OnDestroy {
   isInStreetView: boolean;
 
   properties: Property[] = [];
-  oldProperties: Property[] = [];
+  oldProperties: string;
   pollingInterval: Subscription;
 
   constructor(private navigationService: NavigationService,
@@ -62,8 +62,8 @@ export class SearchComponent implements OnDestroy {
     this.pollingInterval = Observable.interval(100)
     .switchMap(() => propertiesListService.getCurrentProperties())
     .subscribe((data) => {
-      if (JSON.stringify(data) !== JSON.stringify(this.oldProperties)) {
-        this.oldProperties = this.properties;
+      if (JSON.stringify(data) !== this.oldProperties) {
+        this.oldProperties = JSON.stringify(this.properties);
         this.properties = data;
         this.properties.forEach( (property)=> {
           this.preparePanoId(property);
