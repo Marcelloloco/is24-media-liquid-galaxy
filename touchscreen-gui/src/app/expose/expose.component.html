@@ -23,7 +23,7 @@
                         class="item"
                         *ngFor="let image of images"
                         [ngStyle] ="{backgroundImage:'url('+image.url+')'}"
-                        style="background-size: contain"
+                        style="background-size: contain; background-repeat: no-repeat"
                 >
                 </div>
             </ngx-carousel>
