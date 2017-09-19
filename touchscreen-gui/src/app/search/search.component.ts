@@ -79,7 +79,7 @@ export class SearchComponent implements OnDestroy {
   }
 
   public preparePanoId(property) {
-    this.streetViewService.getPanoId(property.address.wgs84Coordinate.latitude, property.address.wgs84Coordinate.longitude)
+    this.streetViewService.getPanoId(property)
     .then(
         panoId => {
 	        property['panoId'] = panoId;
