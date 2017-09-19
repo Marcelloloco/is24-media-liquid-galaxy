@@ -125,6 +125,8 @@ export class SearchComponent implements OnDestroy {
 
   public search() {
     this.storeSearchParameters();
+    this.properties = [];
+    this.oldProperties = null;
     this.searchService.search(this.isRent, this.price, this.space);
   }
 
