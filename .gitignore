@@ -51,3 +51,6 @@ touchscreen-api/typings
 touchscreen-api/e2e/*.js
 touchscreen-api/e2e/*.map
 
+/search-server/app/configs/app.config.js
+search-server/package-lock.json
+touchscreen-gui/package-lock.json

@@ -109,7 +109,7 @@ SearchController.prototype.disableSearch = function () {
 SearchController.prototype.getLastSearch = function () {
 	let self = this;
 	return (req, res) => {
-		return res.json({results: self.lastSearchResults.slice(0, 10)});
+		return res.json({results: self.lastSearchResults});
 	};
 };
 

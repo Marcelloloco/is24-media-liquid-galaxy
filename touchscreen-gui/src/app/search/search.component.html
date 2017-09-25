@@ -7,10 +7,18 @@
         Die Nr. 1 rund um Immobilien
     </span>
 
+
     <div class="close" *ngIf="this.isInStreetView">
-      <button class="close-button" (click)="closeStreetView()">Zurrück zur Welt</button>
+      <button class="close-button" (click)="closeStreetView()">Streetview beenden</button>
     </div>
+
+
+	  <div style="position: absolute; right: 0; top: 0;padding: 10px">
+		  <img src="/img/logo/fs24Logo.gif" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" style="float: right; margin-left: 10px">
+		  <img src="/img/logo/as24.jpg" (click)="easterEggAS24()" style="float: right;height: 40px">
+	  </div>
   </header>
+
 
   <div class="dashboard grid ">
     <div class="grid-item three-tenths">
@@ -42,11 +50,23 @@
         <h3>{{space}}<span>&nbsp;m<sup>2</sup></span></h3>
       </div>
 
-      <button class="button-primary search-button" (click)="search()"><span class="fa fa-search" aria-hidden="true"></span></button>
+      <button class="button-primary search-button" (click)="search()"><span class="fa fa-search" *ngIf="!searching" aria-hidden="true"></span><span class="fa fa-spinner" *ngIf="searching" aria-hidden="true"></span> Suche starten...</button>
 
     </div>
     <div class="grid-item three-tenths">
-      <md-accordion class="example-headers-align" hide-toggle="false">
+		<div *ngIf="searching" style="position: relative; top:0; ">
+			<svg class="loading-indicator" height="250" width="300">
+				<path
+						class="house"
+						d="M100,200 l0,-70 l-20,0 l70,-70 l25,25 l0,-10 l15,0 l0,20 l35,35 l-20,0 l0,70 l-50,0 l0,-40 l-25,0 l0,40 Z"
+						stroke-linecap="round" stroke-linejoin="round"
+						fill="rgba(0,0,0,0)"
+						stroke="#FF7500"
+						stroke-width="4" />
+			</svg>
+
+		</div>
+		<md-accordion *ngIf="!searching" class="example-headers-align" hide-toggle="false">
 
         <md-expansion-panel (opened)="propertyExpanded(property)" *ngFor="let property of properties">
 
@@ -116,8 +136,6 @@
             </div>
           </div>
         </md-expansion-panel>
-
-
 
 
       </md-accordion>

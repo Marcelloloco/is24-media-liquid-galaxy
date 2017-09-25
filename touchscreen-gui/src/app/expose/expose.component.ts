@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {ExposeService} from "./expose.service";
 import {ActivatedRoute} from "@angular/router";
-import {Carousel} from "ngx-carousel";
+import {NgxCarousel} from "ngx-carousel";
 import {REAL_ESTATE_CONDITIONS, REAL_ESTATE_TYPES} from "./realEstateTranslations";
 import {FIRING_TYPE_CONDITIONS} from "./firingTypeCondition";
 
@@ -15,7 +15,7 @@ import {FIRING_TYPE_CONDITIONS} from "./firingTypeCondition";
 export class ExposeComponent implements OnInit {
     expose: any;
     images: Array<Object>;
-    carouselOne: Carousel;
+    carouselOne: NgxCarousel;
     detailsGroups: Array<Array<Array<Object>>>;
     constructor(private exposeService: ExposeService,
                 private route: ActivatedRoute,

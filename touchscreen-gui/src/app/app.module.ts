@@ -34,6 +34,7 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
+
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -47,10 +48,11 @@ import { SearchComponent } from './search/search.component';
 import { ExposeComponent } from './expose/expose.component';
 import {ExposeService} from "./expose/expose.service";
 import {SearchPersistenceService} from "./search/searchPersistence.service";
-import {CarouselModule} from "ngx-carousel";
+import {Carousel} from "angular-carousel/";
 import "hammerjs";
 import { ExposeDetailValuePipe } from "./expose/exposeDetailValue.pipe";
 import {MaxLengthPipe} from "./expose/maxLength.pipe";
+import {NgxCarouselModule} from "ngx-carousel";
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchComponent },
@@ -104,7 +106,7 @@ const appRoutes: Routes = [
     MdToolbarModule,
     MdTooltipModule,
     HttpClientModule,
-    CarouselModule,
+    NgxCarouselModule,
     RouterModule.forRoot(
         appRoutes,
         { enableTracing: true } // <-- debugging purposes only

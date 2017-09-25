@@ -18,6 +18,10 @@ export class NavigationService {
     this.navigate(13.43158897438021, 52.5121619221996, 19.03508785186355, 41.19475331649205, 80, 162.5619296413542);
   }
 
+  public navigateToAutoScout() {
+    this.navigate(11.6117158, 48.1327258, 19.03508785186355, 41.19475331649205, 80, 162.5619296413542);
+  }
+
   public navigate(longitude: number, latitude: number, altitude = 0, heading = 49, tilt = 73, range = 800) {
     const params = new HttpParams()
       .set('query', this.generateFlytoString(longitude, latitude, altitude, heading, tilt, range))

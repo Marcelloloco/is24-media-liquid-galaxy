@@ -1,5 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {MdSliderChange} from '@angular/material';
+import { BootstrapSwitchModule } from 'angular2-bootstrap-switch';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import {City} from '../city';
 import {NavigationService} from '../navigation.service';
 import {Observable} from 'rxjs/Rx';
@@ -23,10 +25,13 @@ export class SearchComponent implements OnDestroy {
   price: number;
   space: number;
   isInStreetView: boolean;
+  searching: boolean;
 
-  properties: Property[] = [];
-  oldProperties: string;
-  pollingInterval: Subscription;
+  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+
+	properties: Property[] = [];
+	oldProperties: string;
+	observable: Subscription;
 
   constructor(private navigationService: NavigationService,
               private propertiesListService: PropertiesListService,
@@ -35,7 +40,7 @@ export class SearchComponent implements OnDestroy {
               private searchPersistenceService: SearchPersistenceService) {
     this.loadSearchParameters();
     this.isInStreetView = false;
-    this.startPollingProperties(propertiesListService);
+    this.searching = false;
   }
 
   ngOnDestroy(): void {
@@ -55,12 +60,14 @@ export class SearchComponent implements OnDestroy {
   }
 
   private stopPolling() {
-    this.pollingInterval.unsubscribe();
+    this.observable.unsubscribe();
   }
 
   private startPollingProperties(propertiesListService: PropertiesListService) {
-    this.pollingInterval = Observable.interval(100)
+	  const timer = Observable.timer(5000);
+	  this.observable = Observable.interval(500)
     .switchMap(() => propertiesListService.getCurrentProperties())
+	.takeUntil(timer)
     .subscribe((data) => {
 	    let oldProps = JSON.stringify(data);
 	    if (oldProps !== this.oldProperties) {
@@ -69,7 +76,9 @@ export class SearchComponent implements OnDestroy {
           this.properties.forEach( (property)=> {
             this.preparePanoId(property);
           });
-      }
+          this.searching = false;
+          this.stopPolling();
+	    }
     });
   }
 
@@ -125,9 +134,11 @@ export class SearchComponent implements OnDestroy {
 
   public search() {
     this.storeSearchParameters();
-    //this.properties = [];
+    this.properties = [];
     //this.oldProperties = null;
-    this.searchService.search(this.isRent, this.price, this.space);
+	  this.searching = true;
+	  this.searchService.search(this.isRent, this.price, this.space);
+    this.startPollingProperties(this.propertiesListService);
   }
 
   public propertyExpanded(property: Property) {
@@ -140,5 +151,32 @@ export class SearchComponent implements OnDestroy {
     this.city = City.Berlin;
     this.navigationService.navigateToImmoScout();
   }
+  public easterEggAS24() {
+    this.city = City.Munich;
+    this.navigationService.navigateToAutoScout();
+  }
+	private swipeCoord?: [number, number];
+	private swipeTime?: number;
+
+	swipe(e: TouchEvent, when: string): void {
+		const coord: [number, number] = [e.changedTouches[0].pageX, e.changedTouches[0].pageY];
+		const time                    = new Date().getTime();
+
+		if (when === 'start') {
+			this.swipeCoord = coord;
+			this.swipeTime  = time;
+		}
+
+		else if (when === 'end') {
+			const direction = [coord[0] - this.swipeCoord[0], coord[1] - this.swipeCoord[1]];
+			const duration  = time - this.swipeTime;
+
+			if (duration < 1000 //Short enough
+				&& Math.abs(direction[1]) < Math.abs(direction[0]) //Horizontal enough
+				&& Math.abs(direction[0]) > 400) {  //Long enough
+				alert('swiped!');
+			}
+		}
+	}
 
 }
