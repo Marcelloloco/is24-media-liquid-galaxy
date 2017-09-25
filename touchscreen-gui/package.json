@@ -23,7 +23,6 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
-    "@angular/touch": "^4.2.4",
     "angular-carousel": "^1.1.0",
     "angular-touch": "^1.6.6",
     "angular2-bootstrap-switch": "^0.2.3",
