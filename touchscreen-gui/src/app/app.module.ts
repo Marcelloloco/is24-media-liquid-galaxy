@@ -52,7 +52,7 @@ import {Carousel} from "angular-carousel/";
 import "hammerjs";
 import { ExposeDetailValuePipe } from "./expose/exposeDetailValue.pipe";
 import {MaxLengthPipe} from "./expose/maxLength.pipe";
-import {NgxCarouselModule} from "ngx-carousel";
+import {CarouselModule} from "ngx-carousel";
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchComponent },
@@ -106,7 +106,7 @@ const appRoutes: Routes = [
     MdToolbarModule,
     MdTooltipModule,
     HttpClientModule,
-    NgxCarouselModule,
+    CarouselModule,
     RouterModule.forRoot(
         appRoutes,
         { enableTracing: true } // <-- debugging purposes only
