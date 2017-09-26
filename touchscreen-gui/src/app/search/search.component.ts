@@ -19,13 +19,14 @@ import {SearchPersistenceService} from "./searchPersistence.service";
 })
 export class SearchComponent implements OnDestroy {
 
-  cities = City;
-  city: City;
-  isRent: boolean;
-  price: number;
-  space: number;
-  isInStreetView: boolean;
-  searching: boolean;
+	cities = City;
+	city: City;
+	isRent: boolean;
+	price: number;
+	space: number;
+	streetViewEnabled: boolean;
+	searching: boolean;
+	adminMode= false;
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 
@@ -39,14 +40,20 @@ export class SearchComponent implements OnDestroy {
               private streetViewService: StreetViewService,
               private searchPersistenceService: SearchPersistenceService) {
     this.loadSearchParameters();
-    this.isInStreetView = false;
-    this.searching = false;
+    this.streetViewEnabled = false;
+    this.searching         = false;
   }
 
   ngOnDestroy(): void {
     this.stopPolling();
   }
-
+	getStyle() {
+		if(this.adminMode) {
+			return "admin_mode";
+		} else {
+			return "";
+		}
+	}
   private loadSearchParameters() {
     let persistedSearchParameters = this.searchPersistenceService.getSearchParameters();
     this.city = persistedSearchParameters.city;
@@ -97,18 +104,17 @@ export class SearchComponent implements OnDestroy {
   }
 
     public openStreetView(panoId: string) {
-        this.isInStreetView = true;
         this.streetViewService.openStreetView(panoId).then(
             response => {
-                this.isInStreetView = true;
+                // this.streetView = true;
             });
     }
 
     public closeStreetView() {
-        this.isInStreetView = false;
+        this.streetViewEnabled = false;
         this.streetViewService.closeStreetView()
             .then(() => {
-                this.isInStreetView = false;
+                // this.streetView = false;
             });
     }
 
@@ -174,7 +180,7 @@ export class SearchComponent implements OnDestroy {
 			if (duration < 1000 //Short enough
 				&& Math.abs(direction[1]) < Math.abs(direction[0]) //Horizontal enough
 				&& Math.abs(direction[0]) > 400) {  //Long enough
-				alert('swiped!');
+				this.adminMode = !this.adminMode;
 			}
 		}
 	}

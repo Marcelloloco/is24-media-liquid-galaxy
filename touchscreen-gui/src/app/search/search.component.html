@@ -8,15 +8,23 @@
     </span>
 
 
-    <div class="close" *ngIf="this.isInStreetView">
+    <div class="close" *ngIf="this.streetViewEnabled">
       <button class="close-button" (click)="closeStreetView()">Streetview beenden</button>
     </div>
-
-
-	  <div style="position: absolute; right: 0; top: 0;padding: 10px">
-		  <img src="/img/logo/fs24Logo.gif" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" style="float: right; margin-left: 10px">
-		  <img src="/img/logo/as24.jpg" (click)="easterEggAS24()" style="float: right;height: 40px">
+	  <div id="header_container" [ngClass]="getStyle()" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" >
+		  <div id="header_panel" class="shadow">
+			  <div class="front face">
+				  <div style="position: absolute; right: 0; top: 0;padding: 10px">
+					  <img src="/img/logo/fs24Logo.gif" style="float: right; margin-left: 10px">
+					  <img src="/img/logo/as24.jpg" (click)="easterEggAS24()" style="float: right;height: 40px">
+				  </div>
+			  </div>
+			  <div class="back face center">
+				  <md-slide-toggle  [(checked)]="streetViewEnabled" (change)="streetViewEnabled = !streetViewEnabled">Streetview</md-slide-toggle>
+			  </div>
+		  </div>
 	  </div>
+
   </header>
 
 
@@ -126,7 +134,7 @@
           </div>
           <div class="grid expansionPanelNavigationButtons">
             <div class="grid-item one-third padding-right-s">
-              <button class="button" [disabled]="!property.panoId" (click)="openStreetView(property.panoId)">Streetview</button>
+              <button class="button" [disabled]="!streetViewEnabled || !property.panoId" (click)="openStreetView(property.panoId)">Streetview</button>
             </div>
             <div class="grid-item one-third">
               <button class="button disabled">360 tour</button>
