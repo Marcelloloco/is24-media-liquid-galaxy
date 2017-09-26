@@ -153,6 +153,12 @@ export class SearchComponent implements OnDestroy {
     this.navigationService.navigate(coordinates.longitude, coordinates.latitude);
   }
 
+  public relaunchLG() {
+    this.navigationService.relaunchLG();
+  }
+  public restartLG() {
+    this.navigationService.rebootLG();
+  }
   public easterEgg() {
     this.city = City.Berlin;
     this.navigationService.navigateToImmoScout();

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {City} from './city';
 import {LG_SERVER_IP} from './constants';
 
@@ -9,7 +9,7 @@ export class NavigationService {
   constructor(private http: HttpClient) { }
 
   public navigateToCity(city: City) {
-    const [longitude, latitude, altitude, heading, tilt, range] = this.getCityCoordinates(city);
+    const [longitude, latitude, altitude, heading, tilt, range] = NavigationService.getCityCoordinates(city);
 
     this.navigate(longitude, latitude, altitude, heading, tilt, range);
   }
@@ -23,16 +23,31 @@ export class NavigationService {
   }
 
   public navigate(longitude: number, latitude: number, altitude = 0, heading = 49, tilt = 73, range = 800) {
-    const params = new HttpParams()
-      .set('query', this.generateFlytoString(longitude, latitude, altitude, heading, tilt, range))
-      .set('name', 'whatever');
-
-    this.http.get(`http://${LG_SERVER_IP}:81/change.php`, {params: params}).subscribe(response => {
-      console.log(response);
-    });
+	  let query = NavigationService.generateFlytoString(longitude, latitude, altitude, heading, tilt, range);
+	  this.executeQueryOnServer(query);
   }
 
-  private getCityCoordinates(city: City) {
+	private executeQueryOnServer(query: string) {
+		const params = new HttpParams()
+			.set('query', query)
+			.set('name', 'whatever');
+		this.callChangeOnServer(params);
+	}
+
+	private callChangeOnServer(params: HttpParams) {
+		this.http.get(`http://${LG_SERVER_IP}:81/change.php`, {params: params}).subscribe(response => {
+			console.log(response);
+		});
+	}
+
+	public relaunchLG() {
+  	    this.executeQueryOnServer("relaunch")
+	}
+
+	public rebootLG() {
+  	    this.executeQueryOnServer("reboot")
+	}
+	private static getCityCoordinates(city: City) {
     let longitude, latitude, altitude, heading, tilt, range;
 
     switch (city) {
@@ -85,7 +100,7 @@ export class NavigationService {
     return [longitude, latitude, altitude, heading, tilt, range];
   }
 
-  private generateFlytoString(longitude: number, latitude: number, altitude: number, heading: number, tilt: number, range: number) {
+  private static generateFlytoString(longitude: number, latitude: number, altitude: number, heading: number, tilt: number, range: number) {
     return `flytoview=<LookAt><longitude>${longitude}</longitude><latitude>${latitude}</latitude><altitude>${altitude}</altitude><heading>${heading}</heading><tilt>${tilt}</tilt><range>${range}</range><gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode></LookAt>`;
   }
 

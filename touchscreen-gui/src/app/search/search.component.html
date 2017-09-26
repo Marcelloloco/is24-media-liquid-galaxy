@@ -20,7 +20,9 @@
 				  </div>
 			  </div>
 			  <div class="back face center">
-				  <md-slide-toggle  [(checked)]="streetViewEnabled" (change)="streetViewEnabled = !streetViewEnabled">Streetview</md-slide-toggle>
+				  <md-slide-toggle style="float: left;margin-top: 8px"  [(checked)]="streetViewEnabled" (change)="streetViewEnabled = !streetViewEnabled">Streetview</md-slide-toggle>
+				  <button style="float: left;margin-left: 5px;"  md-raised-button color="primary" (click)="relaunchLG()">Relaunch</button>
+				  <button style="float: left;margin-left: 5px;"  md-raised-button color="primary" (click)="restartLG()">Restart</button>
 			  </div>
 		  </div>
 	  </div>
