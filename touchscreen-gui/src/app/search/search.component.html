@@ -20,16 +20,16 @@
 				  </div>
 			  </div>
 			  <div class="back face center">
-				  <md-slide-toggle style="float: left;margin-top: 8px"  [(checked)]="streetViewEnabled" (change)="streetViewEnabled = !streetViewEnabled">Streetview</md-slide-toggle>
 				  <button style="float: left;margin-left: 8px;"  md-raised-button color="primary" (click)="relaunchLG()">Relaunch</button>
 				  <button style="float: left;margin-left: 8px;margin-right: 8px;"  md-raised-button color="primary" (click)="restartLG()">Restart</button>
-				  <md-chip-list>
+				  <md-chip-list style="float: left;">
 					  <md-chip *ngFor="let planet of planets"
 							   [selected]="planet.key === selectedPlanet"
 						  	   [value]="planet.key">
 						  {{planet.name}}
 					  </md-chip>
 				  </md-chip-list>
+				  <md-slide-toggle style="float: right;margin-top: 8px"  [(checked)]="streetViewEnabled" (change)="streetViewEnabled = !streetViewEnabled">Streetview</md-slide-toggle>
 			  </div>
 		  </div>
 	  </div>
@@ -70,8 +70,8 @@
       <button class="button-primary search-button" (click)="search()"><span class="fa fa-search" *ngIf="!searching" aria-hidden="true"></span><span class="fa fa-spinner" *ngIf="searching" aria-hidden="true"></span> Suche starten...</button>
 
     </div>
-    <div class="grid-item three-tenths">
-		<div *ngIf="searching" style="position: relative; top:0; ">
+    <div class="grid-item three-tenths" style="height: 550px;">
+		<div *ngIf="searching" style="position: relative; top:100px;left:100px; ">
 			<svg class="loading-indicator" height="250" width="300">
 				<path
 						class="house"
@@ -84,7 +84,7 @@
 
 		</div>
 		<md-accordion *ngIf="!searching" class="example-headers-align" hide-toggle="false">
-
+		<h3>Suchergebnisse:</h3>
         <md-expansion-panel (opened)="propertyExpanded(property)" *ngFor="let property of properties">
 
           <md-expansion-panel-header>
