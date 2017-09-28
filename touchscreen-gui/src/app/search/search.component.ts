@@ -21,14 +21,18 @@ export class SearchComponent implements OnDestroy {
 
 	cities = City;
 	city: City;
+	selectedPlanet: 'earth';
 	isRent: boolean;
 	price: number;
 	space: number;
 	streetViewEnabled: boolean;
 	searching: boolean;
 	adminMode= false;
-
-  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+	planets = [
+		{ name: 'Erde', key: 'earth' },
+		{ name: 'Mond', key: 'moon' },
+		{ name: 'Mars', key: 'mars' }
+	];
 
 	properties: Property[] = [];
 	oldProperties: string;
