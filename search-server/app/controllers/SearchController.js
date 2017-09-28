@@ -233,7 +233,7 @@ SearchController.prototype.doSearch = function (req, res) {
 				self.lastSearchResults = [];
 				let tmpList = _.cloneDeep(self.searchResultCache.values());
 				tmpList = sortByDistance(tmpList, currentView.lat, currentView.lng);
-				for (let i=0; i<tmpList.length && i<10; i++) {
+				for (let i=0; i<tmpList.length; i++) {
 					self.lastSearchResults.push(tmpList[i]);
 				}
 //				center = {
