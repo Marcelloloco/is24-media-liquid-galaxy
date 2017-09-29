@@ -6,8 +6,11 @@
         Der Marktführer:<br />
         Die Nr. 1 rund um Immobilien
     </span>
-<div *ngIf="panoId" style="position: absolute;top: 60px;left: 60px; width: 1800px; height: 90%;z-index: 1000;">
-	<iframe [src]="getStreetviewUrl()" height="100%" width="100%"></iframe>
+
+<div *ngIf="this.panoId" style="position: absolute;top: 0;left: 0; width: 100%; height: 100%;z-index: 1000;background-color: #fff;">
+	<div style="position: absolute;top: 60px;left: 60px; width: 1800px; height: 960px;">
+		<iframe [src]="getStreetviewUrl()" height="100%" width="100%"></iframe>
+	</div>
 </div>
 
 	  <div *ngIf="this.panoId" style="font-size:150%; top: 10px;left: 45%;z-index: 2000;position: absolute;">
@@ -73,7 +76,7 @@
       <button class="button-primary search-button" (click)="search()"><span class="fa fa-search" *ngIf="!searching" aria-hidden="true"></span><span class="fa fa-spinner" *ngIf="searching" aria-hidden="true"></span> Suche starten...</button>
 
     </div>
-    <div class="grid-item three-tenths" style="height: 800px;overflow-y: scroll;">
+    <div class="grid-item three-tenths" style="height: 800px;overflow-y: auto; overflow-x: hidden">
 		<div id="search_spinner" *ngIf="searching" style="position: relative; top:100px;left:100px; ">
 			<svg class="loading-indicator" height="250" width="300">
 				<path
@@ -87,7 +90,7 @@
 
 		</div>
 		<md-accordion *ngIf="!searching" class="example-headers-align" hide-toggle="false">
-		<h3>Suchergebnisse:</h3>
+			<h1 class="font-brandorange font-center">Suchergebnisse:</h1>
         <md-expansion-panel (opened)="propertyExpanded(property)" *ngFor="let property of properties">
 
           <md-expansion-panel-header>

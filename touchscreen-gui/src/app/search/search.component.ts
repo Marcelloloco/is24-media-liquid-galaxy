@@ -36,7 +36,7 @@ export class SearchComponent implements OnDestroy {
 	];
 
 	properties: Property[] = [];
-	oldProperties: string;
+	oldProperties: string = '[]';
 	observable: Subscription;
 
   constructor(private navigationService: NavigationService,
@@ -77,14 +77,17 @@ export class SearchComponent implements OnDestroy {
   }
 
   private startPollingProperties(propertiesListService: PropertiesListService) {
-	  const timer = Observable.timer(5000);
+	  setTimeout(() => {
+		  this.searching = false;
+		  this.stopPolling();
+	  }, 7000);
 	  this.observable = Observable.interval(500)
     .switchMap(() => propertiesListService.getCurrentProperties())
-	.takeUntil(timer)
     .subscribe((data) => {
-	    let oldProps = JSON.stringify(data);
-	    if (oldProps !== this.oldProperties) {
-          this.oldProperties = oldProps;
+	    let newProps = JSON.stringify(data);
+	    if (newProps !== this.oldProperties) {
+	    	console.log("new props " + newProps);
+          this.oldProperties = newProps;
           this.properties = data;
           this.properties.forEach( (property)=> {
             this.preparePanoId(property);
@@ -150,7 +153,7 @@ public getStreetviewUrl(){
   public search() {
     this.storeSearchParameters();
     this.properties = [];
-    this.oldProperties = null;
+    this.oldProperties = '[]';
 	  this.searching = true;
 	  this.searchService.search(this.isRent, this.price, this.space);
     this.startPollingProperties(this.propertiesListService);
