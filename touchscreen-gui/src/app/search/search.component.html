@@ -31,7 +31,9 @@
 				  <md-chip-list style="float: left;">
 					  <md-chip *ngFor="let planet of planets"
 							   [selected]="planet.key === selectedPlanet"
-						  	   [value]="planet.key">
+						  	   [value]="planet.key"
+							   (click)="changePlanet(planet.key)"
+					  			>
 						  {{planet.name}}
 					  </md-chip>
 				  </md-chip-list>

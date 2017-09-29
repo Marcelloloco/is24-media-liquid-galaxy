@@ -33,6 +33,11 @@ export class NavigationService {
 			.set('name', 'whatever');
 		this.callChangeOnServer(params);
 	}
+	public changePlanet(planet: string) {
+		const params = new HttpParams()
+			.set('planet', planet);
+		this.callChangeOnServer(params);
+	}
 
 	private callChangeOnServer(params: HttpParams) {
 		this.http.get(`http://${LG_SERVER_IP}:81/change.php`, {params: params}).subscribe(response => {

@@ -28,7 +28,7 @@ export class SearchComponent implements OnDestroy {
 	space: number;
 	streetViewEnabled: boolean;
 	searching: boolean;
-	adminMode= false;
+	adminMode= true;
 	planets = [
 		{ name: 'Erde', key: 'earth' },
 		{ name: 'Mond', key: 'moon' },
@@ -163,6 +163,10 @@ public getStreetviewUrl(){
     const coordinates = property.address.wgs84Coordinate;
 
     this.navigationService.navigate(coordinates.longitude, coordinates.latitude);
+  }
+
+  public changePlanet(planet) {
+    this.navigationService.changePlanet(planet);
   }
 
   public relaunchLG() {
