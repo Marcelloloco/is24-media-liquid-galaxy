@@ -15,7 +15,6 @@ export class StreetViewService {
       // resolve();
       this.http.get(`https://maps.googleapis.com/maps/api/streetview/metadata?location=${prop.address.street} ${prop.address.houseNumber} ${prop.address.postcode} ${prop.address.city}&key=${config.streetViewImageApiKey}`)
       .subscribe(res => {
-        console.log(`received response! ${JSON.stringify(res)}`);
         const panoId = res['pano_id'];
         if (panoId) {
           console.log(`resolve with pano id. ${panoId}`);

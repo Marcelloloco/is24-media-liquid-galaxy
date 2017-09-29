@@ -11,13 +11,14 @@ import {SearchService} from '../search.service';
 import {Subscription} from "rxjs/Subscription";
 import {StreetViewService} from "../street-view.service";
 import {SearchPersistenceService} from "./searchPersistence.service";
-
+import {DomSanitizer,SafeResourceUrl,} from '@angular/platform-browser';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.less']
 })
 export class SearchComponent implements OnDestroy {
+	panoId: string;
 
 	cities = City;
 	city: City;
@@ -42,7 +43,8 @@ export class SearchComponent implements OnDestroy {
               private propertiesListService: PropertiesListService,
               private searchService: SearchService,
               private streetViewService: StreetViewService,
-              private searchPersistenceService: SearchPersistenceService) {
+              private searchPersistenceService: SearchPersistenceService,
+              public sanitizer:DomSanitizer) {
     this.loadSearchParameters();
     this.streetViewEnabled = false;
     this.searching         = false;
@@ -108,14 +110,17 @@ export class SearchComponent implements OnDestroy {
   }
 
     public openStreetView(panoId: string) {
-        this.streetViewService.openStreetView(panoId).then(
+	    this.panoId= panoId
+	    this.streetViewService.openStreetView(panoId).then(
             response => {
                 // this.streetView = true;
             });
     }
-
+public getStreetviewUrl(){
+  	return this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&pano='+ this.panoId + '&zoom=1');
+}
     public closeStreetView() {
-        this.streetViewEnabled = false;
+	    this.panoId = null;
         this.streetViewService.closeStreetView()
             .then(() => {
                 // this.streetView = false;
