@@ -1,7 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { GestureConfig } from '@angular/material';
+
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -71,8 +73,9 @@ const appRoutes: Routes = [
     MaxLengthPipe
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+	  BrowserAnimationsModule,
+	  BrowserModule,
+
     MdAutocompleteModule,
     MdButtonModule,
     MdButtonToggleModule,
@@ -110,7 +113,9 @@ const appRoutes: Routes = [
         { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [NavigationService, PropertiesListService, SearchService, ExposeService, StreetViewService, SearchPersistenceService],
+  providers: [
+	  { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
+	  NavigationService, PropertiesListService, SearchService, ExposeService, StreetViewService, SearchPersistenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

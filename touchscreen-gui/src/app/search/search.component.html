@@ -65,13 +65,13 @@
 
       <div class="setting-slider" style="margin-top: 50px;">
         <h2>Preis (max)</h2>
-        <md-slider md-discrete [value]="price" min="1" [max]="isRent ? 4000 : 1000000" step="1" class="one-whole" (input)="priceChanged($event)"></md-slider>
+        <md-slider color="primary"  md-discrete [value]="price" min="1" [max]="isRent ? 4000 : 1000000" step="1" class="one-whole" (input)="priceChanged($event)"></md-slider>
         <h3 [innerText]="price | currency:'EUR':true:'1.0-0'"></h3>
       </div>
 
       <div class="setting-slider margin-top">
         <h2>Fläche (min)</h2>
-        <md-slider md-discrete [(value)]="space" min="1" max="200" step="1" class="one-whole" (input)="spaceChanged($event)"></md-slider>
+        <md-slider color="primary" md-discrete [(value)]="space" min="1" max="200" step="1" class="one-whole" (input)="spaceChanged($event)"></md-slider>
         <h3>{{space}}<span>&nbsp;m<sup>2</sup></span></h3>
       </div>
 

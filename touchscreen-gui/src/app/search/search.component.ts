@@ -1,7 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
 import {MdSliderChange} from '@angular/material';
-import { BootstrapSwitchModule } from 'angular2-bootstrap-switch';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import {City} from '../city';
 import {NavigationService} from '../navigation.service';
 import {Observable} from 'rxjs/Rx';
