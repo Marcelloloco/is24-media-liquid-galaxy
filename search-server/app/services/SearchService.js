@@ -44,7 +44,7 @@ function SearchService() {
 	this.requestCache = LRU(50);
 }
 
-SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, minArea) {
+SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, minArea, onlyWith360Tours = false) {
 	if (!this.oauth) {
 		return Promise.reject('oauth not configured');
 	}
@@ -66,6 +66,9 @@ SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, 
 		`pageSize=200`
 	].join('&');
 
+	if(onlyWith360Tours) {
+		searchParams += `&virtualTourType=ALL`;
+	}
 	let request_data = {
 		url: 'https://rest.immobilienscout24.de/restapi/api/search/v1.0/search/radius?'+searchParams,
 		method: 'GET',

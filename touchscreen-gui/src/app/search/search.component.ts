@@ -24,6 +24,7 @@ export class SearchComponent implements OnDestroy {
 	isRent: boolean;
 	price: number;
 	space: number;
+	onlyWith360Tour: boolean;
 	streetViewEnabled: boolean;
 	searching: boolean;
 	adminMode= true;
@@ -46,6 +47,7 @@ export class SearchComponent implements OnDestroy {
     this.loadSearchParameters();
     this.streetViewEnabled = false;
     this.searching         = false;
+    this.onlyWith360Tour   = false;
   }
 
   ngOnDestroy(): void {
@@ -153,7 +155,7 @@ public getStreetviewUrl(){
     this.properties = [];
     this.oldProperties = '[]';
 	  this.searching = true;
-	  this.searchService.search(this.isRent, this.price, this.space);
+	  this.searchService.search(this.isRent, this.price, this.space, this.onlyWith360Tour);
     this.startPollingProperties(this.propertiesListService);
   }
 

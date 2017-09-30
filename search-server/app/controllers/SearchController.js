@@ -18,6 +18,7 @@ function SearchController() {
 	this.maxPrice = 1000000;
 	this.minArea = 1;
 	this.searchResultCache = LRU(maxCacheSize);
+	this.onlyWith360Tour = false;
 	// default is IS24 Berlin Office
 	this.lastMasterViewPoint = {
 		lng: 13.43173929843387,
@@ -61,6 +62,7 @@ SearchController.prototype.enableSearch = function () {
 		}
 		self.maxPrice = req.query.maxPrice || self.maxPrice;
 		self.minArea = req.query.minArea || self.minArea;
+		self.onlyWith360Tour = req.query.onlyWith360Tour || self.onlyWith360Tour;
 
 		let tmpList = _.cloneDeep(self.searchResultCache.values());
 		tmpList.forEach(item => {
@@ -219,7 +221,7 @@ SearchController.prototype.doSearch = function (req, res) {
 	self.lastSearch.set(clientIp, searchKey, 60000);
 
 	return this.searchService
-		.search(isMaster, currentView.lng, currentView.lat, type, this.maxPrice, this.minArea)
+		.search(isMaster, currentView.lng, currentView.lat, type, this.maxPrice, this.minArea, this.onlyWith360Tour)
 		.then(results => {
 			logger.log(`search returned ${results.length} results`);
 			results.forEach(item => {

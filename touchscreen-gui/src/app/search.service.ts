@@ -7,11 +7,12 @@ export class SearchService {
 
   constructor(private http: HttpClient) {}
 
-  public search(isRent: boolean, maxPrice: number, minArea: number) {
+  public search(isRent: boolean, maxPrice: number, minArea: number, onlyWith360Tour:boolean = false) {
     const params = new HttpParams()
       .set('realEstateType', isRent ? 'ApartmentRent' : 'ApartmentBuy')
       .set('maxPrice', maxPrice.toString())
-      .set('minArea', minArea.toString());
+      .set('minArea', minArea.toString())
+      .set('onlyWith360Tour', onlyWith360Tour.toString());
 
     this.http.get(`http://${SEARCH_SERVER_IP}:${SEARCH_SERVER_PORT}/search-enable`, {params: params})
       .subscribe(res => {
