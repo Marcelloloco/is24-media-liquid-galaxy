@@ -75,7 +75,7 @@
         <h3>{{space}}<span>&nbsp;m<sup>2</sup></span></h3>
       </div>
 
-		<md-slide-toggle *ngIf="adminMode" style="float: right;margin-top: 8px"  [(checked)]="onlyWith360Tour" (change)="onlyWith360Tour = !onlyWith360Tour">Mit 360 Grad Tour</md-slide-toggle>
+		<md-slide-toggle *ngIf="adminMode" [(checked)]="onlyWith360Tour" (change)="onlyWith360Tour = !onlyWith360Tour">Mit 360 Grad Tour</md-slide-toggle>
       <button class="button-primary search-button" (click)="search()">
 		  <span class="fa fa-search" *ngIf="!searching" aria-hidden="true"></span><span class="fa fa-spinner" *ngIf="searching" aria-hidden="true"></span> Suche starten...
 	  </button>
@@ -95,7 +95,7 @@
 
 		</div>
 		<md-accordion *ngIf="!searching" class="example-headers-align" hide-toggle="false">
-			<h1 class="font-brandorange font-center">Suchergebnisse:</h1>
+			<h1 class="font-brandorange font-center">Ergebnisse</h1>
         <md-expansion-panel (opened)="propertyExpanded(property)" *ngFor="let property of properties">
 
           <md-expansion-panel-header>
