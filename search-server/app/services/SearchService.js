@@ -44,7 +44,7 @@ function SearchService() {
 	this.requestCache = LRU(50);
 }
 
-SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, minArea, onlyWith360Tours = false) {
+SearchService.prototype.search = function (isMaster, long, lat, type, maxPrice, minArea, onlyWith360Tours) {
 	if (!this.oauth) {
 		return Promise.reject('oauth not configured');
 	}

@@ -7,7 +7,7 @@ const
 	fs = require("fs"),
 	LRU = require("lru-cache"),
 	logger = require("../utils/logger"),
-	maxCacheSize = 	200,
+	maxCacheSize = 	50,
 	MASTER = '10.42.42.1';
 
 function SearchController() {
@@ -235,7 +235,7 @@ SearchController.prototype.doSearch = function (req, res) {
 				self.lastSearchResults = [];
 				let tmpList = _.cloneDeep(self.searchResultCache.values());
 				tmpList = sortByDistance(tmpList, currentView.lat, currentView.lng);
-				for (let i=0; i<tmpList.length; i++) {
+				for (let i=0; i<tmpList.length && i<20; i++) {
 					self.lastSearchResults.push(tmpList[i]);
 				}
 //				center = {
