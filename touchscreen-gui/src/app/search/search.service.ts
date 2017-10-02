@@ -7,7 +7,7 @@ export class SearchService {
 
   constructor(private http: HttpClient) {}
 
-  public search(isRent: boolean, maxPrice: number, minArea: number, onlyWith360Tour:boolean = false) {
+  public search(isRent: boolean, maxPrice: number, minArea: number, onlyWith360Tour:boolean) {
     const params = new HttpParams()
       .set('realEstateType', isRent ? 'ApartmentRent' : 'ApartmentBuy')
       .set('maxPrice', maxPrice.toString())
