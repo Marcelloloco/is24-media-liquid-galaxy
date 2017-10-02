@@ -62,7 +62,7 @@ SearchController.prototype.enableSearch = function () {
 		}
 		self.maxPrice = req.query.maxPrice || self.maxPrice;
 		self.minArea = req.query.minArea || self.minArea;
-		self.onlyWith360Tour = req.query.onlyWith360Tour || self.onlyWith360Tour;
+		self.onlyWith360Tour = req.query.onlyWith360Tour && req.query.onlyWith360Tour === 'true';
 
 		let tmpList = _.cloneDeep(self.searchResultCache.values());
 		tmpList.forEach(item => {
