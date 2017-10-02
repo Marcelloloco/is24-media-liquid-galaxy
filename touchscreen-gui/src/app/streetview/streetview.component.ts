@@ -28,13 +28,13 @@ export class StreetviewComponent implements OnInit {
 	ngOnInit() {
 		if (this.expose) {
 			this.panoId = this.expose.panoId;
-			this.streetViewUrl = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&pano='+ this.panoId + '&zoom=1');
+			this.streetViewUrl = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&pano='+ this.panoId + '&zoom=3');
 		} else if (this.route.snapshot.paramMap.has('panoId')) {
 			this.panoId = this.route.snapshot.paramMap.get('panoId');
-			this.streetViewUrl = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&pano='+ this.panoId + '&zoom=1');
+			this.streetViewUrl = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&pano='+ this.panoId + '&zoom=3');
 		} else if (this.route.snapshot.paramMap.has('tourId')){
 			this.tourId = this.route.snapshot.paramMap.get('tourId');
-			this.streetViewUrl = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&tour='+ this.tourId + '&zoom=1');
+			this.streetViewUrl = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&tour='+ this.tourId + '&zoom=3');
 		}
 	}
 
