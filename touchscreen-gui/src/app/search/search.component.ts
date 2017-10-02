@@ -45,7 +45,7 @@ export class SearchComponent implements OnDestroy {
               private searchPersistenceService: SearchPersistenceService,
               public sanitizer:DomSanitizer) {
     this.loadSearchParameters();
-    this.streetViewEnabled = false;
+    this.streetViewEnabled = true;
     this.searching         = false;
     this.onlyWith360Tour   = false;
   }
