@@ -34,7 +34,7 @@ export class StreetviewService {
 
   public openStreetView(panoId: string) {
     return new Promise((resolve, reject) => {
-      const requestUrl = `http://${LG_SERVER_IP}:81/change.php?query=peruse-${panoId}`;
+      const requestUrl = `http://${LG_SERVER_IP}:81/change.php?query=peruse-on`;
       this.http.get(requestUrl).subscribe(() => {
         resolve();
       });
