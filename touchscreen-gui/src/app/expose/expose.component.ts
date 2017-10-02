@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
+import {StreetviewService} from "../streetview/streetview.service";
 import {ExposeService} from "./expose.service";
 import {ActivatedRoute} from "@angular/router";
 import {NgxCarousel} from "ngx-carousel";
@@ -13,12 +14,15 @@ import {FIRING_TYPE_CONDITIONS} from "./firingTypeCondition";
 })
 
 export class ExposeComponent implements OnInit {
-    expose: any;
-    images: Array<Object>;
-    carouselOne: NgxCarousel;
-    detailsGroups: Array<Array<Array<Object>>>;
+	expose: any;
+	images: Array<Object>;
+	tours: Array<Object>;
+	carouselOne: NgxCarousel;
+	detailsGroups: Array<Array<Array<Object>>>;
+	panoId: string;
     constructor(private exposeService: ExposeService,
                 private route: ActivatedRoute,
+                private svService: StreetviewService,
                 private location: Location) {
 
     }
@@ -54,61 +58,87 @@ export class ExposeComponent implements OnInit {
             custom: 'banner',
             dynamicLength: true
         };
-        this.exposeService.get(id)
-            .subscribe(expose => {
-                this.expose = expose;
-                console.log(expose);
-                this.images = this.expose.realEstate.attachments[0].attachment
-                    .filter((attachment) => attachment['@xsi.type'] === 'common:Picture')
-                    .map((attachment) => {
-                        return {
-                            url: attachment.urls[0].url.find((image)=>image['@scale'] ==='SCALE_540x540')['@href'],
-                            text: attachment.title
-                        }
-                    });
-                let realEstate = this.expose['realEstate'];
-                this.detailsGroups = [
-                    [
-                        [
-                            this.detailFor(REAL_ESTATE_TYPES[realEstate['@xsi.type'].split(':')[1]], "Typ"),
-                            this.detailFor(this.orMinus(realEstate.floor), "Etage"),
-                            this.detailFor(this.orMinus(realEstate.livingSpace),"Wohnfläche &#13217;"),
-                            this.detailFor(this.orMinus(realEstate.freeFrom), "Bezugsfrei"),
-                            this.detailFor(this.orMinus(realEstate.numberOfRooms), "Zimmer"),
-                            this.detailFor(this.orMinus(realEstate.numberOfBedRooms), "Schlafzimmer"),
-                        ],
-                        [
-                            this.detailFor(this.orMinus(realEstate.numberOfBathRooms), "Badezimmer"),
-                            this.detailFor(this.booleanFor(realEstate.cellar), "Keller"),
-                            this.detailFor(this.booleanFor(realEstate.balcony), "Balkon / Terasse"),
-                            this.detailFor(this.booleanFor(realEstate.guestToilet), "Gäste-WC"),
-                        ],
-                    ],
-                    [
-                        [
-                            this.detailFor(this.orMinus(realEstate.baseRent," &euro;"), "Kaltmiete"),
-                            this.detailFor(this.orMinus(realEstate.calculatedTotalRent - realEstate.baseRent," &euro;"), "Nebenkosten")
-                        ],
-                        [
-                            this.detailFor(this.orMinus(realEstate.heatingCosts," &euro;"), "Heizkosten"),
-                            this.detailFor(this.orMinus(realEstate.calculatedTotalRent, " &euro;"), "Gesamtmiete"),
-                            this.detailFor(this.orMinus(realEstate.deposit , " &euro;"), "Kaution"),
-                        ]
-                    ],
-                    [
-                        [
-                            this.detailFor(this.orMinus(realEstate.constructionYear), "Baujahr"),
-                            this.detailFor(REAL_ESTATE_CONDITIONS[realEstate.condition], "Objektzustand"),
-                            this.detailFor(realEstate.heatingType === "CENTRAL_HEATING", "Zentralheizung"),
-                        ],
-                        [
-                            this.detailFor(FIRING_TYPE_CONDITIONS[(realEstate.firingTypes[0].firingType && realEstate.firingTypes[0].firingType) || 'NO_INFORMATION'], "Energieträger"),
-                            this.detailFor(this.orMinus(realEstate.energyPerformanceCertificate), "Energieausweiß"),
-                            this.detailFor(this.orMinus(realEstate.thermalCharacteristic," kWh/(&#13217;*a)"), "Energieverbrauch"),
-                        ]
-                    ]
-                ];
-            });
+	    this.fetchExposeData(id);
     }
+
+	private fetchExposeData(id: string) {
+		this.exposeService.get(id)
+			.subscribe(expose => {
+				this.expose = expose;
+				console.log(expose);
+				this.images        = this.expose.realEstate.attachments[0].attachment
+					.filter((attachment) => attachment['@xsi.type'] === 'common:Picture')
+					.map((attachment) => {
+						return {
+							url:  attachment.urls[0].url.find((image) => image['@scale'] === 'SCALE_540x540')['@href'],
+							text: attachment.title
+						}
+					});
+				this.tours         = this.expose.realEstate.attachments[0].attachment
+					.filter((attachment) => {
+					return attachment['@xsi.type'] === 'common:Link' &&
+						attachment['url'].indexOf("virtualtours.immobilienscout24.de") > -1
+					})
+					.map((attachment) => {
+						return {
+							id:  attachment.url.substr(attachment.url.lastIndexOf('/')+1),
+							text: attachment.title
+						}
+					});
+				let realEstate     = this.expose['realEstate'];
+				console.log(this.tours);
+				this.detailsGroups = [
+					[
+						[
+							this.detailFor(REAL_ESTATE_TYPES[realEstate['@xsi.type'].split(':')[1]], "Typ"),
+							this.detailFor(this.orMinus(realEstate.floor), "Etage"),
+							this.detailFor(this.orMinus(realEstate.livingSpace), "Wohnfläche &#13217;"),
+							this.detailFor(this.orMinus(realEstate.freeFrom), "Bezugsfrei"),
+							this.detailFor(this.orMinus(realEstate.numberOfRooms), "Zimmer"),
+							this.detailFor(this.orMinus(realEstate.numberOfBedRooms), "Schlafzimmer"),
+						],
+						[
+							this.detailFor(this.orMinus(realEstate.numberOfBathRooms), "Badezimmer"),
+							this.detailFor(this.booleanFor(realEstate.cellar), "Keller"),
+							this.detailFor(this.booleanFor(realEstate.balcony), "Balkon / Terasse"),
+							this.detailFor(this.booleanFor(realEstate.guestToilet), "Gäste-WC"),
+						],
+					],
+					[
+						[
+							this.detailFor(this.orMinus(realEstate.baseRent, " &euro;"), "Kaltmiete"),
+							this.detailFor(this.orMinus(realEstate.calculatedTotalRent - realEstate.baseRent, " &euro;"), "Nebenkosten")
+						],
+						[
+							this.detailFor(this.orMinus(realEstate.heatingCosts, " &euro;"), "Heizkosten"),
+							this.detailFor(this.orMinus(realEstate.calculatedTotalRent, " &euro;"), "Gesamtmiete"),
+							this.detailFor(this.orMinus(realEstate.deposit, " &euro;"), "Kaution"),
+						]
+					],
+					[
+						[
+							this.detailFor(this.orMinus(realEstate.constructionYear), "Baujahr"),
+							this.detailFor(REAL_ESTATE_CONDITIONS[realEstate.condition], "Objektzustand"),
+							this.detailFor(realEstate.heatingType === "CENTRAL_HEATING", "Zentralheizung"),
+						],
+						[
+							this.detailFor(FIRING_TYPE_CONDITIONS[(realEstate.firingTypes[0].firingType && realEstate.firingTypes[0].firingType) || 'NO_INFORMATION'], "Energieträger"),
+							this.detailFor(this.orMinus(realEstate.energyPerformanceCertificate), "Energieausweiß"),
+							this.detailFor(this.orMinus(realEstate.thermalCharacteristic, " kWh/(&#13217;*a)"), "Energieverbrauch"),
+						]
+					]
+				];
+				this.fetchStreetviewPanoId(realEstate);
+			});
+	}
+
+	private fetchStreetviewPanoId(property: any) {
+		this.svService.getPanoId(property)
+			.then(
+				panoId => {
+					this.panoId = panoId;
+				});
+	}
+
 
 }

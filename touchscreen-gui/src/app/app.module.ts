@@ -41,12 +41,13 @@ import {HttpClientModule} from '@angular/common/http';
 
 
 import {NavigationService} from './navigation.service';
-import {PropertiesListService} from './properties-list.service';
-import {SearchService} from './search.service';
-import {StreetViewService} from './street-view.service';
+import {PropertiesListService} from './search/properties-list.service';
+import {SearchService} from './search/search.service';
+import {StreetviewService} from './streetview/streetview.service';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExposeComponent } from './expose/expose.component';
+import { StreetviewComponent } from './streetview/streetview.component';
 import {ExposeService} from "./expose/expose.service";
 import {SearchPersistenceService} from "./search/searchPersistence.service";
 import {Carousel} from "angular-carousel/";
@@ -58,6 +59,8 @@ import {NgxCarouselModule} from "ngx-carousel";
 const appRoutes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'expose/:id', component: ExposeComponent },
+  { path: 'streetview/:panoId', component: StreetviewComponent },
+  { path: 'tour/:tourId', component: StreetviewComponent },
   { path: '',
     redirectTo: '/search',
     pathMatch: 'full'
@@ -67,6 +70,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     SearchComponent,
+    StreetviewComponent,
     ExposeComponent,
     AppComponent,
     ExposeDetailValuePipe,
@@ -115,7 +119,7 @@ const appRoutes: Routes = [
   ],
   providers: [
 	  { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
-	  NavigationService, PropertiesListService, SearchService, ExposeService, StreetViewService, SearchPersistenceService],
+	  NavigationService, PropertiesListService, SearchService, ExposeService, StreetviewService, SearchPersistenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

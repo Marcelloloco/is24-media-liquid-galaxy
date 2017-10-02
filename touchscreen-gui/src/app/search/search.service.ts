@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {LG_SERVER_IP, SEARCH_SERVER_IP, SEARCH_SERVER_PORT} from './constants';
+import {LG_SERVER_IP, SEARCH_SERVER_IP, SEARCH_SERVER_PORT} from '../constants';
 
 @Injectable()
 export class SearchService {

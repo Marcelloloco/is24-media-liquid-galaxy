@@ -1,6 +1,7 @@
 export interface Property {
    counter: string;
     id: string;
+    panoId: string;
     title: string;
     titlePicture: string;
     address: {

@@ -51,7 +51,10 @@
         </div>
     </div>
     <div class="right-column grid-item three-fifths">
-        <div class="close">
+
+		<div class="close">
+			<button routerLink="/streetview/{{panoId}}"style="float: left" class="button" [disabled]="!panoId">Streetview</button>
+			<button routerLink="/tour/{{tours[0].id}}" style="float: left" class="button" [disabled]="!tours[0]">360 Tour</button>
             <button class="close-button" (click)="closeButtonClicked()">Schließen</button>
         </div>
         <div class="details grid">

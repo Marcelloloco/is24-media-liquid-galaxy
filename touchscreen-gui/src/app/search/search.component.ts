@@ -3,11 +3,11 @@ import {MdSliderChange} from '@angular/material';
 import {City} from '../city';
 import {NavigationService} from '../navigation.service';
 import {Observable} from 'rxjs/Rx';
-import {PropertiesListService} from '../properties-list.service';
-import {Property} from '../property';
-import {SearchService} from '../search.service';
+import {PropertiesListService} from './properties-list.service';
+import {Property} from './property';
+import {SearchService} from './search.service';
 import {Subscription} from "rxjs/Subscription";
-import {StreetViewService} from "../street-view.service";
+import {StreetviewService} from "../streetview/streetview.service";
 import {SearchPersistenceService} from "./searchPersistence.service";
 import {DomSanitizer,SafeResourceUrl,} from '@angular/platform-browser';
 @Component({
@@ -41,7 +41,7 @@ export class SearchComponent implements OnDestroy {
   constructor(private navigationService: NavigationService,
               private propertiesListService: PropertiesListService,
               private searchService: SearchService,
-              private streetViewService: StreetViewService,
+              private streetViewService: StreetviewService,
               private searchPersistenceService: SearchPersistenceService,
               public sanitizer:DomSanitizer) {
     this.loadSearchParameters();
@@ -110,25 +110,7 @@ export class SearchComponent implements OnDestroy {
         panoId => {
 	        property['panoId'] = panoId;
         });
-  }
-
-    public openStreetView(panoId: string) {
-	    this.panoId= panoId
-	    this.streetViewService.openStreetView(panoId).then(
-            response => {
-                // this.streetView = true;
-            });
-    }
-public getStreetviewUrl(){
-  	return this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:8086/display/?master=true&pano='+ this.panoId + '&zoom=1');
-}
-    public closeStreetView() {
-	    this.panoId = null;
-        this.streetViewService.closeStreetView()
-            .then(() => {
-                // this.streetView = false;
-            });
-    }
+	  }
 
     public spaceChanged(event: MdSliderChange) {
         this.space = event.value;

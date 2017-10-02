@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {SEARCH_SERVER_IP, SEARCH_SERVER_PORT} from './constants';
+import {SEARCH_SERVER_IP, SEARCH_SERVER_PORT} from '../constants';
 import {Observable} from 'rxjs/Observable';
 import {Property} from './property';
 
