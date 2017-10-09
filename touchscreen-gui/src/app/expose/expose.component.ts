@@ -55,8 +55,7 @@ export class ExposeComponent implements OnInit {
             point: true,
             load: 2,
             touch: true,
-            custom: 'banner',
-            dynamicLength: true
+            custom: 'banner'
         };
 	    this.fetchExposeData(id);
     }

@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import {MdSliderChange} from '@angular/material';
+import {MatSliderChange} from '@angular/material';
 import {City} from '../city';
 import {NavigationService} from '../navigation.service';
 import {Observable} from 'rxjs/Rx';
@@ -112,12 +112,12 @@ export class SearchComponent implements OnDestroy {
         });
 	  }
 
-    public spaceChanged(event: MdSliderChange) {
+    public spaceChanged(event: MatSliderChange) {
         this.space = event.value;
         this.storeSearchParameters();
     }
 
-  public priceChanged(event: MdSliderChange) {
+  public priceChanged(event: MatSliderChange) {
     this.price = event.value;
     this.storeSearchParameters();
   }
