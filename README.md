@@ -59,6 +59,13 @@ get current internal state of search api:
 http 'http://10.200.144.22:88/status'
 ```
 
-
+HTW Studenten:
+1-
+2-
+3-
+4-
+5-
+6-
+7-
 
 
